@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- ============ SEO básico ============ -->
+  <title>García · Restaurante, bar y pastelería en Nordelta</title>
+  <meta name="description" content="García, restaurante, bar y pastelería en Nordelta. Pastas frescas, pan de masa madre, pastelería fina y tragos frente a la laguna. Reservá o pedí take away por WhatsApp." />
+  <meta name="theme-color" content="#FAF6F0" />
+  <link rel="canonical" href="https://garcianordelta.com.ar/" />
+
+  <!-- ============ Open Graph / Redes ============ -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="García Nordelta" />
+  <meta property="og:title" content="García · Restaurante, bar y pastelería en Nordelta" />
+  <meta property="og:description" content="Pastas frescas, pan de masa madre, pastelería fina y tragos con vista a la laguna. Reservas y take away por WhatsApp." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="García · Restaurante, bar y pastelería en Nordelta" />
+  <meta name="twitter:description" content="Pastas frescas, masa madre, pastelería fina y bar frente a la laguna." />
+
+  <!-- ============ Datos estructurados ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "García",
+    "description": "Restaurante, bar y pastelería en Nordelta.",
+    "servesCuisine": ["Pastas frescas", "Pastelería", "Cocina casera"],
+    "telephone": "+5491124712586",
+    "acceptsReservations": true,
+    "openingHours": ["Tu-Sa 08:00-24:00", "Su 08:00-20:00"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de los Lagos 205, Officia, Rincón de Milberg",
+      "addressLocality": "Nordelta, Tigre",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "sameAs": ["https://www.instagram.com/garcianordelta/"]
+  }
+  </script>
+
+  <!-- ============ Tipografías ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       1. VARIABLES DE DISEÑO
+       ========================================================= */
+    :root {
+      --bg: #FAF6F0;            /* crema / off-white */
+      --bg-alt: #F2EBE1;        /* crema más profundo para secciones alternas */
+      --surface: #FFFFFF;
+      --line: #E6DDD1;
+      --gray-500: #78716C;
+      --gray-700: #44403C;
+      --ink: #1C1917;           /* texto casi negro */
+      --accent: #A94A28;        /* terracotta (contraste AA sobre blanco y crema) */
+      --accent-hover: #8E3C1F;
+      --wood: #5A3424;          /* madera rojiza oscura */
+      --wood-soft: #8B5A3C;
+      --whatsapp: #1E8E4E;
+
+      --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+
+      --radius: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 1px 2px rgba(28,25,23,.06), 0 2px 8px rgba(28,25,23,.05);
+      --shadow-md: 0 10px 30px -10px rgba(28,25,23,.22);
+      --header-h: 64px;
+      --ease: cubic-bezier(.2,.7,.2,1);
+    }
+
+    /* =========================================================
+       2. RESET Y BASE
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; font-weight: 600; }
+    p { margin: 0 0 1em; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    .skip-link { position: absolute; left: 1rem; top: -100px; background: var(--ink); color: #fff; padding: .75rem 1rem; border-radius: 8px; z-index: 200; }
+    .skip-link:focus { top: 1rem; }
+
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+    section { padding: 4.5rem 0; }
+    .section-alt { background: var(--bg-alt); }
+
+    .eyebrow {
+      display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
+    }
+    .section-title { font-family: var(--font-display); font-size: clamp(2.2rem, 7vw, 3.4rem); font-weight: 600; letter-spacing: -.01em; }
+    .section-lead { color: var(--gray-700); max-width: 60ch; font-size: 1.05rem; }
+
+    /* =========================================================
+       3. BOTONES
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      min-height: 52px; padding: 0 1.5rem; border-radius: 999px; border: 1.5px solid transparent;
+      font-weight: 600; font-size: 1rem; text-decoration: none; cursor: pointer;
+      transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -8px rgba(169,74,40,.6); }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-light { background: rgba(255,255,255,.95); color: var(--ink); }
+    .btn-light:hover { background: #fff; }
+    .btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
+    .btn-outline:hover { background: var(--ink); color: #fff; }
+    .btn-whatsapp { background: var(--whatsapp); color: #fff; }
+    .btn-whatsapp:hover { background: #17733F; }
+    .btn-block { width: 100%; }
+    .btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* Botón chico "Agregar al pedido" */
+    .btn-add {
+      display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: 0 1rem;
+      border-radius: 999px; border: 1.5px solid var(--accent); background: transparent; color: var(--accent);
+      font-weight: 600; font-size: .9rem; cursor: pointer; white-space: nowrap;
+      transition: background-color .2s, color .2s, transform .15s;
+    }
+    .btn-add:hover { background: var(--accent); color: #fff; }
+    .btn-add:active { transform: scale(.95); }
+    .btn-add.added { background: var(--accent); color: #fff; }
+
+    /* =========================================================
+       4. HEADER FIJO + NAVEGACIÓN
+       ========================================================= */
+    .site-header {
+      position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 100;
+      display: flex; align-items: center;
+      transition: background-color .35s var(--ease), box-shadow .35s var(--ease), color .35s;
+      color: #fff;
+    }
+    .site-header.scrolled, .site-header.menu-open {
+      background: rgba(250,246,240,.94); color: var(--ink);
+      backdrop-filter: saturate(150%) blur(12px); -webkit-backdrop-filter: saturate(150%) blur(12px);
+      box-shadow: 0 1px 0 var(--line);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; }
+    .logo { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; text-decoration: none; letter-spacing: .01em; }
+    .header-actions { display: flex; align-items: center; gap: .5rem; }
+
+    .icon-btn {
+      position: relative; width: 46px; height: 46px; border-radius: 50%; border: 0; background: transparent;
+      display: grid; place-items: center; cursor: pointer; color: inherit;
+    }
+    .icon-btn svg { width: 24px; height: 24px; }
+    .cart-count {
+      position: absolute; top: 4px; right: 2px; min-width: 20px; height: 20px; padding: 0 5px;
+      border-radius: 999px; background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700;
+      display: grid; place-items: center; transform: scale(0); transition: transform .25s var(--ease);
+    }
+    .cart-count.visible { transform: scale(1); }
+    .cart-count.bump { animation: bump .4s var(--ease); }
+    @keyframes bump { 50% { transform: scale(1.35); } }
+
+    /* Hamburguesa */
+    .burger span { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; transition: transform .3s var(--ease), opacity .2s; }
+    .burger span + span { margin-top: 5px; }
+    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .burger-inner { display: flex; flex-direction: column; }
+
+    .main-nav {
+      position: fixed; inset: var(--header-h) 0 auto 0; background: var(--bg); color: var(--ink);
+      padding: 1rem 1.25rem 1.75rem; border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md);
+      transform: translateY(-12px); opacity: 0; visibility: hidden;
+      transition: transform .35s var(--ease), opacity .3s var(--ease), visibility .3s;
+    }
+    .main-nav.open { transform: none; opacity: 1; visibility: visible; }
+    .main-nav ul { list-style: none; margin: 0; padding: 0; }
+    .main-nav a { display: block; padding: .9rem .25rem; font-size: 1.15rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--line); }
+    .main-nav .btn { margin-top: 1.25rem; width: 100%; }
+    .nav-reserve-desktop { display: none; }
+
+    @media (min-width: 960px) {
+      :root { --header-h: 76px; }
+      .burger { display: none; }
+      .main-nav {
+        position: static; background: none; color: inherit; padding: 0; border: 0; box-shadow: none;
+        transform: none; opacity: 1; visibility: visible;
+      }
+      .main-nav ul { display: flex; gap: 1.6rem; }
+      .main-nav a { border: 0; padding: .4rem 0; font-size: .95rem; position: relative; }
+      .main-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1.5px; background: currentColor; transition: right .3s var(--ease); }
+      .main-nav a:hover::after, .main-nav a.active::after { right: 0; }
+      .main-nav .btn { display: none; }
+      .nav-reserve-desktop { display: inline-flex; min-height: 44px; padding: 0 1.25rem; font-size: .9rem; }
+    }
+
+    /* =========================================================
+       5. HERO
+       ========================================================= */
+    /* Hero con parallax en capas (GSAP ScrollTrigger + Lenis).
+       Cada capa [data-parallax-layer] baja a distinta velocidad al hacer scroll:
+       1 = foto (la más lenta), 2 = luces cálidas, 3 = título y botones, 4 = primer plano. */
+    .hero {
+      position: relative; height: 100svh; min-height: 620px; color: #fff;
+      background: #2B1D15; /* fallback si no carga la foto */
+    }
+    .hero-layers { position: absolute; inset: 0; overflow: hidden; }
+    .hero-layer { position: absolute; left: 0; width: 100%; will-change: transform; }
+    .hero-layer--photo { top: -17.5%; height: 117.5%; }
+    .hero-layer--photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); animation: heroZoom 2.6s var(--ease) forwards; }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-shade {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(20,14,10,.55) 0%, rgba(20,14,10,.18) 40%, rgba(20,14,10,.7) 100%);
+    }
+    .hero-layer--glow {
+      inset: 0; pointer-events: none; mix-blend-mode: screen;
+      background:
+        radial-gradient(38% 32% at 18% 28%, rgba(240,180,143,.32), transparent 70%),
+        radial-gradient(30% 26% at 82% 18%, rgba(255,214,170,.22), transparent 70%);
+    }
+    .hero-layer--title {
+      inset: 0; display: flex; align-items: center;
+      padding: calc(var(--header-h) + 1rem) 0 clamp(5.5rem, 17vh, 10rem);
+    }
+    .hero-layer--front { inset: 0; display: flex; align-items: flex-end; pointer-events: none; }
+    .hero-layer--front svg { width: 100%; height: clamp(70px, 14vw, 190px); display: block; color: var(--bg); }
+    .hero-fade {
+      position: absolute; left: 0; right: 0; bottom: -1px; height: 14%; pointer-events: none;
+      background: linear-gradient(to top, var(--bg) 20%, rgba(250,246,240,0));
+    }
+    .hero-content { position: relative; }
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 600; font-size: clamp(4.5rem, 22vw, 9.5rem);
+      line-height: .9; letter-spacing: -.02em; margin: 0 0 .9rem;
+    }
+    .hero-tagline { font-size: clamp(1.1rem, 4.2vw, 1.45rem); font-weight: 300; max-width: 28ch; margin-bottom: 2rem; opacity: .95; }
+    .hero-ctas { display: grid; gap: .75rem; max-width: 460px; }
+    .hero-ctas .btn { min-height: 58px; font-size: 1.05rem; }
+    .hero-meta { margin-top: 1.75rem; font-size: .85rem; opacity: .85; display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: .4rem; }
+    @media (min-width: 640px) { .hero-ctas { grid-template-columns: 1fr 1fr; } }
+
+    /* Estilos recomendados por Lenis (scroll suave) */
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+    .lenis.lenis-stopped { overflow: hidden; }
+
+    /* =========================================================
+       6. CARTA
+       ========================================================= */
+    .tabs {
+      display: flex; gap: .5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+      margin: 2rem -1.25rem 1.5rem; padding: .25rem 1.25rem; -webkit-overflow-scrolling: touch;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      flex-shrink: 0; scroll-snap-align: start; min-height: 46px; padding: 0 1.15rem; border-radius: 999px;
+      border: 1.5px solid var(--line); background: var(--surface); font-weight: 500; font-size: .95rem; cursor: pointer;
+      transition: background-color .25s, color .25s, border-color .25s;
+    }
+    .tab:hover { border-color: var(--wood-soft); }
+    .tab[aria-selected="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .menu-panel { animation: fadeUp .45s var(--ease); }
+    .menu-panel[hidden] { display: none; }
+    .menu-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+    @media (min-width: 960px) { .menu-list { grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; } }
+
+    .dish {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.15rem 1.15rem 1rem; display: grid; gap: .5rem; box-shadow: var(--shadow-sm);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .dish:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .dish-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .dish-name { font-size: 1.08rem; font-weight: 600; margin: 0; }
+    .dish-desc { color: var(--gray-500); font-size: .93rem; margin: 0; }
+    .dish-foot { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-top: .35rem; flex-wrap: wrap; }
+    .price { font-weight: 700; font-size: 1.05rem; color: var(--wood); display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap; }
+
+    /* =========================================================
+       7. PASTELERÍA (tarjetas con foto)
+       ========================================================= */
+    .pastry-group { margin-top: 2.75rem; }
+    .pastry-group h3 { font-family: var(--font-display); font-size: 1.85rem; display: flex; align-items: center; gap: .75rem; }
+    .pastry-group h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    .card-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 540px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 960px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .card {
+      background: var(--surface); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line);
+      display: flex; flex-direction: column; box-shadow: var(--shadow-sm); transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .card-media { aspect-ratio: 4 / 3; overflow: hidden; }
+    .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+    .card:hover .card-media img { transform: scale(1.06); }
+    .card-body { padding: 1rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+    .card-body .dish-foot { margin-top: auto; padding-top: .5rem; }
+
+    /* Placeholder elegante si una foto no carga */
+    .media-fallback {
+      background: linear-gradient(135deg, #E9D9C6 0%, #C99A78 55%, #8B5A3C 100%);
+      position: relative;
+    }
+    .media-fallback::after {
+      content: "García"; position: absolute; inset: 0; display: grid; place-items: center;
+      font-family: var(--font-display); font-size: 2rem; color: rgba(255,255,255,.75); letter-spacing: .05em;
+    }
+    .media-fallback img { opacity: 0; }
+
+    /* =========================================================
+       8. FORMULARIOS (reserva + take away)
+       ========================================================= */
+    .split { display: grid; gap: 2rem; }
+    @media (min-width: 960px) { .split { grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: start; } }
+
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.5rem 1.25rem; box-shadow: var(--shadow-sm); }
+    @media (min-width: 640px) { .panel { padding: 2rem; } }
+
+    .form-grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .form-grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+    .field { display: grid; gap: .4rem; }
+    .field label { font-weight: 600; font-size: .9rem; }
+    .field .hint { font-size: .8rem; color: var(--gray-500); font-weight: 400; }
+    .input {
+      width: 100%; min-height: 52px; padding: .75rem 1rem; border-radius: 12px; border: 1.5px solid var(--line);
+      background: var(--bg); font-size: 1rem; transition: border-color .2s, box-shadow .2s, background-color .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    select.input {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2344403C' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+    }
+    textarea.input { min-height: 110px; resize: vertical; }
+    .input:focus { outline: none; border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(169,74,40,.14); }
+    .input:user-invalid { border-color: #B42318; }
+    .form-note { font-size: .82rem; color: var(--gray-500); margin: .25rem 0 0; }
+
+    /* ---------- Bloque de reserva por WhatsApp ---------- */
+    .reserve-panel { text-align: center; display: grid; gap: 1rem; justify-items: center; }
+    .reserve-panel > svg { width: 56px; height: 56px; color: var(--whatsapp); }
+    .reserve-panel h3 { font-family: var(--font-display); font-size: 2rem; margin: 0; }
+    .reserve-panel p { color: var(--gray-700); margin: 0; max-width: 34ch; }
+    .reserve-panel .btn { min-height: 60px; font-size: 1.1rem; }
+    .reserve-phone { font-weight: 600; letter-spacing: .02em; }
+
+    .info-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .9rem; }
+    .info-list li { display: flex; gap: .85rem; align-items: flex-start; color: var(--gray-700); }
+    .info-list svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+    /* ---------- Carrito ---------- */
+    .cart-empty { text-align: center; padding: 2rem 1rem; color: var(--gray-500); }
+    .cart-empty svg { width: 48px; height: 48px; margin: 0 auto 1rem; color: var(--line); }
+    .cart-list { list-style: none; margin: 0; padding: 0; }
+    .cart-item { display: grid; grid-template-columns: 1fr auto; gap: .35rem 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); animation: fadeUp .35s var(--ease); }
+    .cart-item-name { font-weight: 600; }
+    .cart-item-unit { font-size: .85rem; color: var(--gray-500); }
+    .cart-item-sub { font-weight: 700; color: var(--wood); text-align: right; }
+    .qty { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 999px; overflow: hidden; }
+    .qty button { width: 40px; height: 40px; border: 0; background: transparent; cursor: pointer; font-size: 1.2rem; line-height: 1; }
+    .qty button:hover { background: var(--bg-alt); }
+    .qty output { min-width: 28px; text-align: center; font-weight: 600; }
+    .remove-btn { border: 0; background: none; color: var(--gray-500); font-size: .85rem; text-decoration: underline; cursor: pointer; justify-self: end; padding: .5rem 0; min-height: 40px; }
+    .remove-btn:hover { color: #B42318; }
+    .cart-total { display: flex; justify-content: space-between; align-items: baseline; padding: 1.25rem 0; font-size: 1.15rem; }
+    .cart-total strong { font-size: 1.5rem; color: var(--ink); }
+    .cart-actions { display: grid; gap: .75rem; }
+    .link-btn { background: none; border: 0; color: var(--gray-500); text-decoration: underline; cursor: pointer; font-size: .9rem; padding: .5rem; justify-self: center; }
+
+    /* Barra flotante del pedido (solo mobile) */
+    .floating-cart {
+      position: fixed; left: 1rem; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); z-index: 90;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      min-height: 58px; padding: 0 1.25rem; border-radius: 999px; text-decoration: none;
+      background: var(--ink); color: #fff; font-weight: 600; box-shadow: 0 14px 30px -10px rgba(0,0,0,.45);
+      transform: translateY(150%); transition: transform .4s var(--ease);
+    }
+    .floating-cart.visible { transform: none; }
+    .floating-cart .fc-total { background: var(--accent); padding: .35rem .85rem; border-radius: 999px; }
+    @media (min-width: 960px) { .floating-cart { display: none; } }
+
+    /* =========================================================
+       9. SOBRE GARCÍA / EL LUGAR
+       ========================================================= */
+    .about-media { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow-md); }
+    .about-media img { width: 100%; height: 100%; object-fit: cover; }
+    .quote { font-family: var(--font-display); font-style: italic; font-size: 1.6rem; line-height: 1.3; color: var(--wood); border-left: 3px solid var(--accent); padding-left: 1.1rem; margin: 1.75rem 0; }
+    .pillars { display: grid; gap: 1rem; margin-top: 2rem; }
+    @media (min-width: 640px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
+    .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.15rem; }
+    .pillar h3 { font-size: 1rem; margin-bottom: .3rem; }
+    .pillar p { font-size: .9rem; color: var(--gray-500); margin: 0; }
+
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+    @media (min-width: 640px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat { border-top: 1.5px solid var(--ink); padding-top: .75rem; }
+    .stat strong { display: block; font-family: var(--font-display); font-size: 2.2rem; line-height: 1; font-weight: 600; }
+    .stat span { font-size: .85rem; color: var(--gray-500); }
+    .materials { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .materials span { border: 1px solid var(--wood-soft); color: var(--wood); padding: .35rem .9rem; border-radius: 999px; font-size: .85rem; font-weight: 500; }
+
+    .gallery { display: grid; gap: .75rem; grid-template-columns: repeat(2, 1fr); margin-top: 2rem; }
+    .gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 1; position: relative; }
+    .gallery figure:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+    .gallery figure:hover img { transform: scale(1.05); }
+    @media (min-width: 960px) {
+      .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; }
+      .gallery figure, .gallery figure:first-child { aspect-ratio: auto; }
+      .gallery figure:first-child { grid-column: span 2; grid-row: span 2; }
+      .gallery figure:nth-child(4) { grid-column: span 2; }
+    }
+
+    /* =========================================================
+       10. CONTACTO
+       ========================================================= */
+    .hours { list-style: none; padding: 0; margin: 1rem 0 0; }
+    .hours li { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); }
+    .hours li span:last-child { font-weight: 600; text-align: right; }
+    .hours li.closed span:last-child { color: var(--gray-500); font-weight: 400; }
+    .dj-banner {
+      margin-top: 1.5rem; border-radius: var(--radius-lg); padding: 1.35rem; color: #fff;
+      background: linear-gradient(135deg, var(--wood) 0%, #2B1A12 100%); display: flex; gap: 1rem; align-items: center;
+    }
+    .dj-banner svg { width: 38px; height: 38px; flex-shrink: 0; color: #F0B48F; }
+    .dj-banner strong { display: block; font-size: 1.1rem; }
+    .dj-banner span { font-size: .9rem; opacity: .85; }
+    .map-wrap { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4 / 3; background: var(--bg-alt); box-shadow: var(--shadow-sm); }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; filter: saturate(.85); }
+    .contact-ctas { display: grid; gap: .75rem; margin-top: 1.25rem; }
+    @media (min-width: 640px) { .contact-ctas { grid-template-columns: 1fr 1fr; } }
+
+    /* =========================================================
+       11. FOOTER
+       ========================================================= */
+    .site-footer { background: var(--ink); color: #D6D3D1; padding: 3rem 0 6.5rem; font-size: .9rem; }
+    @media (min-width: 960px) { .site-footer { padding-bottom: 3rem; } }
+    .footer-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 640px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
+    .site-footer .logo { color: #fff; font-size: 2.4rem; }
+    .site-footer a { color: #fff; text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+    .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
+    .footer-bottom { border-top: 1px solid #3F3A36; margin-top: 2rem; padding-top: 1.25rem; font-size: .8rem; color: #A8A29E; }
+
+    /* =========================================================
+       12. TOAST + ANIMACIONES DE ENTRADA
+       ========================================================= */
+    .toast {
+      position: fixed; left: 50%; top: calc(var(--header-h) + 12px); z-index: 150;
+      transform: translate(-50%, -20px); opacity: 0; pointer-events: none;
+      background: var(--ink); color: #fff; padding: .75rem 1.15rem; border-radius: 999px; font-size: .9rem; font-weight: 500;
+      box-shadow: var(--shadow-md); transition: transform .35s var(--ease), opacity .35s var(--ease); max-width: calc(100% - 2rem); text-align: center;
+    }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- =========================================================
+       HEADER / MENÚ FIJO
+       ========================================================= -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo" aria-label="García, ir al inicio">García</a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#pasteleria">Pastelería</a></li>
+          <li><a href="#reservar">Reservar</a></li>
+          <li><a href="#takeaway">Take away</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#lugar">El lugar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#reservar" class="btn btn-primary">Reservar mesa</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#reservar" class="btn btn-primary nav-reserve-desktop">Reservar</a>
+        <a href="#takeaway" class="icon-btn" aria-label="Ver mi pedido">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+        </a>
+        <button class="icon-btn burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+          <span class="burger-inner"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- =========================================================
+         1. HERO
+         ========================================================= -->
+    <section class="hero" id="inicio" aria-label="Inicio">
+      <div class="hero-layers" data-parallax-layers>
+        <!-- Capa 1: foto del salón -->
+        <div class="hero-layer hero-layer--photo" data-parallax-layer="1">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80"
+               alt="Salón cálido de García con mesas de madera y luz natural" fetchpriority="high" loading="eager" />
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+
+        <!-- Capa 2: luces cálidas -->
+        <div class="hero-layer hero-layer--glow" data-parallax-layer="2" aria-hidden="true"></div>
+
+        <!-- Capa 3: título y botones -->
+        <div class="hero-layer hero-layer--title" data-parallax-layer="3">
+      <div class="container hero-content">
+        <h1>García</h1>
+        <p class="hero-tagline">Restaurante, bar y pastelería en Nordelta</p>
+        <div class="hero-ctas">
+          <a href="#reservar" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+            Reservar mesa
+          </a>
+          <a href="#carta" class="btn btn-light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Pedir take away
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span>📍 Av. de los Lagos 205, Nordelta</span>
+          <span>🎶 DJ jueves y viernes</span>
+        </div>
+      </div>
+        </div>
+
+        <!-- Capa 4: primer plano (ondas color crema que "tapan" el título al bajar) -->
+        <div class="hero-layer hero-layer--front" data-parallax-layer="4" aria-hidden="true">
+          <svg viewBox="0 0 1440 200" preserveAspectRatio="none" fill="currentColor">
+            <path opacity=".45" d="M0 110 C 260 30 520 60 760 100 S 1220 40 1440 80 L1440 200 L0 200 Z"/>
+            <path d="M0 140 C 240 70 480 80 720 120 S 1200 170 1440 100 L1440 200 L0 200 Z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- =========================================================
+         2. CARTA
+         ========================================================= -->
+    <section id="carta" aria-labelledby="carta-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Nuestra carta</span>
+          <h2 class="section-title" id="carta-title">Cocina casera, hecha con tiempo</h2>
+          <p class="section-lead">Las pastas frescas son el centro de la mesa. Alrededor, platos para compartir, principales de estación y ensaladas con productos de cercanía.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Categorías de la carta" id="menu-tabs"></div>
+        <div id="menu-panels"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. PASTELERÍA Y PARA LLEVAR
+         ========================================================= -->
+    <section id="pasteleria" class="section-alt" aria-labelledby="pasteleria-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Pastelería y para llevar</span>
+          <h2 class="section-title" id="pasteleria-title">La vitrina de Luciano</h2>
+          <p class="section-lead">Pastelería fina, panes de masa madre de fermentación lenta, viennoiserie hojaldrada cada mañana y helados artesanales. Para disfrutar acá o llevar a casa.</p>
+        </div>
+        <div id="pastry-groups"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. RESERVAR
+         ========================================================= -->
+    <section id="reservar" aria-labelledby="reservar-title">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Reservas</span>
+          <h2 class="section-title" id="reservar-title">Reservá tu mesa</h2>
+          <p class="section-lead">Escribinos por WhatsApp con el día, el horario y la cantidad de personas, y te confirmamos la reserva a la brevedad.</p>
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span>La reserva queda confirmada cuando te respondemos por WhatsApp.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M17 20h5v-2a3 3 0 0 0-5-2.2M9 20H2v-2a4 4 0 0 1 7-2.6M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+              <span>¿Grupos grandes o eventos? Contanos en comentarios y lo coordinamos.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+              <span>Si querés mesa con vista a la laguna, pedila en comentarios.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel reserve-panel reveal">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+          <h3>Reservas por WhatsApp</h3>
+          <p>Hablanos directamente y coordinamos tu mesa. Rápido y sin formularios.</p>
+          <a class="btn btn-whatsapp btn-block" href="https://wa.me/5491124712586" data-wa="¡Hola García! Quiero reservar una mesa." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+            Hablanos por WhatsApp
+          </a>
+          <p class="reserve-phone">+54 9 11 2471-2586</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. TAKE AWAY
+         ========================================================= -->
+    <section id="takeaway" class="section-alt" aria-labelledby="takeaway-title">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Take away</span>
+          <h2 class="section-title" id="takeaway-title">Tu pedido para llevar</h2>
+          <p class="section-lead">Sumá platos de la carta o de la vitrina y mandanos el pedido por WhatsApp. Te confirmamos disponibilidad y horario de retiro.</p>
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>Retiro en Av. de los Lagos 205, Nordelta.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Preparamos tu pedido en el momento y te avisamos cuando está listo.</span>
+            </li>
+          </ul>
+          <a href="#carta" class="btn btn-outline" style="margin-top:1.5rem">Ver la carta</a>
+        </div>
+
+        <div class="panel reveal" aria-live="polite">
+          <h3 style="font-size:1.2rem">Resumen del pedido</h3>
+
+          <div class="cart-empty" id="cart-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            <p>Todavía no agregaste productos.</p>
+            <a href="#carta" class="btn btn-primary">Elegir de la carta</a>
+          </div>
+
+          <div id="cart-filled" hidden>
+            <ul class="cart-list" id="cart-list"></ul>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong id="cart-total">$0</strong>
+            </div>
+            <div class="form-grid cols-2" style="margin-bottom:1rem">
+              <div class="field">
+                <label for="t-nombre">Tu nombre <span class="hint">(opcional)</span></label>
+                <input class="input" id="t-nombre" type="text" autocomplete="name" placeholder="Ej.: Juan" />
+              </div>
+              <div class="field">
+                <label for="t-retiro">Horario de retiro <span class="hint">(opcional)</span></label>
+                <input class="input" id="t-retiro" type="text" placeholder="Ej.: hoy 13:30" />
+              </div>
+            </div>
+            <div class="cart-actions">
+              <button class="btn btn-whatsapp btn-block" id="send-order">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+                Enviar pedido por WhatsApp
+              </button>
+              <button class="link-btn" id="clear-cart" type="button">Vaciar pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. SOBRE GARCÍA
+         ========================================================= -->
+    <section id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container split">
+        <div class="about-media reveal">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
+               alt="Manos de pastelero trabajando la masa sobre mesada de mármol" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Sobre García</span>
+          <h2 class="section-title" id="nosotros-title">Oficio, harina y paciencia</h2>
+          <p>García es la casa de <strong>Luciano García</strong>, pastelero formado en algunas de las cocinas más exigentes de Buenos Aires, como <strong>Palacio Duhau</strong> y <strong>La Bourgogne</strong>, y conocido por muchos por su paso por <strong>Cocineros Argentinos</strong>.</p>
+          <p>La idea es simple: cocina casera de alta calidad, sin atajos. Pastas frescas amasadas todos los días, pan de masa madre de fermentación lenta y una pastelería fina que se hace a la vista, del obrador a la mesa.</p>
+          <blockquote class="quote">“Lo casero, cuando se hace bien, no necesita nada más.”<br /><span style="font-size:.9rem;font-style:normal;font-family:var(--font-sans);color:var(--gray-500)">— Luciano García</span></blockquote>
+
+          <div class="pillars">
+            <div class="pillar">
+              <h3>Productores locales</h3>
+              <p>Trabajamos con productores de cercanía y materia prima de estación.</p>
+            </div>
+            <div class="pillar">
+              <h3>Harina orgánica</h3>
+              <p>La base de nuestros panes, pastas y masas.</p>
+            </div>
+            <div class="pillar">
+              <h3>Cocina a la vista</h3>
+              <p>Todo se prepara frente a vos, sin secretos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. EL LUGAR
+         ========================================================= -->
+    <section id="lugar" class="section-alt" aria-labelledby="lugar-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">El lugar</span>
+          <h2 class="section-title" id="lugar-title">Un salón frente a la laguna</h2>
+          <p class="section-lead">Más de 700 m² con vista al jardín y a la laguna, una cocina central a la vista y una barra que es el corazón de la casa. Madera, cuero y mármol en un ambiente luminoso y cálido, pensado para quedarse: desde el primer café de la mañana hasta el último trago de la noche.</p>
+          <div class="stats">
+            <div class="stat"><strong>+700 m²</strong><span>de salón y jardín</span></div>
+            <div class="stat"><strong>Laguna</strong><span>vista abierta al agua</span></div>
+            <div class="stat"><strong>Cocina</strong><span>central y a la vista</span></div>
+            <div class="stat"><strong>Barra</strong><span>tragos y vinos argentinos</span></div>
+          </div>
+          <div class="materials" aria-label="Materiales del espacio">
+            <span>Madera</span><span>Cuero</span><span>Mármol</span><span>Luz natural</span>
+          </div>
+        </div>
+
+        <div class="gallery reveal">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Salón amplio con mesas de madera y grandes ventanales" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80" alt="Cóctel servido en la barra" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Panes de masa madre recién horneados" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80" alt="Ambiente cálido del restaurante por la noche" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" alt="Plato de pasta fresca" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Copas de vino tinto" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         8. HORARIOS, UBICACIÓN Y CONTACTO
+         ========================================================= -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Visitanos</span>
+          <h2 class="section-title" id="contacto-title">Horarios y ubicación</h2>
+          <ul class="hours">
+            <li class="closed"><span>Lunes</span><span>Cerrado</span></li>
+            <li><span>Martes a sábados</span><span>8 a 24 hs</span></li>
+            <li><span>Domingos</span><span>8 a 20 hs</span></li>
+          </ul>
+
+          <div class="dj-banner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <div>
+              <strong>Noches con DJ</strong>
+              <span>Jueves y viernes desde las 20 hs. Tragos de autor, vinos argentinos y buena música.</span>
+            </div>
+          </div>
+
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <address style="font-style:normal">Av. de los Lagos 205, Officia, Rincón de Milberg (Nordelta), Tigre, Buenos Aires</address>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              <span>Reservas y pedidos por WhatsApp: <a href="https://wa.me/5491124712586" target="_blank" rel="noopener">+54 9 11 2471-2586</a></span>
+            </li>
+          </ul>
+
+          <div class="contact-ctas">
+            <a class="btn btn-whatsapp" id="contact-wa" href="https://wa.me/5491124712586" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+              Escribinos por WhatsApp
+            </a>
+            <a class="btn btn-outline" href="https://www.instagram.com/garcianordelta/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              @garcianordelta
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="map-wrap">
+            <iframe
+              title="Mapa: García, Av. de los Lagos 205, Nordelta"
+              src="https://www.google.com/maps?q=Av.+de+los+Lagos+205,+Nordelta,+Tigre,+Buenos+Aires&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <a class="btn btn-outline btn-block" style="margin-top:1rem"
+             href="https://www.google.com/maps/search/?api=1&query=Av.+de+los+Lagos+205,+Nordelta,+Tigre" target="_blank" rel="noopener">
+            Cómo llegar
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#inicio" class="logo">García</a>
+          <p style="margin-top:.5rem">Restaurante, bar y pastelería en Nordelta.</p>
+        </div>
+        <div>
+          <ul>
+            <li><a href="#carta">Carta</a></li>
+            <li><a href="#pasteleria">Pastelería</a></li>
+            <li><a href="#reservar">Reservar</a></li>
+            <li><a href="#takeaway">Take away</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><a href="https://wa.me/5491124712586" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/garcianordelta/" target="_blank" rel="noopener">Instagram</a></li>
+            <li>Av. de los Lagos 205, Nordelta</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> García Nordelta · Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barra flotante del pedido (mobile) -->
+  <a href="#takeaway" class="floating-cart" id="floating-cart" aria-label="Ver mi pedido" tabindex="-1">
+    <span>Ver pedido (<span id="fc-count">0</span>)</span>
+    <span class="fc-total" id="fc-total">$0</span>
+  </a>
+
+  <!-- Aviso flotante (toast) + región accesible -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Librerías del parallax: GSAP + ScrollTrigger y Lenis (scroll suave) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <script>
+  /* =========================================================
+     CONFIGURACIÓN GENERAL
+     ========================================================= */
+  const CONFIG = {
+    whatsapp: '5491124712586',   // Formato internacional sin "+", espacios ni guiones
+    instagram: 'garcianordelta'
+  };
+
+  /* =========================================================
+     CARTA Y VITRINA
+     "seccion": 'carta' o 'pasteleria'. "img" solo se usa en pastelería.
+     ========================================================= */
+  const IMG = (id, w = 800) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
+
+  const CATEGORIAS_CARTA = [
+    { id: 'picar',       nombre: 'Para picar' },
+    { id: 'pastas',      nombre: 'Pastas' },
+    { id: 'principales', nombre: 'Principales' },
+    { id: 'ensaladas',   nombre: 'Ensaladas y quiches' },
+    { id: 'bebidas',     nombre: 'Bebidas' }
+  ];
+
+  const CATEGORIAS_PASTELERIA = [
+    { id: 'vitrina',  nombre: 'Vitrina de pastelería' },
+    { id: 'panes',    nombre: 'Panes de masa madre' },
+    { id: 'vienno',   nombre: 'Viennoiserie' },
+    { id: 'helados',  nombre: 'Helados' }
+  ];
+
+  const PRODUCTOS = [
+    // ---------- Para picar ----------
+    { id: 'p1', cat: 'picar', nombre: 'Panera de masa madre', desc: 'Selección de panes de la casa con manteca batida y aceite de oliva.', precio: 6500 },
+    { id: 'p2', cat: 'picar', nombre: 'Burrata con tomates asados', desc: 'Burrata cremosa, tomates confitados, albahaca y pan tostado.', precio: 14500 },
+    { id: 'p3', cat: 'picar', nombre: 'Provoleta de campo', desc: 'Con orégano fresco, chimichurri suave y miel picante.', precio: 11000 },
+    { id: 'p4', cat: 'picar', nombre: 'Croquetas de jamón crudo', desc: 'Bechamel cremosa, rebozado crocante y alioli de limón.', precio: 9800 },
+    { id: 'p5', cat: 'picar', nombre: 'Tabla García', desc: 'Fiambres y quesos de productores locales, encurtidos y focaccia.', precio: 22000 },
+
+    // ---------- Pastas ----------
+    { id: 'pa1', cat: 'pastas', nombre: 'Tagliatelle al ragú', desc: 'Pasta al huevo amasada en el día con ragú de cocción lenta.', precio: 17500 },
+    { id: 'pa2', cat: 'pastas', nombre: 'Sorrentinos de calabaza', desc: 'Calabaza asada y queso de cabra, manteca de salvia y nueces.', precio: 18000 },
+    { id: 'pa3', cat: 'pastas', nombre: 'Ñoquis de papa', desc: 'Con salsa pomodoro y albahaca, o a los cuatro quesos.', precio: 15500 },
+    { id: 'pa4', cat: 'pastas', nombre: 'Lasagna de la casa', desc: 'Capas de pasta fresca, bolognesa, bechamel y gratinado de parmesano.', precio: 19000 },
+    { id: 'pa5', cat: 'pastas', nombre: 'Cappelletti de osobuco', desc: 'Rellenos de osobuco braseado, en su jugo con gremolata.', precio: 21000 },
+
+    // ---------- Principales ----------
+    { id: 'pr1', cat: 'principales', nombre: 'Ojo de bife', desc: 'A la parrilla con papas rústicas y ensalada verde.', precio: 28500 },
+    { id: 'pr2', cat: 'principales', nombre: 'Pesca del día', desc: 'Con vegetales asados, puré de coliflor y beurre blanc.', precio: 24000 },
+    { id: 'pr3', cat: 'principales', nombre: 'Pollo de campo al limón', desc: 'Asado al horno con hierbas, ajo confitado y papas.', precio: 19500 },
+    { id: 'pr4', cat: 'principales', nombre: 'Milanesa de ternera', desc: 'Empanada en pan de masa madre, con puré o papas fritas.', precio: 20500 },
+
+    // ---------- Ensaladas y quiches ----------
+    { id: 'e1', cat: 'ensaladas', nombre: 'Ensalada García', desc: 'Hojas verdes de la huerta, palta, quinoa, frutos secos y cítricos.', precio: 13500 },
+    { id: 'e2', cat: 'ensaladas', nombre: 'César con pollo', desc: 'Lechuga romana, pollo grillado, croutons de masa madre y parmesano.', precio: 15000 },
+    { id: 'e3', cat: 'ensaladas', nombre: 'Quiche de puerros y queso', desc: 'Masa brisa de manteca, puerros caramelizados. Con ensalada.', precio: 12500 },
+    { id: 'e4', cat: 'ensaladas', nombre: 'Quiche de espinaca y ricota', desc: 'Con nuez moscada y queso gratinado. Con ensalada.', precio: 12500 },
+
+    // ---------- Bebidas ----------
+    { id: 'b1', cat: 'bebidas', nombre: 'Limonada de la casa', desc: 'Con menta y jengibre.', precio: 4800 },
+    { id: 'b2', cat: 'bebidas', nombre: 'Café de especialidad', desc: 'Espresso, cortado o flat white.', precio: 3500 },
+    { id: 'b3', cat: 'bebidas', nombre: 'Negroni García', desc: 'Gin, vermut rosso y bitter. Clásico de barra.', precio: 9500 },
+    { id: 'b4', cat: 'bebidas', nombre: 'Copa de Malbec', desc: 'Selección de bodegas argentinas.', precio: 7500 },
+    { id: 'b5', cat: 'bebidas', nombre: 'Agua mineral', desc: 'Con o sin gas.', precio: 3000 },
+
+    // ---------- Vitrina de pastelería ----------
+    { id: 'v1', cat: 'vitrina', nombre: 'Tarta de limón', desc: 'Masa sablée, crema de limón y merengue italiano.', precio: 6800, img: IMG('photo-1519915028121-7d3463d20b13') },
+    { id: 'v2', cat: 'vitrina', nombre: 'Torta de chocolate', desc: 'Bizcocho húmedo, ganache de chocolate amargo.', precio: 7200, img: IMG('photo-1578985545062-69928b1d9587') },
+    { id: 'v3', cat: 'vitrina', nombre: 'Lemon pie entero', desc: 'Para 8 porciones. Pedido con anticipación.', precio: 38000, img: IMG('photo-1464305795204-6f5bbfc7fb81') },
+    { id: 'v4', cat: 'vitrina', nombre: 'Cheesecake de frutos rojos', desc: 'Base crocante y coulis de estación.', precio: 7000, img: IMG('photo-1533134242443-d4fd215305ad') },
+
+    // ---------- Panes de masa madre ----------
+    { id: 'm1', cat: 'panes', nombre: 'Hogaza de campo', desc: 'Harina orgánica, fermentación de 24 hs. 900 g aprox.', precio: 8500, img: IMG('photo-1549931319-a545dcf3bc73') },
+    { id: 'm2', cat: 'panes', nombre: 'Pan integral con semillas', desc: 'Lino, girasol y sésamo. 800 g aprox.', precio: 8900, img: IMG('photo-1509440159596-0249088772ff') },
+    { id: 'm3', cat: 'panes', nombre: 'Focaccia de romero', desc: 'Aceite de oliva, romero y sal en escamas.', precio: 7500, img: IMG('photo-1573140247632-f8fd74997d5c') },
+
+    // ---------- Viennoiserie ----------
+    { id: 'vi1', cat: 'vienno', nombre: 'Croissant de manteca', desc: 'Laminado artesanal, hojaldrado cada mañana.', precio: 3200, img: IMG('photo-1555507036-ab1f4038808a') },
+    { id: 'vi2', cat: 'vienno', nombre: 'Pain au chocolat', desc: 'Con barras de chocolate semiamargo.', precio: 3600, img: IMG('photo-1530610476181-d83430b64dcd') },
+    { id: 'vi3', cat: 'vienno', nombre: 'Medialunas x 6', desc: 'De manteca, con almíbar.', precio: 9000, img: IMG('photo-1608198093002-ad4e005484ec') },
+
+    // ---------- Helados ----------
+    { id: 'h1', cat: 'helados', nombre: 'Helado artesanal ¼ kg', desc: 'Sabores de estación. Consultá disponibilidad.', precio: 7500, img: IMG('photo-1501443762994-82bd5dace89a') },
+    { id: 'h2', cat: 'helados', nombre: 'Helado artesanal 1 kg', desc: 'Hasta 4 sabores.', precio: 24000, img: IMG('photo-1497034825429-c343d7c6a68f') }
+  ];
+
+  /* =========================================================
+     UTILIDADES
+     ========================================================= */
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const money = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 });
+  const fmt = n => money.format(n);
+
+  /** Arma un link de WhatsApp (wa.me) con el texto ya codificado */
+  const waLink = texto => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+  /** Abre WhatsApp en una pestaña nueva (en mobile abre la app) */
+  function abrirWhatsApp(texto) {
+    const win = window.open(waLink(texto), '_blank', 'noopener');
+    if (!win) window.location.href = waLink(texto); // por si el navegador bloquea pop-ups
+  }
+
+  /** Aviso flotante breve */
+  let toastTimer;
+  function toast(msg) {
+    const t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  /** Escapa texto antes de insertarlo como HTML */
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  /* =========================================================
+     RENDER DE LA CARTA (pestañas accesibles)
+     ========================================================= */
+  function priceHTML(p) {
+    return `<span class="price">${fmt(p.precio)}</span>`;
+  }
+  function addBtnHTML(p) {
+    return `<button type="button" class="btn-add" data-add="${p.id}" aria-label="Agregar ${esc(p.nombre)} al pedido">
+              <span aria-hidden="true">+</span> Agregar al pedido
+            </button>`;
+  }
+
+  function renderCarta() {
+    const tabs = $('#menu-tabs');
+    const panels = $('#menu-panels');
+
+    CATEGORIAS_CARTA.forEach((cat, i) => {
+      const selected = i === 0;
+      tabs.insertAdjacentHTML('beforeend',
+        `<button class="tab" role="tab" id="tab-${cat.id}" aria-controls="panel-${cat.id}"
+                 aria-selected="${selected}" tabindex="${selected ? 0 : -1}">${cat.nombre}</button>`);
+
+      const items = PRODUCTOS.filter(p => p.cat === cat.id).map(p => `
+        <li class="dish">
+          <div class="dish-head"><h3 class="dish-name">${esc(p.nombre)}</h3></div>
+          <p class="dish-desc">${esc(p.desc)}</p>
+          <div class="dish-foot">${priceHTML(p)}${addBtnHTML(p)}</div>
+        </li>`).join('');
+
+      panels.insertAdjacentHTML('beforeend',
+        `<div class="menu-panel" role="tabpanel" id="panel-${cat.id}" aria-labelledby="tab-${cat.id}" ${selected ? '' : 'hidden'}>
+           <ul class="menu-list">${items}</ul>
+         </div>`);
+    });
+
+    // Cambio de pestaña con click y con flechas del teclado
+    const allTabs = [...tabs.querySelectorAll('[role="tab"]')];
+    function activar(tab) {
+      allTabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        $('#' + t.getAttribute('aria-controls')).hidden = !on;
+      });
+      tab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    }
+    tabs.addEventListener('click', e => { const t = e.target.closest('[role="tab"]'); if (t) activar(t); });
+    tabs.addEventListener('keydown', e => {
+      const i = allTabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      let n = null;
+      if (e.key === 'ArrowRight') n = allTabs[(i + 1) % allTabs.length];
+      if (e.key === 'ArrowLeft')  n = allTabs[(i - 1 + allTabs.length) % allTabs.length];
+      if (e.key === 'Home') n = allTabs[0];
+      if (e.key === 'End')  n = allTabs[allTabs.length - 1];
+      if (n) { e.preventDefault(); n.focus(); activar(n); }
+    });
+  }
+
+  /* =========================================================
+     RENDER DE PASTELERÍA (tarjetas con foto)
+     ========================================================= */
+  function renderPasteleria() {
+    const wrap = $('#pastry-groups');
+    CATEGORIAS_PASTELERIA.forEach(cat => {
+      const cards = PRODUCTOS.filter(p => p.cat === cat.id).map(p => `
+        <article class="card">
+          <div class="card-media"><img src="${p.img}" alt="${esc(p.nombre)}" loading="lazy" /></div>
+          <div class="card-body">
+            <h4 class="dish-name">${esc(p.nombre)}</h4>
+            <p class="dish-desc">${esc(p.desc)}</p>
+            <div class="dish-foot">${priceHTML(p)}${addBtnHTML(p)}</div>
+          </div>
+        </article>`).join('');
+      wrap.insertAdjacentHTML('beforeend',
+        `<div class="pastry-group reveal"><h3>${cat.nombre}</h3><div class="card-grid">${cards}</div></div>`);
+    });
+  }
+
+  /* =========================================================
+     CARRITO DE TAKE AWAY (en memoria, no se guarda nada)
+     ========================================================= */
+  const cart = new Map(); // id -> cantidad
+  const byId = id => PRODUCTOS.find(p => p.id === id);
+
+  const Cart = {
+    add(id) {
+      cart.set(id, (cart.get(id) || 0) + 1);
+      this.render();
+      const p = byId(id);
+      toast(`✓ ${p.nombre} agregado al pedido`);
+      const badge = $('#cart-count');
+      badge.classList.remove('bump'); void badge.offsetWidth; badge.classList.add('bump');
+    },
+    setQty(id, qty) {
+      if (qty <= 0) cart.delete(id); else cart.set(id, qty);
+      this.render();
+    },
+    remove(id) {
+      const p = byId(id);
+      cart.delete(id);
+      this.render();
+      toast(`${p.nombre} quitado del pedido`);
+    },
+    clear() { cart.clear(); this.render(); toast('Pedido vaciado'); },
+    count() { let n = 0; cart.forEach(q => n += q); return n; },
+    total() { let t = 0; cart.forEach((q, id) => t += byId(id).precio * q); return t; },
+
+    render() {
+      const count = this.count();
+      const total = this.total();
+      const empty = count === 0;
+
+      // Contadores
+      const badge = $('#cart-count');
+      badge.textContent = count;
+      badge.classList.toggle('visible', !empty);
+      $('#fc-count').textContent = count;
+      $('#fc-total').textContent = fmt(total);
+      $('#floating-cart').classList.toggle('visible', !empty);
+      $('#floating-cart').tabIndex = empty ? -1 : 0;
+
+      // Estado vacío / lleno
+      $('#cart-empty').hidden = !empty;
+      $('#cart-filled').hidden = empty;
+      $('#send-order').disabled = empty;
+
+      // Lista
+      $('#cart-list').innerHTML = [...cart.entries()].map(([id, q]) => {
+        const p = byId(id);
+        return `
+          <li class="cart-item">
+            <div>
+              <div class="cart-item-name">${esc(p.nombre)}</div>
+              <div class="cart-item-unit">${fmt(p.precio)} c/u</div>
+            </div>
+            <div class="cart-item-sub">${fmt(p.precio * q)}</div>
+            <div class="qty" role="group" aria-label="Cantidad de ${esc(p.nombre)}">
+              <button type="button" data-dec="${id}" aria-label="Restar uno">−</button>
+              <output aria-live="polite">${q}</output>
+              <button type="button" data-inc="${id}" aria-label="Sumar uno">+</button>
+            </div>
+            <button type="button" class="remove-btn" data-remove="${id}">Quitar</button>
+          </li>`;
+      }).join('');
+      $('#cart-total').textContent = fmt(total);
+
+      // Marca visual en los botones "Agregar" de productos que ya están en el pedido
+      document.querySelectorAll('[data-add]').forEach(b => b.classList.toggle('added', cart.has(b.dataset.add)));
+    }
+  };
+
+  // Delegación de eventos para todos los botones del carrito
+  document.addEventListener('click', e => {
+    const add = e.target.closest('[data-add]');
+    if (add) return Cart.add(add.dataset.add);
+    const inc = e.target.closest('[data-inc]');
+    if (inc) return Cart.setQty(inc.dataset.inc, cart.get(inc.dataset.inc) + 1);
+    const dec = e.target.closest('[data-dec]');
+    if (dec) return Cart.setQty(dec.dataset.dec, cart.get(dec.dataset.dec) - 1);
+    const rem = e.target.closest('[data-remove]');
+    if (rem) return Cart.remove(rem.dataset.remove);
+  });
+  $('#clear-cart').addEventListener('click', () => Cart.clear());
+
+  // Enviar pedido por WhatsApp
+  $('#send-order').addEventListener('click', () => {
+    if (!cart.size) return;
+    const nombre = $('#t-nombre').value.trim();
+    const retiro = $('#t-retiro').value.trim();
+    const lineas = [...cart.entries()].map(([id, q]) => {
+      const p = byId(id);
+      return `• ${q} x ${p.nombre} — ${fmt(p.precio * q)}`;
+    });
+    const msg = [
+      '¡Hola García! Quiero hacer un pedido para take away 🛍️',
+      '',
+      ...lineas,
+      '',
+      `*Total: ${fmt(Cart.total())}*`,
+      nombre ? `Nombre: ${nombre}` : null,
+      retiro ? `Retiro: ${retiro}` : null,
+      '',
+      '¿Me confirman disponibilidad y horario de retiro? ¡Gracias!'
+    ].filter(l => l !== null).join('\n');
+    abrirWhatsApp(msg);
+  });
+
+  /* =========================================================
+     LINKS DE WHATSAPP CON MENSAJE PREARMADO
+     Todo link con data-wa="texto" abre WhatsApp con ese texto ya escrito.
+     ========================================================= */
+  function initWhatsAppLinks() {
+    document.querySelectorAll('[data-wa]').forEach(a => { a.href = waLink(a.dataset.wa); });
+  }
+
+  /* =========================================================
+     HEADER, MENÚ MOBILE Y NAVEGACIÓN ACTIVA
+     ========================================================= */
+  function initNav() {
+    const header = $('#header');
+    const burger = $('#burger');
+    const nav = $('#main-nav');
+
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const toggle = open => {
+      burger.setAttribute('aria-expanded', open);
+      burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      nav.classList.toggle('open', open);
+      header.classList.toggle('menu-open', open);
+    };
+    burger.addEventListener('click', () => toggle(burger.getAttribute('aria-expanded') !== 'true'));
+    nav.addEventListener('click', e => { if (e.target.closest('a')) toggle(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+
+    // Resalta en el menú la sección visible
+    const links = [...nav.querySelectorAll('ul a')];
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
+  }
+
+  /* =========================================================
+     ANIMACIONES DE ENTRADA + FALLBACK DE IMÁGENES
+     ========================================================= */
+  function initReveal() {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  }
+
+  /* =========================================================
+     HERO PARALLAX + SCROLL SUAVE
+     Si el usuario prefiere menos movimiento o no cargan las librerías,
+     el hero queda estático y el scroll es el nativo.
+     ========================================================= */
+  function initParallax() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const trigger = $('[data-parallax-layers]');
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger, start: '0% 0%', end: '100% 0%', scrub: 0 }
+    });
+
+    // Cuánto baja cada capa (en % de su propia altura) mientras el hero sale de pantalla
+    const layers = [
+      { layer: '1', yPercent: 70 },
+      { layer: '2', yPercent: 55 },
+      { layer: '3', yPercent: 40 },
+      { layer: '4', yPercent: 10 }
+    ];
+    layers.forEach((l, i) => {
+      tl.to(trigger.querySelectorAll(`[data-parallax-layer="${l.layer}"]`),
+        { yPercent: l.yPercent, ease: 'none' }, i === 0 ? undefined : '<');
+    });
+
+    if (!window.Lenis) return;
+    const lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Links internos (#seccion): scroll suave con Lenis, descontando el header fijo
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const hash = a.getAttribute('href');
+      const target = hash.length > 1 && document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -($('#header').offsetHeight + 12) });
+      history.pushState(null, '', hash);
+    });
+  }
+
+  // Si alguna foto no carga, se muestra un placeholder cálido con el nombre "García"
+  document.addEventListener('error', e => {
+    if (e.target.tagName === 'IMG' && e.target.parentElement) e.target.parentElement.classList.add('media-fallback');
+  }, true);
+
+  /* =========================================================
+     INICIO
+     ========================================================= */
+  renderCarta();
+  renderPasteleria();
+  Cart.render();
+  initWhatsAppLinks();
+  initNav();
+  initReveal();
+  initParallax();
+  $('#year').textContent = new Date().getFullYear();
+  </script>
+
+  <!--
+  =====================================================================
+  INSTRUCCIONES PARA ACTUALIZAR EL SITIO
+  =====================================================================
+
+  1) CAMBIAR EL NÚMERO DE WHATSAPP
+     - En el <script>, buscá  CONFIG.whatsapp  y reemplazá '5491124712586'
+       por el número nuevo en formato internacional, sin "+", espacios ni guiones
+       (Argentina: 549 + código de área sin 0 + número sin 15).
+     - Buscá también "5491124712586" en el HTML (links de contacto y footer)
+       y "+54 9 11 2471-2586" (texto visible) para actualizarlos.
+
+  2) CAMBIAR PLATOS Y PRECIOS
+     - Todo está en el array  PRODUCTOS  dentro del <script>.
+       Cada producto tiene: id (único), cat (categoría), nombre, desc, precio (número, sin puntos), img (solo pastelería).
+     - Para agregar un plato, copiá una línea y cambiale el id y los datos.
+     - Las categorías están en CATEGORIAS_CARTA y CATEGORIAS_PASTELERIA.
+
+  3) CAMBIAR LAS FOTOS
+     - Hero: <img> dentro de data-parallax-layer="1" (ideal: 2000 px de ancho, horizontal).
+       La velocidad de cada capa se ajusta en initParallax() (valores yPercent).
+     - Sobre García: <div class="about-media"> (vertical 4:5).
+     - Galería "El lugar": las 6 <img> dentro de <div class="gallery">.
+     - Pastelería: campo img de cada producto. Podés usar una URL o una ruta local, ej.: img: 'fotos/croissant.jpg'
+     - Imagen para redes (Open Graph): meta property="og:image" en el <head> (1200 x 630 px).
+     - Recomendado: fotos en .jpg o .webp, comprimidas (menos de 300 KB cada una).
+
+  4) HORARIOS Y TEXTOS
+     - Horarios: lista <ul class="hours"> en la sección #contacto y "openingHours"
+       en los datos estructurados del <head>.
+     - Mensaje prearmado de reservas: atributo data-wa del botón "Hablanos por WhatsApp".
+     - Texto de "Sobre García" y la frase de Luciano: sección #nosotros.
+
+  5) DOMINIO
+     - Reemplazá <link rel="canonical"> con el dominio real del sitio.
+  =====================================================================
+  -->
+</body>
+</html>
