@@ -338,6 +338,7 @@
     .item-side { display: flex; flex-direction: column; align-items: flex-end; gap: .55rem; }
     .item-price { font-family: var(--font-sans); font-weight: 400; font-size: .95rem; letter-spacing: .02em; white-space: nowrap; }
 
+    .menu-footnote { margin: 2.5rem 0 0; text-align: center; font-family: var(--font-display); font-style: italic; color: var(--gray-500); }
     .menu-extra {
       margin-top: 2.25rem; border: 1px solid var(--ink); padding: 1.5rem 1.4rem; max-width: 560px;
     }
@@ -611,6 +612,7 @@
         </div>
         <div class="tabs" role="tablist" aria-label="Categorías del menú" id="menu-tabs"></div>
         <div id="menu-panels"></div>
+        <p class="menu-footnote">Servicio de mesa (cubierto) <span id="cubierto"></span></p>
       </div>
     </section>
 
@@ -930,7 +932,8 @@
      ========================================================= */
   const CONFIG = {
     whatsapp: '5491124712586',   // Formato internacional sin "+", espacios ni guiones
-    instagram: 'garcianordelta'
+    instagram: 'garcianordelta',
+    cubierto: 3700               // Servicio de mesa
   };
 
   /* =========================================================
@@ -942,33 +945,27 @@
   /* ---------- MENÚ DE COCINA (se puede agregar al pedido) ---------- */
   const MENU = [
     { id: 'platillos', nombre: 'Platillos', grupos: [{ items: [
-      ['Croquetas de humita', 'con salsa de tomate fresco & ajo', 11500],
-      ['Tartar de trucha', 'con mostaza & cilantro, sobre papa dorada', 16900],
-      ['Rösti', 'vegetales de estación & huevo de campo mollet', 13900],
-      ['Chipa so’o', 'de ternera braseada, salsa romesco', 12900],
-      ['Paté & brioche', 'paté de ave & pan brioche de manteca', 12500],
-      ['Tortilla de papa', 'con alioli', 13500],
-      ['Croquetas de hongos', '& crema de ajos asados', 11900],
-      ['Buñuelos de espinaca', 'con salsa de tomate fresco & ajo', 10900],
-      ['Burrata', 'tomates & albahaca con pesto', 17500],
-      ['Polenta dorada', 'con pomodoro', 10500],
-      ['Burrata, jamón serrano & rúcula', 'con pistachos & miel especiada', 21900],
-      ['Hongos', 'portobellos a la provenzal', 14500],
-      ['Berenjena asada & tomates al pesto', 'con blue couly', 13900],
-      ['Papas fritas', 'con cilantro', 8900],
-      ['Camembert dorado', 'con peras & miel especiada', 16500],
-      ['Langostinos', 'al ajillo', 23900],
-      ['Empanada de carne', 'cortada a cuchillo', 5900]
+      ['Croquetas de humita', 'con salsa de tomate fresco & ajo', 16200],
+      ['Croquetas de hongos', '& crema de ajos asados', 16200],
+      ['Buñuelos de espinaca', 'con salsa de tomate fresco & ajo', 16200],
+      ['Chipa so’o del día', 'con salsa romesco', 16200],
+      ['Paté & brioche', 'paté de ave & pan brioche de manteca', 12600],
+      ['Tortilla de papa', 'con alioli', 13800],
+      ['Milhojas de papa', '', 15800],
+      ['Polenta dorada', 'con pomodoro', 13100],
+      ['Pulpetines al pomodoro', '', 18600],
+      ['Berenjena asada', '& tomates al pesto con blue couly', 13700],
+      ['Berenjena melanzane', '', 19500],
+      ['Papas fritas', 'con cilantro', 11600],
+      ['Camembert dorado', 'con peras & miel especiada', 23100],
+      ['Burrata, jamón crudo & rúcula', 'con pistachos & miel especiada', 46300],
+      ['Langostinos', 'al ajillo', 35700],
+      ['Empanada de carne', 'cortada a cuchillo', 8800]
     ]}]},
 
     { id: 'selecciones', nombre: 'Nuestras selecciones', grupos: [
-      { titulo: 'Tablas de quesos', nota: '100 gramos c/u. Salen con dulce casero, frutos secos salados, librito y pan brioche. Consultar disponibilidad.', items: [
-        ['Selección de quesos x1', '', 12900],
-        ['Selección de quesos x3', '', 29900],
-        ['Selección de quesos x5', '', 44900]
-      ]},
-      { titulo: 'Embutidos', items: [
-        ['Selección de embutidos x1', 'salame tandilero, jamón serrano, mortadela con pistachos, jamón cocido de cerdo', 18900]
+      { titulo: 'Tabla de quesos', nota: 'Consultar disponibilidad.', items: [
+        ['Tabla de quesos para 2 personas', 'con dulce casero, frutos secos salados, librito y pan brioche', 27800]
       ]}
     ], extra: { titulo: 'Nuestros quesos', lineas: [
       'Frescos: camembert, brie',
@@ -978,423 +975,679 @@
     ]}},
 
     { id: 'pastas', nombre: 'Pastas caseras', grupos: [{ items: [
-      ['Pappardelle de espinaca', 'al limón con mascarpone', 21500],
-      ['Tortelloni', 'rellenos de bondiola, con su salsa & dulce de arándanos', 24500],
-      ['Malfattis de espinaca', 'con crema de quesos', 20500],
-      ['Ñoquis de papa & sémola', 'con salsa de tomate & albahaca', 18500],
-      ['Canelones de cordero', 'con parmesano gratinado', 26500],
-      ['Lingüini', '& oliva extra virgen', 16500],
-      ['Garganelli', 'con tomates asados al aceto, albahaca & oliva extra virgen', 19500],
-      ['Tagliatelle', 'a la carbonara & con panceta ahumada', 22500],
-      ['Sorrentinos de ternera braseada', 'con su salsa', 24900],
-      ['Ravioles de zapallo asado', 'panceta, vegetales, tomates & ricota', 21900],
-      ['Garganelli', 'con frutos de mar', 28900],
-      ['Agnolottis de espinaca, ricota & parmesano', 'con tomates asados al aceto, albahaca & oliva extra virgen', 22900],
-      ['Orecchiette a la bolognesa', '', 21500],
-      ['Lasagna bolognesa', 'con salsa blanca & parmesano', 24500],
-      ['Tortelli de hongos', 'con ragoût de hongos & avellanas tostadas', 25900],
-      ['Lingüini', 'con langostinos al ajillo', 29500],
-      ['Lingüini al pesto', 'con pistacho', 21900],
-      ['Tagliatelle', 'con albóndigas & tomate', 23500]
+      ['Lingüini al pesto', 'con pistacho', 31900],
+      ['Pasta sin gluten', '', 31900],
+      ['Ñoquis de papa', 'con salsa rosa', 34200],
+      ['Lingüini', 'al parmesano & pimienta', 34200],
+      ['Garganelli', 'con pomodoro', 34200],
+      ['Ravioles de zapallo', 'con crema de azafrán', 35300],
+      ['Ravioles de verdura', 'con pomodoro', 35800],
+      ['Malfattis de espinaca', 'con crema de quesos', 35800],
+      ['Tagliatelle', 'con albóndigas & tomate', 37600],
+      ['Orecchiette a la bolognesa', '', 37600],
+      ['Cavatelli', 'con estofado de pollo', 40900],
+      ['Tortelli de hongos', 'con ragoût de hongos & avellanas tostadas', 41800],
+      ['Lasagna bolognesa', 'con salsa blanca & parmesano', 44900],
+      ['Sorrentinos de ternera braseada', 'con su salsa', 45200],
+      ['Canelones de cordero', 'con parmesano gratinado', 47300]
     ]}]},
 
-    { id: 'principales', nombre: 'Principales', grupos: [{ items: [
-      ['Sopa de zapallo', 'de cabutia & anco asado', 12900],
-      ['Pechuga de pollo dorada', 'con ensalada de rúcula, tomates, parmesano, palta y huevo de campo mollet', 23900],
-      ['Pechuga de pollo', 'con puré de zanahorias', 21500],
-      ['Trucha salmonada', 'con vegetales al rescoldo & puré de zanahorias', 31900],
-      ['Milanesa con papas fritas', '', 25900],
-      ['Milanesa con lingüini', 'al parmesano', 26900],
-      ['Risotto de hongos', '', 24500],
-      ['Abadejo', 'vegetales horneados & puré de zanahoria', 29900],
-      ['Ternera braseada', 'con puré', 28500],
-      ['Risotto de cabutia', '& queso patagonzola', 23500]
-    ]}]},
+    { id: 'principales', nombre: 'Principales', grupos: [
+      { items: [
+        ['Sopa de zapallo', 'de cabutia & anco asado', 26100],
+        ['Pascualina', '', 31500],
+        ['Pechuga de pollo dorada', 'con ensalada de rúcula, tomates, parmesano, palta y huevo de campo mollet', 33700],
+        ['Pechuga de pollo dorada', 'con puré de zanahorias', 33700],
+        ['Porción de milanesa', '', 36000],
+        ['Risotto de cabutia', '& queso patagonzola', 36200],
+        ['Risotto de hongos', '', 39800],
+        ['Milanesa con papas fritas', '', 43100],
+        ['Milanesa con lingüini', 'al parmesano', 44600],
+        ['Trucha salmonada', 'con vegetales al rescoldo & puré de zanahorias', 47500],
+        ['Ternera braseada', 'con puré', 70500]
+      ]},
+      { titulo: 'Adicionales', items: [
+        ['Dip', 'queso crema, manteca, mermelada o miel', 3400],
+        ['Tomates confitados', '', 4400],
+        ['Huevo', '', 5200],
+        ['Queso', '', 5400],
+        ['Papas fritas o mix de verdes', '', 7600],
+        ['Jamón cocido', '', 8700],
+        ['Lomito', '', 8700],
+        ['Puré', '', 9800],
+        ['Huevo de campo revuelto', '', 11000],
+        ['Jamón serrano', '', 11900],
+        ['Pollo', '', 13100],
+        ['Trucha ahumada', '', 13100],
+        ['Ensalada', '', 14900],
+        ['Trucha salmonada', '', 16800],
+        ['Albóndigas', '', 18600]
+      ]}
+    ]},
 
     { id: 'ensaladas', nombre: 'Ensaladas & quiches', grupos: [
       { titulo: 'Ensaladas', items: [
-        ['Pollo grillado', 'mix de verdes, rúcula, tomates, escamas de parmesano & aderezo caesar', 19500],
-        ['Pera, manzana verde & queso azul', 'rúcula & mix de verdes, manzanas doradas, queso azul, nueces y miel especiada', 18900],
-        ['Ensalada de estación', 'mix de verdes, zapallo asado, berenjena, tomate, zucchini, huevo de campo mollet', 17900],
-        ['Ensalada de trucha salmonada', 'mix de verdes, trucha a la plancha, tomates, palta, semillas de zapallo & su aderezo', 24500]
+        ['Pera, manzana verde & queso azul', 'rúcula & mix de verdes, manzanas doradas, queso azul, nueces y miel especiada', 28000],
+        ['Pollo grillado', 'mix de verdes, rúcula, tomates, escamas de parmesano & aderezo caesar', 29400],
+        ['Ensalada de trucha salmonada', 'mix de verdes, trucha a la plancha, tomates, palta, semillas de zapallo & su aderezo', 44600]
       ]},
-      { titulo: 'Quiche del día', nota: 'Salen con rúcula, tomate, palta & parmesano. Hasta las 20 hs.', items: [
-        ['Quiche de puerro', 'queso parmesano', 16500],
-        ['Quiche de pollo', 'con masa de semillas', 17500]
+      { titulo: 'Quiche del día', nota: 'Sale con rúcula, tomate, palta & parmesano. Hasta las 20 hs.', items: [
+        ['Quiche de pollo', 'con masa de semillas', 36200]
       ]}
     ]},
-
-    { id: 'sandwiches', nombre: 'Sandwiches & tostadas', nota: 'Hasta las 20 hs.', grupos: [{ items: [
-      ['Croque monsieur “García”', 'pan brioche de molde tostado, salsa bechamel, mortadela, queso gruyère', 16900],
-      ['Croque madame “García”', 'pan brioche de molde tostado, salsa bechamel, mortadela, queso gruyère & huevo frito', 18500],
-      ['Tostado de jamón y queso', 'pan blanco de molde', 12500],
-      ['Tostada de palta', 'pan de campo, palta, tomate confitado, huevo revuelto', 15900],
-      ['Adicional', 'papas fritas o mix de verdes', 5500]
-    ]}]},
 
     { id: 'postres', nombre: 'Postres', grupos: [{ items: [
-      ['Tiramisú', 'de queso mascarpone & café de especialidad', 11500],
-      ['Panqueque tibio acaramelado', 'de dulce de leche Jersey', 9900],
-      ['Queso lincoln y dulce', 'con frutos secos & miel (membrillo o batata)', 10500],
-      ['Flan de dulce de leche', 'con dulce de leche Jersey, crema & bostock de almendras', 9900],
-      ['Marquise merengada', 'de chocolate belga con crema chantilly & dulce de leche Jersey (sin harina)', 12500],
-      ['Degustación de chocolate belga', 'marquise (sin harina), cremoso al 70% & helado', 14500],
-      ['Natilla de vainilla', 'con azúcar rubio bruleada', 9500],
-      ['Plato de fruta fresca', 'con merengue de coco & helado de frambuesa', 10900],
-      ['Tarta tibia de peras', 'con helado de crema', 11500],
-      ['Cuadrado hojaldrado de manzana', 'con helado de crema', 11500],
-      ['Frutillas con crema', '', 9500],
-      ['Tarta de ricota', 'con dulce de leche y pistachos', 10500],
-      ['Merengue', 'con crema chantilly & fruta de estación', 9900]
+      ['Plato de fruta fresca', 'con almíbar', 13700],
+      ['Frutillas con crema', '', 13700],
+      ['Merengue', 'con crema chantilly & frutas de estación', 13700],
+      ['Queso y dulce', 'queso lincoln con frutos secos & miel (membrillo o batata)', 14100],
+      ['Flan de dulce de leche', 'con dulce de leche Jersey, crema & bostock de almendras', 14800],
+      ['Crumble de manzana', 'porción con helado', 15400],
+      ['Natilla de vainilla', 'con azúcar rubio bruleada', 15600],
+      ['Tiramisú', 'de queso mascarpone & café de especialidad', 15700],
+      ['Panqueque tibio acaramelado', 'de dulce de leche Jersey', 16600],
+      ['Tarta tibia de peras', 'con helado de crema', 17100],
+      ['Hojaldre de manzana', 'con helado de vainilla', 17400],
+      ['Degustación de chocolate belga', 'marquise (sin harina), cremoso al 70% & helado', 20000]
     ]}], extra: { titulo: 'Sugerencias para acompañar tu postre', lineas: [
       'Limoncello', 'Lindaflor Chardonnay Tardío', 'Cruzat Ratafia Licor', 'Jerez González Byass Cream',
-      'Terrazas de los Andes Petit Manseng', 'Taylor’s Tawny 10 Años', 'Rutini Vin Doux'
+      'Terrazas de los Andes Petit Manseng', 'Taylor’s Tawny 10 Años', 'Rutini Vin Doux Naturel'
     ]}},
 
-    { id: 'helados', nombre: 'Helados & cafetería', grupos: [
-      { titulo: 'Helados de la casa', nota: 'Bocha de 100 g. Consultar disponibilidad.', items: [
-        ['Bocha de helado', 'dulce de leche, pistacho, frambuesa, chocolate belga intenso, crema, café, membrillo', 4500]
+    { id: 'vitrina', nombre: 'Pastelería de vitrina', nota: 'También podés encargar tu torta entera para llevar.', grupos: [
+      { titulo: 'Por porción', items: [
+        ['Ricota, dulce de leche & pistacho', '', 12300],
+        ['Cremoso de limón & merengue', '', 13800],
+        ['Espuma de limón & maracuyá', 'con bizcocho de almendras (sin harina)', 13800],
+        ['Lemon pie', '', 13800],
+        ['Tarta de peras', 'con crema de almendras', 13800],
+        ['Crumble de manzana', 'con avena, nuez & canela', 13800],
+        ['Tarta toffee', 'con miel & frutos secos', 14500],
+        ['Rogel', 'con merengue italiano', 15000],
+        ['Chocolate, naranja & frambuesa', 'con bizcocho de almendras (sin harina)', 15000],
+        ['Lingote doble chocolate', 'de chocolate amargo', 15000],
+        ['Torta de avellanas & dulce de leche', '', 15000],
+        ['Torta de chocolate blanco & limón', '', 15000],
+        ['Tarta de frutillas', '', 15000],
+        ['Napoleón', '', 15000],
+        ['Lingote de chocolate & frambuesa', 'con jalea, ganache & mousse de chocolate', 15100],
+        ['Tarta de chocolate, maní & caramelo', '', 15100],
+        ['Cremoso de chocolate blanco', 'con coco y dulce de leche', 15100],
+        ['Lingote ópera de pistacho', '', 15800],
+        ['Cheesecake de frutos rojos', '', 15800],
+        ['Cheesecake de dulce de leche & chocolate', '', 15800],
+        ['Cheesecake de avellanas & chocolate', '', 15800],
+        ['Cheesecake de pistacho', '', 15800],
+        ['Tarta de pistacho & chocolate blanco', 'con jalea de frambuesa & biscuit financier', 16400],
+        ['Marquise merengada', 'con crema chantilly & dulce de leche Jersey (sin gluten)', 18600]
       ]},
-      { titulo: 'Cafetería de especialidad', nota: 'Grano de origen Brasil.', items: [
-        ['Ristretto', '', 3500],
-        ['Espresso', '', 3500],
-        ['Jarrito', '', 3900],
-        ['Doble', '', 4900],
-        ['Flat white', '', 5500],
-        ['Latte / café con leche', '', 5200],
-        ['Capuccino', '', 5500],
-        ['Affogato', '', 7500]
+      { titulo: 'Para el café', items: [
+        ['Canelé', '', 3600],
+        ['Moelleux de chocolate', '', 4000],
+        ['Merengue de pistacho', '', 4600],
+        ['Cuadrado de coco', '', 5600],
+        ['Cuadrado de pasta frola', '', 5600],
+        ['Coquito relleno', '', 6800],
+        ['Alfajor de almendras', '', 7900],
+        ['Alfajor de chocolate', '', 7900],
+        ['Cookie de avellanas & chocolate', '', 7900],
+        ['Cookie triple chocolate', '', 8600],
+        ['Biscottis de frutos secos', '', 10400],
+        ['Biscottis de cacao', '', 10400],
+        ['Budín de pistacho & frambuesa', '', 17400],
+        ['Budín húmedo de cítricos', '', 17400]
+      ]},
+      { titulo: 'Macarons', nota: 'Por unidad.', items: [
+        ['Macaron de chocolate', '', 4600],
+        ['Macaron de pistacho', '', 4600],
+        ['Macaron de frambuesa', '', 4600],
+        ['Macaron de coco & dulce de leche', '', 4600],
+        ['Macaron de chocolate & maní', '', 4600]
+      ]},
+      { titulo: 'Trufas de chocolate belga', nota: 'Por unidad.', items: [
+        ['Trufa 70%', 'chocolate al 70%', 4100],
+        ['Trufa Neige', 'chocolate con leche bañada en chocolate blanco & coco', 4100]
       ]}
     ]},
 
-    { id: 'vitrina', nombre: 'Pastelería de vitrina', nota: 'También podés encargar tu torta entera para llevar.', grupos: [
-      { titulo: 'De la vitrina', items: [
-        ['Cheesecake de dulce de leche', '', 9500],
-        ['Cheesecake de chocolate belga', 'con pasta de avellanas', 9900],
-        ['Cheesecake clásica', 'frutos rojos', 9500],
-        ['Tarta de pistacho & chocolate blanco', 'con jalea de frambuesa & biscuit financier', 10500],
-        ['Tarta toffee', 'con miel y frutos secos', 9500],
-        ['Cremoso de chocolate blanco', 'con coco y dulce de leche', 9500],
-        ['Lingote doble', 'de chocolate amargo', 9900],
-        ['Lingote de chocolate & frambuesa', 'con jalea, ganache & mousse de chocolate', 9900],
-        ['Ópera de pistacho', '', 10500],
-        ['Tarta de peras especiada', 'con crema de almendras', 8900],
-        ['Espuma de limón & maracuyá', 'con bizcocho de almendras (sin harina)', 9500],
-        ['Tarta de chocolate & maní', 'sablé de cacao, toffee & mousse de chocolate', 9900],
-        ['Cuadrado de coco & dulce de leche', '', 6500]
+    { id: 'viennoiserie', nombre: 'Viennoiserie & panadería', grupos: [
+      { titulo: 'Viennoiserie', items: [
+        ['Medialuna', '', 2900],
+        ['Croissant clásico', '', 6900],
+        ['Pain au chocolat', '', 7000],
+        ['Roll de canela', '', 7000],
+        ['Cuadrado de hojaldre con manzana', '', 7100],
+        ['Croissant de almendras', '', 7600]
       ]},
-      { titulo: 'Por porción', items: [
-        ['Rogel', 'con merengue italiano', 8900],
-        ['Torta de chocolate, naranja & frambuesa', 'con bizcocho de almendras (sin harina)', 9500],
-        ['Pasta frola', 'de membrillo', 6900],
-        ['Crumble de manzana', 'con avena, nuez & canela', 7900],
-        ['Torta húmeda de limón', 'con curd, crema suiza de chocolate blanco & limón', 8900],
-        ['Torta de chocolate & avellanas', 'con dulce de leche, crema suiza de avellanas & ganache', 9500]
+      { titulo: 'Panadería', items: [
+        ['Baguette', '', 6300],
+        ['Pan de campo', '', 10800],
+        ['Pan de centeno', '', 10800]
+      ]}
+    ]},
+
+    { id: 'desayuno', nombre: 'Desayuno & merienda', grupos: [
+      { items: [
+        ['Avocado toast', 'pan integral con semillas, puré de palta y tomates confitados', 7900],
+        ['Tostadas con dulce y queso crema', '', 10600],
+        ['Ensalada de frutas de estación', '', 10600],
+        ['Panqueque de avena', 'con miel y fruta fresca', 10600],
+        ['Huevo revuelto al plato', '', 11000],
+        ['Chia pudding', 'base de almendras y frutas frescas', 12000],
+        ['Yogur natural, granola y frutas', '', 12200],
+        ['Huevo poché', 'tostadas de pan multicereal y puré de palta con tomate fresco', 18300],
+        ['Tostada de huevo y palta', 'pan integral con semillas, huevo revuelto, palta y tomates confitados', 18300],
+        ['Servicio de té de la casa', '', 87100]
       ]},
-      { titulo: 'Macarons', nota: 'Por unidad.', items: [
-        ['Macaron', 'frambuesa, coco & dulce de leche, pistacho, chocolate belga, chocolate con leche & maní', 2900]
+      { titulo: 'Para acompañar', items: [
+        ['Scons clásicos', '', 5200],
+        ['Pan de queso', '', 5200],
+        ['Scons de queso', '', 7000],
+        ['Chipa de jamón y queso', '', 7000]
       ]},
-      { titulo: 'Trufas de chocolate belga', nota: 'Por unidad.', items: [
-        ['Trufa Cacao', 'chocolate al 70%', 2200],
-        ['Trufa Neige', 'chocolate con leche bañada en chocolate blanco & coco', 2200]
+      { titulo: 'Croissants rellenos', items: [
+        ['Croissant natural', '', 17200],
+        ['Croissant vegetariano', '', 19400],
+        ['Croissant de jamón crudo', '', 21400],
+        ['Croissant mediterráneo', '', 26900]
+      ]},
+      { titulo: 'Sandwiches & tostados', nota: 'Hasta las 20 hs.', items: [
+        ['Tostado de jamón y queso', 'pan blanco de molde', 16500],
+        ['Croque monsieur “García”', 'pan brioche de molde tostado, salsa bechamel, mortadela, queso gruyère', 18100],
+        ['Croque madame “García”', 'pan brioche de molde tostado, salsa bechamel, mortadela, queso gruyère & huevo frito', 19300],
+        ['Sándwich de pollo', '', 31400]
+      ]}
+    ]},
+
+    { id: 'cafeteria', nombre: 'Cafetería & helados', grupos: [
+      { titulo: 'Cafetería de especialidad', nota: 'Grano de origen Brasil.', items: [
+        ['Espresso', '', 4400],
+        ['Ristretto', '', 4800],
+        ['Doppio', '', 5300],
+        ['Jarrito', '', 5300],
+        ['Doble', '', 5500],
+        ['Café americano', '', 5500],
+        ['Cappuccino', '', 6200],
+        ['Flat white', '', 6700],
+        ['Latte / café con leche', '', 6700],
+        ['Mocaccino', '', 6700],
+        ['Submarino', '', 6700],
+        ['Affogato', '', 12200]
+      ]},
+      { titulo: 'Tés & infusiones', items: [
+        ['Earl Grey', '', 4400],
+        ['Té negro Blend García', '', 4800],
+        ['Té negro Corteza gruesa & rosa', '', 4800],
+        ['Té negro Chai', '', 4800],
+        ['Té negro Royal Fruit', '', 4800],
+        ['Té negro Frida’s Almond', '', 4800],
+        ['Té verde Green Berry', '', 4800],
+        ['Té verde Thai Wind', '', 4800],
+        ['Infusión Calm', '', 4800],
+        ['Infusión Yoguitea', '', 4800]
+      ]},
+      { titulo: 'Helados de la casa', nota: 'Consultar disponibilidad.', items: [
+        ['Helado de dulce de leche', '', 8600],
+        ['Helado de pistacho', '', 8600],
+        ['Helado de frambuesa', '', 8600],
+        ['Helado de chocolate belga', '', 8600],
+        ['Helado de crema', '', 8600],
+        ['Helado de café', '', 8600],
+        ['Helado de banana & dulce de leche', '', 8600]
       ]}
     ]},
 
     { id: 'bebidas', nombre: 'Bebidas', grupos: [
       { titulo: 'Sin alcohol', items: [
-        ['Gaseosas', '', 4200],
-        ['Agua mineral con o sin gas', '', 3800],
-        ['Agua x 750 cc', 'San Pellegrino / Panna', 7900],
-        ['Licuado de estación', '', 6900],
-        ['Jugo verde detox con fibra', 'manzana verde, apio, espinaca, jengibre, pepino, jugo de naranja', 7500],
-        ['Limonada menta & jengibre', '', 6500],
-        ['Pomelada / té helado / kombucha', '', 6500],
-        ['Jugo de naranja exprimido', '', 6900]
+        ['Agua con o sin gas', '', 5200],
+        ['Gaseosas', 'Coca-Cola, Coca-Cola Zero, Coca-Cola Light, Sprite, Sprite Zero, Fanta, Schweppes tónica o pomelo', 5200],
+        ['Licuado de estación', '', 6400],
+        ['Limonada menta & jengibre', '', 7200],
+        ['Té helado', '', 7200],
+        ['Jugo de naranja exprimido', '', 7200],
+        ['Pomelada', '', 7800],
+        ['Jugo verde detox con fibra', 'manzana verde, apio, espinaca, jengibre, pepino, jugo de naranja', 8100],
+        ['San Pellegrino 505 cc', '', 13100],
+        ['San Pellegrino 750 cc', '', 17900],
+        ['Acqua Panna 750 cc', '', 17900]
       ]},
       { titulo: 'Cervezas', items: [
+        ['Stella Artois sin alcohol', 'todo el sabor y la frescura de una Stella, sin alcohol. Porrón 330 cc', 6600],
+        ['Stella Artois', 'premium belga, destacado aroma a lúpulo y fino amargor. Porrón 330 cc', 7000],
+        ['Cerveza tirada', '', 7200],
         ['Stella Artois Blanche', 'white lager con notas frescas y cítricas, amargor ligero y gran aroma por su lúpulo Mandarina Bavaria. Porrón 330 cc', 7900],
-        ['Stella Artois sin alcohol', 'todo el sabor y la frescura de una Stella, sin alcohol. Porrón 330 cc', 6900],
-        ['Stella Artois', 'premium belga, destacado aroma a lúpulo y fino amargor. Porrón 330 cc', 7500],
-        ['Cerveza tirada 500 cc', '', 8500],
-        ['Corona', 'porrón 330 cc', 7900],
-        ['Patagonia', 'porrón 330 cc', 7900]
+        ['Corona', 'porrón 330 cc', 8100]
       ]}
     ]}
   ];
 
   /* ---------- TORTAS ENTERAS POR ENCARGUE (se pueden agregar al pedido) ---------- */
   const TORTAS = [
-    ['Rogel cubierto de merengue italiano', '20 cm · 12 porciones', 42600],
-    ['Marquise de dulce de leche y crema con fruta de estación', '18 cm', 61300],
-    ['Marquise con dulce de leche y merengue italiano', '18 cm', 61300],
-    ['Lingote doble chocolate', 'biscuit de chocolate amargo y ganache de chocolate · 24 x 12 cm · 16 porciones', 80200],
-    ['Lingote de chocolate y frambuesa', 'biscuit de chocolate amargo, jalea de frambuesa y mousse de chocolate semiamargo · 24 x 12 cm · 16 porciones', 67600],
-    ['Lingote de ópera de pistacho y chocolate amargo', 'biscuit de almendras y pistacho · 24 x 12 cm · 16 porciones', 72700],
-    ['Cheesecake de frutos rojos', '18 cm · 10 porciones', 53400],
-    ['Cheesecake de chocolate y avellanas', '18 cm · 10 porciones', 53400],
-    ['Torta húmeda de chocolate, naranja y frambuesa', 'bizcocho de almendras sin harina · 20 cm · 12 porciones', 53400],
-    ['Tarta de ricota, dulce de leche y pistacho', '22 cm · 12 porciones', 49200],
-    ['Torta lemon y merengue italiano', '20 cm · 12 porciones', 46700],
-    ['Crumble de manzana', '24 cm · 16 porciones', 40600],
-    ['Tarta de peras, crema de almendra y especias', 'flor de 22 cm · 12 porciones', 40600],
-    ['Pasta frola', '24 cm · 16 porciones', 31900]
+    ['Pasta frola', '', 39700],
+    ['Tarta de ricota, dulce de leche y pistacho', '22 cm · 12 porciones', 55600],
+    ['Tarta de peras, crema de almendras y especias', 'flor de 22 cm · 12 porciones', 56500],
+    ['Rogel cubierto de merengue italiano', '20 cm · 16 porciones', 60300],
+    ['Crumble de manzana', '24 cm · 16 porciones', 62600],
+    ['Torta de chocolate, naranja y frambuesa', 'bizcocho de almendras sin harina · 18 cm', 66300],
+    ['Lemon pie con merengue italiano', '16 porciones', 67800],
+    ['Marquise de dulce de leche y merengue italiano', '24 cm · 16 porciones', 70100],
+    ['Cheesecake de frutos rojos', '24 cm · 16 porciones', 73500],
+    ['Cheesecake de dulce de leche', '24 cm · 16 porciones', 73500],
+    ['Marquise de dulce de leche, crema y frutas de estación', '24 cm · 16 porciones', 76400],
+    ['Tarta de frutillas', 'con crema pastelera y dulce de leche, base de masa de tarta de manteca · 24 cm · 16 porciones', 79100],
+    ['Cheesecake de pistacho y dulce de frutos rojos', '24 cm · 16 porciones', 82200],
+    ['Lingote ópera de pistacho', 'biscuit de almendras y pistacho · 24 x 12 cm · 16 porciones', 90400],
+    ['Lingote doble chocolate', 'biscuit de chocolate amargo y ganache de chocolate · 24 x 12 cm · 16 porciones', 90600],
+    ['Lingote de chocolate y frambuesa', 'biscuit de chocolate amargo, jalea de frambuesa y mousse de chocolate semiamargo · 24 x 12 cm · 16 porciones', 90600]
   ];
 
-  /* ---------- CARTA DE VINOS Y BAR (solo consulta, no se agrega al pedido) ---------- */
+  /* ---------- CARTA DE VINOS Y BAR (solo consulta, no se agrega al pedido)
+     Dentro de cada grupo los ítems se ordenan solos por precio. ---------- */
   const VINOS = [
+    { id: 'copa', nombre: 'Por copa', grupos: [{ items: [
+      ['Copa de vino tinto', '', 12100],
+      ['Copa de vino blanco', '', 12100],
+      ['Copa de vino rosado', '', 12100],
+      ['Copa de vino naranjo', '', 12100],
+      ['Copa de espumante', '', 12100],
+      ['Descorche', '', 41300]
+    ]}]},
+
     { id: 'espumosos', nombre: 'Espumosos', grupos: [{ items: [
-      ['Chandon Cuvée Réserve Blanc de Noirs', 'Chandon | Luján de Cuyo, Mendoza', 40200],
-      ['Cruzat Cuvée Extra Brut', 'Cruzat | Tupungato, Valle de Uco, Mendoza. 75% Pinot Noir - 25% Chardonnay', 46900],
-      ['Alma Negra Brut Nature Rosé', 'Wine is Art | Agrelo y Tupungato, Mendoza. Malbec', 48900],
-      ['Baron B Brut Nature Cuvée Millésimé', 'Baron B | Mendoza. Chardonnay - Pinot Noir', 52200],
-      ['Alma 4 Extra Brut', 'Alma 4 | Tupungato, Tunuyán, Valle de Uco, Mendoza. Viognier', 53900],
-      ['Zuccardi Blanc de Blancs', 'Familia Zuccardi | Tupungato, Valle de Uco, Mendoza. Chardonnay', 79700],
-      ['Otronia Brut Nature Rosé', 'Otronia | Sarmiento, Chubut, Patagonia. Pinot Noir', 84000],
-      ['Baron B Heritage Edición 002', 'Baron B | Luján de Cuyo; Gualtallary, Tupungato, Valle de Uco, Mendoza. Chardonnay - Pinot Noir', 140900]
+      ['Luigi Bosca Brut Nature', 'Luigi Bosca', 44600],
+      ['Chandon Cuvée Réserve Blanc de Noirs', 'Chandon | Luján de Cuyo, Mendoza', 48700],
+      ['Baron B Extra Brut', 'Baron B', 54400],
+      ['Cruzat Cuvée Extra Brut', 'Cruzat | Tupungato, Valle de Uco, Mendoza. 75% Pinot Noir - 25% Chardonnay', 56800],
+      ['Alma Negra Brut Nature Rosé', 'Wine is Art | Agrelo y Tupungato, Mendoza. Malbec', 59200],
+      ['Cruzat Finca La Dama', 'Cruzat', 60400],
+      ['Baron B Brut Nature Cuvée Millésimé', 'Baron B | Mendoza. Chardonnay - Pinot Noir', 63200],
+      ['Alma 4 Extra Brut', 'Alma 4 | Tupungato, Tunuyán, Valle de Uco, Mendoza. Viognier', 65300],
+      ['Zuccardi Blanc de Blancs', 'Familia Zuccardi | Tupungato, Valle de Uco, Mendoza. Chardonnay', 96500],
+      ['Otronia Brut Nature Rosé', 'Otronia | Sarmiento, Chubut, Patagonia. Pinot Noir', 101700],
+      ['Baron B Heritage Edición 002', 'Baron B | Luján de Cuyo; Gualtallary, Tupungato, Valle de Uco, Mendoza. Chardonnay - Pinot Noir', 170500]
     ]}]},
 
     { id: 'champagne', nombre: 'Champagne', grupos: [{ items: [
-      ['Taittinger Brut Réserve', 'Taittinger | Montagne de Reims, Marne, Champagne, Francia. 40% Chardonnay - 25% Pinot Meunier - 35% Pinot Noir', 376000],
-      ['Moët & Chandon Brut Impérial', 'Moët & Chandon | Épernay, Marne, Champagne, Francia. Pinot Noir - Pinot Meunier - Chardonnay', 390900],
-      ['Veuve Clicquot Brut Yellow Label', 'Veuve Clicquot | Montagne de Reims, Marne, Champagne, Francia. 30% Chardonnay - 20% Pinot Noir - 50% Pinot Meunier', 420000],
-      ['Dom Pérignon Blanc Vintage 2012', 'Dom Pérignon | Hautvillers, Marne, Champagne, Francia. 58% Chardonnay - 42% Pinot Noir', 975000],
-      ['Cristal Brut 2009', 'Louis Roederer | Champagne, Francia. 60% Pinot Noir - 40% Chardonnay', 2830000]
+      ['Moët & Chandon Brut Impérial', 'Moët & Chandon | Épernay, Marne, Champagne, Francia. Pinot Noir - Pinot Meunier - Chardonnay', 240000],
+      ['Veuve Clicquot Brut Yellow Label', 'Veuve Clicquot | Montagne de Reims, Marne, Champagne, Francia. 30% Chardonnay - 20% Pinot Noir - 50% Pinot Meunier', 260000],
+      ['Taittinger Brut Réserve', 'Taittinger | Montagne de Reims, Marne, Champagne, Francia. 40% Chardonnay - 25% Pinot Meunier - 35% Pinot Noir', 413600],
+      ['Dom Pérignon Blanc Vintage 2012', 'Dom Pérignon | Hautvillers, Marne, Champagne, Francia. 58% Chardonnay - 42% Pinot Noir', 660000],
+      ['Cristal Brut 2009', 'Louis Roederer | Champagne, Francia. 60% Pinot Noir - 40% Chardonnay', 2000000]
     ]}]},
 
     { id: 'blancos', nombre: 'Blancos', grupos: [
       { titulo: 'Chardonnay', items: [
-        ['Marchiori & Barreaud', '100% Chardonnay. Valle de Uco. 2025', 28000],
-        ['Miras', 'Miras | General Roca, Río Negro', 28900],
-        ['Perlita', 'Diamandes | Valle de Uco', 33300],
-        ['Hermandad 2021', 'Falasco | Vista Flores, Tunuyán, Mendoza', 44900],
-        ['Terrazas de los Andes Grand Chardonnay 2021', 'Terrazas de los Andes | San Pablo, Tunuyán, Mendoza', 46700],
-        ['Bramare', 'Valle de Uco', 46900],
-        ['Dominio', 'Rutini Wines | Valle de Uco', 48400],
-        ['La Coste de los Andes', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 53200],
-        ['Partida Limitada Chañar Punco', 'Bodega El Esteco | Catamarca', 84000],
-        ['La Linterna', '100% Chardonnay. Bemberg. Gualtallary, Valle de Uco. Finca El Tomillo. 2022', 115000],
-        ['Laborum de Parcela Finca Alto Los Cuises', 'El Porvenir | Cafayate, Salta', 121500],
-        ['Fósil', 'Familia Zuccardi | San Pablo, Tunuyán, Mendoza', 141900],
-        ['Adrianna Parcelas White Bones', 'Catena Zapata | Gualtallary, Tupungato, Mendoza', 415000]
+        ['Marchiori & Barreaud 2021', 'Mendoza', 28500],
+        ['Marchiori & Barreaud 2025', '100% Chardonnay. Valle de Uco', 33900],
+        ['Miras', 'Miras | General Roca, Río Negro', 35000],
+        ['Lo Chardonnay 2021', '', 39200],
+        ['Perlita', 'Diamandes | Valle de Uco', 40300],
+        ['Guarda', 'Lagarde | Gualtallary, Valle de Uco', 53200],
+        ['Hermandad 2021', 'Falasco | Vista Flores, Tunuyán, Mendoza', 54400],
+        ['Terrazas de los Andes Grand Chardonnay 2021', 'Terrazas de los Andes | San Pablo, Tunuyán, Mendoza', 56600],
+        ['Bramare', 'Valle de Uco', 56800],
+        ['Dominio', 'Rutini Wines | Valle de Uco', 58600],
+        ['Angélica Zapata Chardonnay', '', 60500],
+        ['La Coste de los Andes', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 64400],
+        ['Partida Limitada Chañar Punco', 'Bodega El Esteco | Catamarca', 101700],
+        ['La Linterna', '100% Chardonnay. Bemberg. Gualtallary, Valle de Uco. Finca El Tomillo. 2022', 139200],
+        ['Laborum de Parcela Finca Alto Los Cuises', 'El Porvenir | Cafayate, Salta', 147100],
+        ['Filos Chardonnay 2023', '', 169400],
+        ['Fósil', 'Familia Zuccardi | San Pablo, Tunuyán, Mendoza', 171700],
+        ['Adrianna Parcelas White Bones', 'Catena Zapata | Gualtallary, Tupungato, Mendoza', 501100]
       ]},
       { titulo: 'Sauvignon Blanc', items: [
-        ['Andillian 2025', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 28000],
-        ['Pulenta Estate', 'Pulenta Estate | Alto Agrelo, Luján de Cuyo', 33600],
-        ['Polígonos del Valle de Uco', 'Zuccardi | Tupungato, Valle de Uco', 40000],
-        ['Fuego Blanco', 'Fuego Blanco | Valle de Pedernal, San Juan', 41500]
+        ['Pulenta Estate', 'Pulenta Estate | Alto Agrelo, Luján de Cuyo', 40700],
+        ['Fuego Blanco', 'Fuego Blanco | Valle de Pedernal, San Juan', 45700],
+        ['Polígonos del Valle de Uco', 'Zuccardi | Tupungato, Valle de Uco', 48400],
+        ['Mariflor Sauvignon Blanc', '', 63600],
+        ['Montesco Agua de Roca', '', 65900],
+        ['Marlborough Sun', '', 97800]
       ]},
       { titulo: 'Semillón', items: [
-        ['Polígonos', 'Familia Zuccardi | El Peral, Tupungato, Mendoza', 57900],
-        ['Apuntes', 'Luigi Bosca', 61500]
+        ['Bizzotto Semillón', '', 41100],
+        ['Polígonos', 'Familia Zuccardi | El Peral, Tupungato, Mendoza', 70100],
+        ['Apuntes', 'Luigi Bosca', 74500]
       ]},
       { titulo: 'Torrontés', items: [
-        ['Old Vines', 'El Esteco | Valles Calchaquíes, Cafayate, Salta', 31800]
+        ['Tinkunaco', '', 28200],
+        ['Blend de Extremos', '', 38200],
+        ['Old Vines', 'El Esteco | Valles Calchaquíes, Cafayate, Salta', 38500],
+        ['Susana Balbo Signature Torrontés', 'Susana Balbo', 44000]
       ]},
       { titulo: 'Riesling', items: [
-        ['Altaluvia Riesling', 'Doña Paula | Gualtallary, Tupungato, Mendoza', 75000],
-        ['Insólito Riesling', 'Puerta del Abra | Balcarce, Buenos Aires', 76900]
+        ['Altaluvia Riesling', 'Doña Paula | Gualtallary, Tupungato, Mendoza', 90800],
+        ['Insólito Riesling', 'Puerta del Abra | Balcarce, Buenos Aires', 93100]
+      ]},
+      { titulo: 'Albariño', items: [
+        ['Costa & Pampa Albariño', 'Trapiche | Chapadmalal', 40800],
+        ['Insólito Albariño', 'Puerta del Abra | Balcarce, Buenos Aires', 61500]
       ]},
       { titulo: 'Gewürztraminer', items: [
-        ['Costa & Pampa', 'Trapiche | Chapadmalal', 30000],
-        ['Fuego Blanco Gewürztraminer', 'Fuego Blanco | Valle de Pedernal, San Juan', 40200],
-        ['Rutini Gewürztraminer', 'Rutini Wines | Valle de Uco, Mendoza', 63000]
+        ['Costa & Pampa', 'Trapiche | Chapadmalal', 36300],
+        ['Fuego Blanco Gewürztraminer', 'Fuego Blanco | Valle de Pedernal, San Juan', 48700],
+        ['Rutini Gewürztraminer', 'Rutini Wines | Valle de Uco, Mendoza', 76300]
       ]},
       { titulo: 'Blend de blancas', items: [
-        ['Nuna', 'Chakana. 2024. Vino orgánico', 28500],
-        ['El Esteco', 'Valles Calchaquíes, Cafayate', 29000],
-        ['Ferus Blend de Blancas', 'Falasco | Tunuyán y Tupungato, Mendoza. 45% Viognier - 25% Semillón - 20% Sauvignon Blanc - 10% Torrontés', 30900],
-        ['Edad Moderna', 'Alta Uco | Tupungato, Gualtallary, Mendoza. Chardonnay - Sauvignon Blanc', 35000],
-        ['El Esteco Blend de Blancas', 'El Esteco | Valle de Cafayate, Salta. Marsanne - Roussanne - Viognier - Chardonnay - Torrontés', 42500],
-        ['Lágrima Canela', 'Bressia | Tupungato, Mendoza. Chardonnay - Semillón', 44200],
-        ['Blanco Histórico', 'Catena Zapata | Tupungato, Valle de Uco, Mendoza. Semillón - Chenin Blanc', 52150],
-        ['Otronia Rugientes 45', 'Otronia | Sarmiento, Chubut. Chardonnay - Gewürztraminer - Pinot Gris', 64500],
-        ['Edad Media', 'Alta Uco | Tupungato, Valle de Uco, Mendoza. Chardonnay - Sauvignon Blanc', 80000]
+        ['Nuna', 'Chakana. 2024. Vino orgánico', 34500],
+        ['El Esteco', 'Valles Calchaquíes, Cafayate', 35100],
+        ['Ferus Blend de Blancas', 'Falasco | Tunuyán y Tupungato, Mendoza. 45% Viognier - 25% Semillón - 20% Sauvignon Blanc - 10% Torrontés', 37400],
+        ['De Sangre White Blend', 'Luigi Bosca', 38000],
+        ['Edad Moderna', 'Alta Uco | Tupungato, Gualtallary, Mendoza. Chardonnay - Sauvignon Blanc', 43000],
+        ['Susana Balbo Signature White Blend', 'Susana Balbo', 44000],
+        ['El Esteco Blend de Blancas', 'El Esteco | Valle de Cafayate, Salta. Marsanne - Roussanne - Viognier - Chardonnay - Torrontés', 46800],
+        ['Terra Camiare Socavones White Blend', '', 47300],
+        ['Lágrima Canela', 'Bressia | Tupungato, Mendoza. Chardonnay - Semillón', 53500],
+        ['Blanco Histórico', 'Catena Zapata | Tupungato, Valle de Uco, Mendoza. Semillón - Chenin Blanc', 63200],
+        ['Otronia Rugientes 45', 'Otronia | Sarmiento, Chubut. Chardonnay - Gewürztraminer - Pinot Gris', 78100],
+        ['Edad Media', 'Alta Uco | Tupungato, Valle de Uco, Mendoza. Chardonnay - Sauvignon Blanc', 96800]
       ]}
     ]},
 
     { id: 'naranjos', nombre: 'Naranjos', grupos: [{ items: [
-      ['Alma Gemela Amber', 'Onofri Wines | Lavalle, Oasis Este, Mendoza. Roussanne', 38500],
-      ['Campo del Cielo', 'Sella Crinita | Los Andes, Mendoza. Viognier - Chardonnay', 47000],
-      ['Chakana Singulares Maceración Prolongada', 'Chakana Wines | El Peral, Valle de Uco, Mendoza. Torrontés', 54800],
-      ['Alma Negra Orange Blend de Blancas', 'Wine is Art | Gualtallary, Tupungato, Mendoza', 57900]
+      ['Campo del Cielo', 'Sella Crinita | Los Andes, Mendoza. Viognier - Chardonnay', 51700],
+      ['Chakana Singulares Maceración Prolongada', 'Chakana Wines | El Peral, Valle de Uco, Mendoza. Torrontés', 66400],
+      ['Apuntes Naranjo', 'Luigi Bosca', 69000],
+      ['Alma Negra Orange Blend de Blancas', 'Wine is Art | Gualtallary, Tupungato, Mendoza', 70100]
     ]}]},
 
     { id: 'rosados', nombre: 'Rosados', grupos: [{ items: [
-      ['Coeur Sair Grenache Rosé', 'Uqueco Wines | Agrelo, Luján de Cuyo, Mendoza. Garnacha', 28900],
-      ['Cuvelier Rosé', 'Cuvelier Los Andes | Vista Flores, Tunuyán, Mendoza. Malbec', 28900],
-      ['Casa de Herrero Rosé', 'Cuchillo de Palo | Vista Flores, Tunuyán, Mendoza. Pinot Noir', 31500],
-      ['Cuartel 2', '100% Syrah. Marchiori & Barreaud. Las Pintadas, Tunuyán. 2025', 35000],
-      ['Lisa Rosé', 'Château La Coste | Provence, Francia. 2023 Méditerranée', 39500],
-      ['S’il Vous Plaît', 'Pulenta Estate | Finca La Zulema, Agrelo, Luján de Cuyo, Mendoza. Merlot', 39900],
-      ['Susana Balbo Signature Rosé', 'Susana Balbo | Chacayes y Gualtallary, Valle de Uco, Mendoza. Malbec - Pinot Noir', 40000],
-      ['Antonieta', 'Falasco | Mendoza. Pinot Noir', 42900],
-      ['Rose is a Rosé', 'Luigi Bosca | Finca Don Leoncio, Maipú, Mendoza. Pinot Gris - Syrah', 51900]
+      ['Nuna Rosé', 'Chakana', 31800],
+      ['Cuvelier Rosé', 'Cuvelier Los Andes | Vista Flores, Tunuyán, Mendoza. Malbec', 35000],
+      ['Coeur Sair Grenache Rosé', 'Uqueco Wines | Agrelo, Luján de Cuyo, Mendoza. Garnacha', 35000],
+      ['Casa de Herrero Rosé', 'Cuchillo de Palo | Vista Flores, Tunuyán, Mendoza. Pinot Noir', 38200],
+      ['Capítulo 2 Rosé', 'Ruca Malén', 38390],
+      ['Marchiori & Barreaud Rosé', '', 39500],
+      ['Cuartel 2', '100% Syrah. Marchiori & Barreaud. Las Pintadas, Tunuyán. 2025', 42300],
+      ['S’il Vous Plaît', 'Pulenta Estate | Finca La Zulema, Agrelo, Luján de Cuyo, Mendoza. Merlot', 48300],
+      ['Lisa Rosé', 'Château La Coste | Provence, Francia. 2023 Méditerranée', 48300],
+      ['Susana Balbo Signature Rosé', 'Susana Balbo | Chacayes y Gualtallary, Valle de Uco, Mendoza. Malbec - Pinot Noir', 48400],
+      ['Antonieta', 'Falasco | Mendoza. Pinot Noir', 52000],
+      ['Rose is a Rosé', 'Luigi Bosca | Finca Don Leoncio, Maipú, Mendoza. Pinot Gris - Syrah', 62800],
+      ['Saint Felicien Rosé', '', 63600],
+      ['Rutini Rosé', 'Rutini Wines', 68200]
     ]}]},
 
     { id: 'tintos', nombre: 'Tintos', grupos: [
       { titulo: 'Malbec', items: [
-        ['Castore', 'Castore | Valle de Sañogasta, La Rioja', 28900],
-        ['Trapiche Medalla', 'Luján de Cuyo, Maipú', 29600],
-        ['La Madrid Reserva', 'Alto Agrelo, Luján de Cuyo, Mendoza', 29900],
-        ['Capítulo II', 'Ruca Malén', 34900],
-        ['Cuartel 2', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza', 35000],
-        ['Cadus', 'Tupungato', 40700],
-        ['Achával Ferrer', 'Luján de Cuyo, Mendoza', 46000],
-        ['Terrazas de los Andes Origen Los Chacayes', 'Terrazas de los Andes | Valle de Uco, Mendoza', 56000],
-        ['A Lisa', 'Noemía | Mainque, Río Negro', 56900],
-        ['Mártir', 'Lorenzo Wines | Luján de Cuyo, Mendoza', 57800],
-        ['Polígonos del Valle de Uco', 'Zuccardi | San Pablo, Valle de Uco', 58500],
-        ['Concreto', 'Zuccardi | Altamira, Valle de Uco', 61650],
-        ['Luca', 'Luca | Altamira, Gualtallary, Valle de Uco', 68600],
-        ['Bressano', 'Falasco | Valle de Uco: Altamira, Los Árboles, Gualtallary, Mendoza', 75000],
-        ['Lorenzo de Agrelo Lo Bendito', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 88500],
-        ['Trapiche Terroir Series Ambrosía', 'Trapiche | Gualtallary, Tupungato, Mendoza', 90100],
-        ['Riccitelli Old Vines', 'Riccitelli Wines | Río Negro, Patagonia', 95000],
-        ['La Linterna', '100% Malbec. Bemberg. Gualtallary, Valle de Uco. 2020', 115000],
-        ['J. Alberto', 'Noemía | Mainque, Río Negro', 133900],
-        ['Aluvional Altamira', 'Familia Zuccardi | Tupungato, Mendoza', 156900],
-        ['Fede', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 161000],
-        ['La Cautiva', 'Michelini i Mufatto | La Cautiva, Tupungato, Mendoza', 230900]
+        ['Castore', 'Castore | Valle de Sañogasta, La Rioja', 35000],
+        ['Trapiche Medalla', 'Luján de Cuyo, Maipú', 35900],
+        ['Punta de Flecha', '', 36200],
+        ['La Madrid Reserva', 'Alto Agrelo, Luján de Cuyo, Mendoza', 36200],
+        ['Cuartel 2', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza. 2023', 38500],
+        ['Capítulo II', 'Ruca Malén', 42300],
+        ['Nodo', '', 42400],
+        ['Cadus Appellation Tupungato', 'Cadus Wines | Tupungato', 49300],
+        ['Achával Ferrer', 'Luján de Cuyo, Mendoza', 50600],
+        ['Proyecto Las Compuertas 5 Suelos', 'Durigutti | Las Compuertas, Luján de Cuyo, Mendoza', 55600],
+        ['De Sangre Malbec DOC', 'Luigi Bosca', 58100],
+        ['Bizzotto Reserva', '', 59300],
+        ['DV Catena Malbec-Malbec', 'Catena Zapata', 59400],
+        ['Terrazas de los Andes Origen Los Chacayes', 'Terrazas de los Andes | Valle de Uco, Mendoza', 67800],
+        ['A Lisa', 'Noemía | Mainque, Río Negro', 68900],
+        ['Mártir', 'Lorenzo Wines | Luján de Cuyo, Mendoza', 68900],
+        ['Polígonos del Valle de Uco', 'Zuccardi | San Pablo, Valle de Uco', 70800],
+        ['Concreto', 'Zuccardi | Altamira, Valle de Uco', 74600],
+        ['El Esteco Partida Limitada 2024', 'El Esteco', 81100],
+        ['Luca', 'Luca | Altamira, Gualtallary, Valle de Uco', 83100],
+        ['Bressano', 'Falasco | Valle de Uco: Altamira, Los Árboles, Gualtallary, Mendoza', 90800],
+        ['Lorenzo de Agrelo Lo Bendito', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 107100],
+        ['Trapiche Terroir Series Ambrosía', 'Trapiche | Gualtallary, Tupungato, Mendoza', 109100],
+        ['Riccitelli Old Vines', 'Riccitelli Wines | Río Negro, Patagonia', 115000],
+        ['La Linterna', '100% Malbec. Bemberg. Gualtallary, Valle de Uco. 2020', 139150],
+        ['Val de Flores', '', 141800],
+        ['Malbec Argentino', '', 161200],
+        ['J. Alberto', 'Noemía | Mainque, Río Negro', 162100],
+        ['Yacochuya', '', 182500],
+        ['Apartado Gran Malbec', '', 184800],
+        ['Aluvional Altamira', 'Familia Zuccardi | Tupungato, Mendoza', 189900],
+        ['Fede', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 194900],
+        ['La Cautiva', 'Michelini i Mufatto | La Cautiva, Tupungato, Mendoza', 279400],
+        ['Adrianna Parcelas River', 'Catena Zapata', 468100],
+        ['Cobos Malbec', '', 726000]
       ]},
       { titulo: 'Pinot Noir', items: [
-        ['Primogénito', 'San Patricio del Chañar. 2024', 28900],
-        ['Marantiqua', 'San Patricio del Chañar, Neuquén, Patagonia Argentina', 29300],
-        ['Costa & Pampa', 'Trapiche | Chapadmalal', 30000],
-        ['Manos Negras Red Soil', 'Manos Negras | El Cepillo, Valle de Uco, Mendoza', 30400],
-        ['Chakana Estate Selection', 'Pinot Noir 2023. Vino orgánico', 31000],
-        ['Pulenta Estate', 'Pulenta Estate | Finca Los Álamos, Tupungato, Valle de Uco', 53100],
-        ['Rugientes 45', 'Otronia | Sarmiento, Chubut, Argentina', 64500],
-        ['Proyecto Hermanas', 'Lagarde | Gualtallary, Valle de Uco', 69800],
-        ['Barda', 'Chacra | Mainque, Río Negro', 90000],
-        ['La Linterna', '100% Pinot Noir. Bemberg. Los Árboles, Valle de Uco. 2020', 115000]
+        ['Primogénito', 'San Patricio del Chañar. 2024', 31800],
+        ['Manos Negras Red Soil', 'Manos Negras | El Cepillo, Valle de Uco, Mendoza', 33400],
+        ['Marantiqua', 'San Patricio del Chañar, Neuquén, Patagonia Argentina', 35500],
+        ['Costa & Pampa', 'Trapiche | Chapadmalal. 2024', 36300],
+        ['Chakana Estate Selection', 'Pinot Noir 2023. Vino orgánico', 37600],
+        ['Insignia Pinot Noir', 'Luigi Bosca', 54500],
+        ['Vertebrado', '', 58200],
+        ['El Esteco Blanc de Noir', 'El Esteco. Vino blanco de Pinot Noir', 60000],
+        ['Pulenta Estate', 'Pulenta Estate | Finca Los Álamos, Tupungato, Valle de Uco', 64300],
+        ['Mariflor Pinot Noir', '', 65900],
+        ['Proyecto Hermanas', 'Lagarde | Gualtallary, Valle de Uco', 84500],
+        ['Rugientes 45', 'Otronia | Sarmiento, Chubut, Argentina', 84500],
+        ['Domaine Nico Grand Mère', '', 91500],
+        ['Barda', 'Chacra | Mainque, Río Negro', 108900],
+        ['La Linterna', '100% Pinot Noir. Bemberg. Los Árboles, Valle de Uco. 2020', 139200],
+        ['Chacra 55', 'Chacra | Mainque, Río Negro', 376200]
       ]},
       { titulo: 'Cabernet Franc', items: [
-        ['Andillán 2023', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 28000],
-        ['La Madrid Reserva', 'Alto Agrelo, Luján de Cuyo, Mendoza', 29900],
-        ['Mártir', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 49900],
-        ['Zaha', 'Manos Negras | Altamira, Valle de Uco', 52500],
-        ['Hermandad Winemaker Series', 'Falasco | Tunuyán, Mendoza', 68900],
-        ['Rutini Single Vineyard Gualtallary', 'Rutini Wines | Gualtallary, Tupungato, Mendoza', 84000],
-        ['Gran Enemigo Gualtallary', 'Aleanna | Gualtallary, Tupungato, Mendoza', 117500],
-        ['Gran Pulenta', 'Pulenta Estate | Agrelo, Luján de Cuyo, Mendoza', 126000]
+        ['Chakana Estate', 'Vino orgánico', 31800],
+        ['Andillán 2023', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 33900],
+        ['La Madrid Reserva', 'Alto Agrelo, Luján de Cuyo, Mendoza', 36200],
+        ['Desbandado', '', 39100],
+        ['Ovum', '', 39500],
+        ['Nodo', '', 42400],
+        ['Vertebrado', '', 55700],
+        ['Mártir', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 60400],
+        ['Zaha', 'Manos Negras | Altamira, Valle de Uco', 63600],
+        ['El Enemigo', 'Aleanna', 64800],
+        ['Polígonos', 'Zuccardi', 64800],
+        ['Hermandad Winemaker Series', 'Falasco | Tunuyán, Mendoza', 83400],
+        ['Rutini Single Vineyard Gualtallary', 'Rutini Wines | Gualtallary, Tupungato, Mendoza', 101700],
+        ['Gran Enemigo Gualtallary', 'Aleanna | Gualtallary, Tupungato, Mendoza', 139800],
+        ['Gran Pulenta', 'Pulenta Estate | Agrelo, Luján de Cuyo, Mendoza', 152500]
       ]},
       { titulo: 'Cabernet Sauvignon', items: [
-        ['La Mascota', 'Finca La Mascota, Cruz de Piedra, Maipú, Mendoza', 28000],
-        ['Cuartel 2', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza', 35000],
-        ['Bramare', 'Vistalba, Luján de Cuyo, Mendoza', 54900],
-        ['La Linterna', 'Bemberg. Gualtallary, Valle de Uco. 2020', 115000],
-        ['Cuartel 5', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza', 300000]
+        ['La Mascota', 'Finca La Mascota, Cruz de Piedra, Maipú, Mendoza', 33900],
+        ['Ambrosía Viña Única', '', 38400],
+        ['Livvera', '', 38400],
+        ['Cuartel 2', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza. 2023', 42400],
+        ['Flor de Cardón', '', 49500],
+        ['LO Cabernet Sauvignon', '', 50100],
+        ['DeÁngeles', '', 51400],
+        ['Apuntes Villa Canota', 'Luigi Bosca', 56100],
+        ['De Sangre', 'Luigi Bosca', 58100],
+        ['Bramare', 'Vistalba, Luján de Cuyo, Mendoza', 66500],
+        ['La Linterna', 'Bemberg. Gualtallary, Valle de Uco. 2020', 139200],
+        ['Cuartel 5', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza. 2022', 363000]
       ]},
       { titulo: 'Merlot', items: [
-        ['Pulenta Estate', 'Pulenta Estate | Agrelo, Luján de Cuyo, Mendoza', 52900],
-        ['Rugientes 45', 'Otronia | Sarmiento, Chubut, Argentina', 78000]
+        ['Patritti Sangre Azul', 'Patritti', 52300],
+        ['Pulenta Estate', 'Pulenta Estate | Agrelo, Luján de Cuyo, Mendoza', 63100],
+        ['Riccitelli Old Vines', 'Riccitelli Wines', 93400],
+        ['Rugientes 45', 'Otronia | Sarmiento, Chubut, Argentina', 94400]
       ]},
       { titulo: 'Syrah', items: [
-        ['Luca', 'Luca | La Consulta, San Carlos, Mendoza', 69200]
+        ['La Cayetana', '', 46200],
+        ['Luca', 'Luca | La Consulta, San Carlos, Mendoza', 83800]
       ]},
       { titulo: 'Garnacha', items: [
-        ['El Esteco', 'Partida Limitada 2024', 67000]
-      ]},
-      { titulo: 'Bonarda', items: [
-        ['Castore', 'Castore | Valle de Famatina, La Rioja', 28900]
+        ['TigerStone', '', 41300],
+        ['Ver Sacrum', '', 52700],
+        ['DV Apelación Lunlunta', 'Catena Zapata', 58200]
       ]},
       { titulo: 'Criolla', items: [
-        ['Proyecto Las Compuertas', 'Durigutti | Las Compuertas, Luján de Cuyo, Mendoza', 47000]
+        ['Cadus Appellation Tunuyán Criolla Chica', 'Cadus Wines | Tunuyán', 47200],
+        ['Proyecto Las Compuertas', 'Durigutti | Las Compuertas, Luján de Cuyo, Mendoza', 56900],
+        ['Old Vines Criolla', 'El Esteco', 71400]
+      ]},
+      { titulo: 'Otras cepas tintas', items: [
+        ['Ara Tannat', '', 25900],
+        ['Castore Bonarda', 'Castore | Valle de Famatina, La Rioja', 35000],
+        ['Cadus Appellation Tunuyán Petit Verdot', 'Cadus Wines | Tunuyán', 50500]
       ]},
       { titulo: 'Blend tinto', items: [
-        ['Château Subsónico', 'Falasco | Valle de Uco, Mendoza. Malbec - Merlot', 27900],
-        ['Clos de los Siete', 'Michel Rolland | Valle de Uco. 2021', 37900],
-        ['Hermandad Blend', 'Falasco | Mendoza. 60% Malbec - 20% Cabernet Sauvignon - 20% Petit Verdot', 44900],
-        ['Profundo', 'Bressia | Valle de Uco. Malbec - Cabernet Sauvignon - Merlot - Syrah', 74650],
-        ['Beso de Dante', 'Luca | La Pirámide, Agrelo (Luján de Cuyo); Vista Flores, Altamira (Valle de Uco). 55% Malbec - 45% Cabernet Sauvignon', 78900],
-        ['Hornero', 'Marchiori & Barreaud. 2023. Malbec 62% - Cabernet Sauvignon 33% - Petit Verdot 5%', 92000],
-        ['Cadus Assemblage Blend', 'Cadus Wines | Vistalba, Luján de Cuyo, Mendoza. Malbec - Cabernet Sauvignon - Merlot - Petit Verdot', 93500],
-        ['Mariflor', 'Rolland Collection | Valle de Uco. Cabernet Franc - Malbec', 98900],
-        ['Encuentro Barrel Blend', 'Rutini Wines | Paraje Altamira y Gualtallary, Valle de Uco, Mendoza. 30% Malbec - 30% Cabernet Sauvignon - 20% Merlot - 10% Petit Verdot - 10% Cabernet Franc', 138000],
-        ['Pionero', 'Blend de tintas. Bemberg. Gualtallary, Valle de Uco. Finca El Tomillo. 2020', 180000],
-        ['Paraíso', 'Luigi Bosca | Finca Paraíso, Valle de Uco, Mendoza. 71% Malbec - 29% Cabernet Sauvignon', 188900]
+        ['Ambrosía Luna Llena', '', 31400],
+        ['Château Subsónico', 'Falasco | Valle de Uco, Mendoza. Malbec - Merlot', 33800],
+        ['Rosso d’Uco', '', 35100],
+        ['Lo Silky', '', 38400],
+        ['Rutini Colección', 'Rutini Wines', 41600],
+        ['Clos de los Siete', 'Michel Rolland | Valle de Uco', 45900],
+        ['Ver Sacrum GSM', 'Garnacha - Syrah - Monastrell', 50800],
+        ['Hermandad Blend', 'Falasco | Mendoza. 60% Malbec - 20% Cabernet Sauvignon - 20% Petit Verdot', 54400],
+        ['Brunetto', '', 54500],
+        ['Cuvelier Los Andes Grand Vin', 'Cuvelier Los Andes', 75800],
+        ['Profundo', 'Bressia | Valle de Uco. Malbec - Cabernet Sauvignon - Merlot - Syrah', 90400],
+        ['Beso de Dante', 'Luca | La Pirámide, Agrelo (Luján de Cuyo); Vista Flores, Altamira (Valle de Uco). 55% Malbec - 45% Cabernet Sauvignon', 95500],
+        ['Hornero', 'Marchiori & Barreaud. 2023. Malbec 62% - Cabernet Sauvignon 33% - Petit Verdot 5%', 111400],
+        ['Cadus Assemblage Blend', 'Cadus Wines | Vistalba, Luján de Cuyo, Mendoza. Malbec - Cabernet Sauvignon - Merlot - Petit Verdot', 113200],
+        ['Mariflor', 'Rolland Collection | Valle de Uco. Cabernet Franc - Malbec', 119700],
+        ['Iscay', '', 140700],
+        ['Encuentro Barrel Blend', 'Rutini Wines | Paraje Altamira y Gualtallary, Valle de Uco, Mendoza. 30% Malbec - 30% Cabernet Sauvignon - 20% Merlot - 10% Petit Verdot - 10% Cabernet Franc', 167000],
+        ['Pionero', 'Blend de tintas. Bemberg. Gualtallary, Valle de Uco. Finca El Tomillo. 2020', 217800],
+        ['Paraíso', 'Luigi Bosca | Finca Paraíso, Valle de Uco, Mendoza. 71% Malbec - 29% Cabernet Sauvignon', 228600],
+        ['Cheval des Andes', '', 264000],
+        ['Mariflor Arthur & Theo', 'Rolland Collection', 302500],
+        ['Cobos Volturno', '', 726000],
+        ['Catena Zapata Estiba Reservada', 'Catena Zapata', 752300],
+        ['Felipe Rutini', 'Rutini Wines', 950400]
       ]}
     ]},
 
     { id: 'dulces', nombre: 'Dulces / licorosos', grupos: [{ items: [
-      ['Luigi Bosca Granos Nobles 2023', 'Gewürztraminer. Luigi Bosca | Finca “El Paraíso”, Maipú, Luján de Cuyo', 47900],
-      ['Lindaflor Chardonnay Tardío', 'Monteviejo | Valle de Uco, Mendoza', 72700],
-      ['Taylor’s Tawny 10 Años', 'Taylor’s | Oporto, Portugal. Touriga Nacional, Touriga Franca, Tinta Barroca, Tinta Roriz, Tinto Cão, Tinta Amarela', 112500]
+      ['El Esteco Torrontés Tardío', 'El Esteco', 28000],
+      ['Terrazas de los Andes Single Vineyard Tardío', 'Terrazas de los Andes', 42000],
+      ['Terrazas de los Andes Petit Manseng', 'Terrazas de los Andes', 42000],
+      ['Cruzat Ratafia Licor', 'Cruzat', 54900],
+      ['Luigi Bosca Granos Nobles 2023', 'Gewürztraminer. Luigi Bosca | Finca “El Paraíso”, Maipú, Luján de Cuyo', 58000],
+      ['Rutini Vin Doux Naturel', 'Rutini Wines', 67700],
+      ['Lindaflor Chardonnay Tardío', 'Monteviejo | Valle de Uco, Mendoza', 88000],
+      ['Jerez González Byass Cream', 'González Byass | Jerez, España', 109500],
+      ['Taylor’s Tawny 10 Años', 'Taylor’s | Oporto, Portugal. Touriga Nacional, Touriga Franca, Tinta Barroca, Tinta Roriz, Tinto Cão, Tinta Amarela', 136200]
     ]}]},
 
     { id: 'cocteles', nombre: 'Cócteles', grupos: [
       { titulo: 'Cócteles', items: [
-        ['Aperol Spritz', 'Aperol / espumante / soda / rodaja de naranja', 15200],
-        ['Americano', 'vermú / Campari / soda', 10800],
-        ['Gin tonic', 'gin / agua tónica / garnish (romero, pomelo, limón o pepino)', 15200],
-        ['Cynar julep', 'Cynar / menta / almíbar / jugo de pomelo', 10200],
-        ['Negroni', 'rosso / gin / Campari', 13900],
-        ['Moscow mule (mug)', 'vodka / ginger ale / angostura / menta', 12900],
-        ['Tom Collins', 'gin / simple syrup / jugo de limón / soda', 12900],
-        ['Penicillin', 'whisky / syrup de miel & jengibre / jugo de limón / jengibre fresco', 22300],
-        ['Cuba libre', 'ron / cola / jugo de lima', 12900],
-        ['Margarita', 'tequila / Cointreau / jugo de lima', 22500],
-        ['White russian', 'vodka / crema / licor de café', 16800]
+        ['Americano', 'vermú / Campari / soda', 11880],
+        ['Cynar julep', 'Cynar / menta / almíbar / jugo de pomelo', 11220],
+        ['Aperol sour', '', 12400],
+        ['Moscow mule (mug)', 'vodka / ginger ale / angostura / menta', 14190],
+        ['Tom Collins', 'gin / simple syrup / jugo de limón / soda', 14190],
+        ['Cuba libre', 'ron / cola / jugo de lima', 14190],
+        ['Pisco sour', '', 14200],
+        ['Negroni', 'rosso / gin / Campari', 15290],
+        ['Aperol Spritz', 'Aperol / espumante / soda / rodaja de naranja', 16720],
+        ['Gin tonic', 'gin / agua tónica / garnish (romero, pomelo, limón o pepino)', 16720],
+        ['White russian', 'vodka / crema / licor de café', 18480],
+        ['Penicillin', 'whisky / syrup de miel & jengibre / jugo de limón / jengibre fresco', 24530],
+        ['Margarita', 'tequila / Cointreau / jugo de lima', 24750],
+        ['Scotch sour', '', 25600],
+        ['John Collins', '', 25600],
+        ['Gold & ginger', '', 26400]
       ]},
       { titulo: 'Clásicos', items: [
-        ['Old fashioned', 'bourbon / azúcar / angostura / naranja y cereza maraschino', 17000],
-        ['Boulevardier', 'Campari / bourbon / vermouth rosso', 13500],
-        ['Season caipiroska', 'vodka / limas / fruta de estación', 12800],
-        ['Fernet cola', 'fernet / Coca-Cola', 11900],
-        ['Campari orange', 'Campari / jugo de naranja', 11900],
-        ['Lemon drop', 'vodka / triple sec / jugo de limón', 18500],
-        ['Bloody Mary', 'vodka / jugo de limón / salsa Tabasco / salsa inglesa / jugo de tomate / sal & pimienta', 23200],
-        ['Dry martini', 'gin / vermouth extra dry', 14900],
-        ['Manhattan', 'whisky / vermouth rosso / bitter angostura', 18900],
-        ['Mojito', 'ron blanco / lima / soda / menta', 12900],
-        ['God father', 'whisky / amaretto / piel de naranja', 25200],
-        ['Carajillo', 'Licor 43 / café de especialidad', 16800]
+        ['Fernet cola', 'fernet / Coca-Cola', 13090],
+        ['Campari orange', 'Campari / jugo de naranja', 13090],
+        ['Season caipiroska', 'vodka / limas / fruta de estación', 14080],
+        ['Mojito', 'ron blanco / lima / soda / menta', 14190],
+        ['Boulevardier', 'Campari / bourbon / vermouth rosso', 14850],
+        ['Dry martini', 'gin / vermouth extra dry', 16390],
+        ['Carajillo', 'Licor 43 / café de especialidad', 18480],
+        ['Old fashioned', 'bourbon / azúcar / angostura / naranja y cereza maraschino', 18700],
+        ['Lemon drop', 'vodka / triple sec / jugo de limón', 20350],
+        ['Manhattan', 'whisky / vermouth rosso / bitter angostura', 20790],
+        ['Bloody Mary', 'vodka / jugo de limón / salsa Tabasco / salsa inglesa / jugo de tomate / sal & pimienta', 25520],
+        ['God father', 'whisky / amaretto / piel de naranja', 27720]
       ]},
       { titulo: 'Cócteles de autor', items: [
-        ['Gin fizz & cucumber', 'gin / jugo de limón / menta / pepino / lima limón / splash de gaseosa de limón / bitter angostura', 15800],
-        ['Citrus Hennessy', 'Hennessy / pomelo / bitter italiano / romero fresco', 22900],
-        ['Sangría Chamarrita', 'por Cantinero Entrerriano. Tannat entrerriano / almíbar de frutos rojos / aperitivo El Cantinero / soda de pomelo', 12900],
-        ['Espuma Negroni', 'gin Apóstoles / Campari / Cynar / jugo de pomelo', 13900],
-        ['Passion sour', 'pisco quebranta / angostura / Golden Age Apricot / cordial de maracuyá / clara', 15500],
-        ['Pineral rouge', 'Pineral / almíbar de frutos rojos / jugo de lima / jugo de pomelo', 11200],
-        ['Flor de aperitivo', 'Gancia Hibiscus / fernet / maracuyá / jugo de naranja / almíbar', 11600],
-        ['Whisky sour', 'bourbon / jugo de limón / almíbar / clara de huevo', 23400]
+        ['Pineral rouge', 'Pineral / almíbar de frutos rojos / jugo de lima / jugo de pomelo', 12320],
+        ['Flor de aperitivo', 'Gancia Hibiscus / fernet / maracuyá / jugo de naranja / almíbar', 12760],
+        ['Moscow pears', '', 13800],
+        ['Sangría Chamarrita', 'por Cantinero Entrerriano. Tannat entrerriano / almíbar de frutos rojos / aperitivo El Cantinero / soda de pomelo', 14190],
+        ['Sangría pinot', '', 14200],
+        ['Sangría white', '', 14200],
+        ['La vie en rose', '', 14200],
+        ['Espuma Negroni', 'gin Apóstoles / Campari / Cynar / jugo de pomelo', 15290],
+        ['Aperol bohème', '', 16700],
+        ['Passion sour', 'pisco quebranta / angostura / Golden Age Apricot / cordial de maracuyá / clara', 17050],
+        ['Mandarine sour', '', 17100],
+        ['Gin fizz & cucumber', 'gin / jugo de limón / menta / pepino / lima limón / splash de gaseosa de limón / bitter angostura', 17380],
+        ['Citrus Hennessy', 'Hennessy / pomelo / bitter italiano / romero fresco', 25190],
+        ['Whisky sour', 'bourbon / jugo de limón / almíbar / clara de huevo', 25740]
       ]},
       { titulo: 'Mócteles', nota: 'Sin alcohol.', items: [
-        ['Lemon fizz', 'jugo de limón / menta / jengibre / soda / almíbar', 7200],
-        ['Red sour', 'almíbar de frutos rojos / maracuyá / jugo de limón / clara / almíbar', 6600]
-      ]},
-      { titulo: 'Cognac', items: [
-        ['Cognac Hennessy', 'medida de 2 oz', 24600]
+        ['Red sour', 'almíbar de frutos rojos / maracuyá / jugo de limón / clara / almíbar', 7260],
+        ['Lemon fizz', 'jugo de limón / menta / jengibre / soda / almíbar', 7920]
       ]}
     ]},
 
-    { id: 'whisky', nombre: 'Whisky & licores', grupos: [
-      { titulo: 'Whisky', nota: 'Medida de 2 oz.', items: [
-        ['Red Label', 'mezcla joven, picante, seco', 13500],
-        ['Monkey Shoulder', 'blend de maltas, suave, moderno', 14900],
-        ['Black Label', 'suave, equilibrado, ahumado, clásico', 20500],
-        ['Chivas 12 Años', 'mezcla suave, dulce, equilibrada', 23800],
-        ['Double Black', 'más intenso, turboso, profundo', 24500],
-        ['Talisker 10 Años', 'isla, salino, turboso, especiado', 32000],
-        ['Glenkinchie', 'lowland, floral, ligero, seco', 34500],
-        ['Glenfiddich', 'speyside, frutado, suave, clásico', 41000],
-        ['Chivas 18 Años', 'maduro, cremoso, vainilla, sofisticado', 52100],
-        ['Macallan', 'elegante, afrutado, roble, suave', 58000],
-        ['Blue Label', 'premium, complejo, sedoso, exclusivo', 82900]
+    { id: 'destilados', nombre: 'Destilados & licores', grupos: [
+      { titulo: 'Whisky', items: [
+        ['Johnnie Walker Red Label', 'mezcla joven, picante, seco', 11500],
+        ['Monkey Shoulder', 'blend de maltas, suave, moderno', 11700],
+        ['Chivas Regal 12 Años', 'mezcla suave, dulce, equilibrada', 13500],
+        ['Jameson', '', 13800],
+        ['Johnnie Walker Black Label', 'suave, equilibrado, ahumado, clásico', 14800],
+        ['Jim Beam White', '', 15600],
+        ['Johnnie Walker Double Black', 'más intenso, turboso, profundo', 16500],
+        ['Jack Daniel’s', '', 20400],
+        ['Jack Daniel’s Honey', '', 20800],
+        ['Glenkinchie 12 Años', 'lowland, floral, ligero, seco', 23600],
+        ['Talisker 10 Años', 'isla, salino, turboso, especiado', 24500],
+        ['Glenfiddich', 'speyside, frutado, suave, clásico', 24700],
+        ['Wild Turkey', '', 26600],
+        ['Chivas Regal 18 Años', 'maduro, cremoso, vainilla, sofisticado', 27375],
+        ['Bulleit Bourbon', '', 32500],
+        ['Cragganmore', '', 37300],
+        ['Johnnie Walker Gold', '', 45100],
+        ['Macallan', 'elegante, afrutado, roble, suave', 47200],
+        ['Johnnie Walker Blue Label', 'premium, complejo, sedoso, exclusivo', 79700]
+      ]},
+      { titulo: 'Gin', items: [
+        ['Restinga', '', 14200],
+        ['Beefeater', '', 16700],
+        ['Tanqueray Sevilla', '', 17400],
+        ['Tanqueray Royal', '', 17400],
+        ['Bulldog', '', 17800],
+        ['Bombay', '', 18300],
+        ['Hendrick’s', '', 32000],
+        ['Monkey 47', '', 33800],
+        ['Hendrick’s Neptunia', '', 36400],
+        ['Nordés', '', 42000],
+        ['The Botanist', '', 45300]
+      ]},
+      { titulo: 'Vodka', items: [
+        ['Ketel One', '', 14500],
+        ['Absolut', '', 14900],
+        ['Pravda', '', 21200],
+        ['Grey Goose', '', 32000]
+      ]},
+      { titulo: 'Ron & tequila', items: [
+        ['Havana Club Especial', '', 10900],
+        ['Malibu', '', 10900],
+        ['Appleton Estate', '', 14200],
+        ['Havana Club 7 Años', '', 15600],
+        ['José Cuervo Reposado', '', 20400],
+        ['1800 Reserva', '', 46900],
+        ['Zacapa', '', 50800]
+      ]},
+      { titulo: 'Cognac & grappa', items: [
+        ['Hennessy VS', '', 27100],
+        ['Grappa Luxardo', '', 30140]
+      ]},
+      { titulo: 'Vermut', items: [
+        ['Vermut rosso', '', 10900],
+        ['Vermut bianco', '', 10900],
+        ['Vermut dry', '', 10900]
       ]},
       { titulo: 'Licores', items: [
-        ['Amarula', 'africano, cremoso, frutal, exótico', 11200],
-        ['Baileys', 'irlandés, cremoso, café, dulce', 11500],
-        ['Isola Bella', 'italiano, almendra, suave, aromático', 20600],
-        ['Disaronno', 'italiano, almendra, especiado, dulce', 11200],
-        ['Frangelico', 'avellana, suave, italiano, herbal', 11200],
-        ['St-Germain', 'flor de saúco, elegante, floral', 25700],
-        ['Limoncello', 'limón, dulce, fresco, italiano', 15900],
-        ['Grappa', 'uva, seco, fuerte, destilado', 27400],
-        ['Hesperidina', 'argentino, cítrico, amargo, herbal', 11200],
-        ['Drambuie', 'escocés, miel, whisky, especias', 17900],
-        ['Tambo', 'licor argentino de dulce de leche', 11200]
+        ['Borghetti', 'licor de café', 11000],
+        ['Amarula', 'africano, cremoso, frutal, exótico', 12320],
+        ['Frangelico', 'avellana, suave, italiano, herbal', 12320],
+        ['Baileys', 'irlandés, cremoso, café, dulce', 12650],
+        ['Jägermeister', '', 16800],
+        ['Strega', '', 16800],
+        ['Amaretto', 'italiano, almendra, especiado, dulce', 17100],
+        ['Passion Mandarine', '', 17100],
+        ['Limoncello', 'limón, dulce, fresco, italiano', 17490],
+        ['Drambuie', 'escocés, miel, whisky, especias', 19690],
+        ['Sambuca Isolabella', 'italiano, anís, suave, aromático', 22660],
+        ['Cointreau', '', 24500],
+        ['St-Germain', 'flor de saúco, elegante, floral', 28300]
       ]}
     ]}
   ];
@@ -1470,7 +1723,8 @@
   }
 
   /** Arma pestañas accesibles + paneles para una carta */
-  function renderCarta(data, tabsEl, panelsEl, pedible) {
+  function renderCarta(data, tabsEl, panelsEl, pedible, ordenarPorPrecio = false) {
+    if (ordenarPorPrecio) data.forEach(cat => cat.grupos.forEach(g => g.items.sort((a, b) => a[2] - b[2])));
     data.forEach((cat, i) => {
       const selected = i === 0;
       const tabId = `tab-${cat.id}`, panelId = `panel-${cat.id}`;
@@ -1733,13 +1987,14 @@
      INICIO
      ========================================================= */
   renderCarta(MENU, $('#menu-tabs'), $('#menu-panels'), true);
-  renderCarta(VINOS, $('#vinos-tabs'), $('#vinos-panels'), false);
+  renderCarta(VINOS, $('#vinos-tabs'), $('#vinos-panels'), false, true);
   renderTortas();
   Cart.render();
   initWhatsAppLinks();
   initNav();
   initReveal();
   initParallax();
+  $('#cubierto').textContent = fmt(CONFIG.cubierto);
   $('#year').textContent = new Date().getFullYear();
   </script>
 
@@ -1756,11 +2011,14 @@
        y "+54 9 11 2471-2586" (texto visible) para actualizarlos.
 
   2) CAMBIAR PLATOS, VINOS Y PRECIOS
+     - Precios tomados del menú online de Maxirest (menu.maxirest.com/40997).
      - MENU   = carta de cocina (se puede agregar al pedido).
      - TORTAS = tortas enteras por encargue (se pueden agregar al pedido).
      - VINOS  = carta de vinos, coctelería, whisky y licores (solo consulta).
      - Cada ítem es  ['Nombre', 'descripción', precio]  con el precio sin puntos (ej.: 28900).
      - Cada categoría tiene "grupos": un grupo puede tener titulo (ej.: 'Malbec') y nota.
+     - En VINOS los ítems se ordenan solos por precio dentro de cada grupo.
+     - Cubierto: CONFIG.cubierto.
      - Para agregar un plato, copiá una línea dentro del grupo y cambiá los datos.
 
   3) CAMBIAR LAS FOTOS
