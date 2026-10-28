@@ -356,6 +356,21 @@
     .pastry-photos figure:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
     .pastry-photos img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
     .pastry-photos figure:hover img { transform: scale(1.05); }
+    /* Segunda tanda de fotos: en escritorio estira la columna izquierda hasta el final de la lista */
+    .pastry-photos--more { display: none; }
+    @media (min-width: 960px) {
+      #pasteleria .split { align-items: stretch; }
+      #pasteleria .split > :first-child { display: flex; flex-direction: column; }
+      /* flex-basis 0: la columna no crece por las fotos, solo ocupan el espacio que sobra */
+      .pastry-photos--more {
+        display: grid; flex: 1 1 0; min-height: 0; margin-top: .6rem;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+      }
+      .pastry-photos--more figure,
+      .pastry-photos--more figure:first-child { aspect-ratio: auto; position: relative; min-height: 0; }
+      .pastry-photos--more img { position: absolute; inset: 0; }
+      .pastry-photos--more figure:first-child { grid-row: span 2; grid-column: auto; }
+    }
     .pastry-note { font-family: var(--font-display); font-size: .95rem; margin-top: 1.75rem; }
     .pastry-note strong { font-weight: 600; }
     .pastry-list .items { grid-template-columns: 1fr; }
@@ -635,6 +650,12 @@
             <figure><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80" alt="Torta de chocolate" loading="lazy" /></figure>
             <figure><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80" alt="Cheesecake de frutos rojos" loading="lazy" /></figure>
             <figure><img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=700&q=80" alt="Macarons de colores" loading="lazy" /></figure>
+          </div>
+          <!-- Fotos extra: solo en escritorio, llenan el alto de la lista de tortas -->
+          <div class="pastry-photos pastry-photos--more" aria-hidden="true">
+            <figure><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy" /></figure>
+            <figure><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy" /></figure>
+            <figure><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy" /></figure>
           </div>
         </div>
         <div class="pastry-list reveal" id="tortas-list"></div>
