@@ -6,20 +6,20 @@
 
   <!-- ============ SEO básico ============ -->
   <title>García · Restaurante, bar y pastelería en Nordelta</title>
-  <meta name="description" content="García, restaurante, bar y pastelería en Nordelta. Pastas frescas, pan de masa madre, pastelería fina y tragos frente a la laguna. Reservá o pedí take away por WhatsApp." />
-  <meta name="theme-color" content="#FAF6F0" />
+  <meta name="description" content="García, cocina y pasta casera en Nordelta. Pastas caseras, pastelería de vitrina, tortas por encargue, vinos argentinos y coctelería frente a la laguna. Reservá o pedí take away por WhatsApp." />
+  <meta name="theme-color" content="#FFFFFF" />
   <link rel="canonical" href="https://garcianordelta.com.ar/" />
 
   <!-- ============ Open Graph / Redes ============ -->
   <meta property="og:type" content="restaurant" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="García Nordelta" />
-  <meta property="og:title" content="García · Restaurante, bar y pastelería en Nordelta" />
-  <meta property="og:description" content="Pastas frescas, pan de masa madre, pastelería fina y tragos con vista a la laguna. Reservas y take away por WhatsApp." />
+  <meta property="og:title" content="García · Cocina y pasta casera en Nordelta" />
+  <meta property="og:description" content="Pastas caseras, pastelería fina, vinos argentinos y coctelería con vista a la laguna. Reservas y take away por WhatsApp." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&h=630&q=80" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="García · Restaurante, bar y pastelería en Nordelta" />
-  <meta name="twitter:description" content="Pastas frescas, masa madre, pastelería fina y bar frente a la laguna." />
+  <meta name="twitter:title" content="García · Cocina y pasta casera en Nordelta" />
+  <meta name="twitter:description" content="Pastas caseras, pastelería fina, vinos y coctelería frente a la laguna." />
 
   <!-- ============ Datos estructurados ============ -->
   <script type="application/ld+json">
@@ -27,10 +27,11 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "García",
-    "description": "Restaurante, bar y pastelería en Nordelta.",
-    "servesCuisine": ["Pastas frescas", "Pastelería", "Cocina casera"],
+    "description": "Cocina y pasta casera. Restaurante, bar y pastelería en Nordelta.",
+    "servesCuisine": ["Pastas caseras", "Pastelería", "Cocina casera"],
     "telephone": "+5491124712586",
     "acceptsReservations": true,
+    "hasMenu": "https://garcianordelta.com.ar/#carta",
     "openingHours": ["Tu-Sa 08:00-24:00", "Su 08:00-20:00"],
     "address": {
       "@type": "PostalAddress",
@@ -43,36 +44,34 @@
   }
   </script>
 
-  <!-- ============ Tipografías ============ -->
+  <!-- ============ Tipografías (estilo de la carta García) ============
+       Playfair Display: títulos y nombres de platos (serif de alto contraste, en mayúsculas)
+       Playfair Display Italic: descripciones
+       Montserrat: precios, navegación y textos chicos
+       Parisienne: frases caligráficas ("Cocina y pasta casera") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet" />
 
   <style>
     /* =========================================================
-       1. VARIABLES DE DISEÑO
+       1. VARIABLES DE DISEÑO (identidad García: blanco y negro, minimalista)
        ========================================================= */
     :root {
-      --bg: #FAF6F0;            /* crema / off-white */
-      --bg-alt: #F2EBE1;        /* crema más profundo para secciones alternas */
+      --bg: #FFFFFF;
+      --bg-alt: #F5F3EF;        /* blanco cálido para secciones alternas */
       --surface: #FFFFFF;
-      --line: #E6DDD1;
-      --gray-500: #78716C;
-      --gray-700: #44403C;
-      --ink: #1C1917;           /* texto casi negro */
-      --accent: #A94A28;        /* terracotta (contraste AA sobre blanco y crema) */
-      --accent-hover: #8E3C1F;
-      --wood: #5A3424;          /* madera rojiza oscura */
-      --wood-soft: #8B5A3C;
-      --whatsapp: #1E8E4E;
+      --line: #E4E1DB;
+      --gray-500: #6E6E6E;
+      --gray-700: #3D3D3D;
+      --ink: #141414;           /* negro de la carta */
+      --ink-soft: #2A2A2A;
 
-      --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-display: "Playfair Display", "Didot", Georgia, serif;
+      --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-script: "Parisienne", "Snell Roundhand", cursive;
 
-      --radius: 14px;
-      --radius-lg: 22px;
-      --shadow-sm: 0 1px 2px rgba(28,25,23,.06), 0 2px 8px rgba(28,25,23,.05);
-      --shadow-md: 0 10px 30px -10px rgba(28,25,23,.22);
+      --radius: 2px;
       --header-h: 64px;
       --ease: cubic-bezier(.2,.7,.2,1);
     }
@@ -85,8 +84,9 @@
     body {
       margin: 0;
       font-family: var(--font-sans);
-      font-size: 1rem;
-      line-height: 1.6;
+      font-weight: 400;
+      font-size: .98rem;
+      line-height: 1.7;
       color: var(--ink);
       background: var(--bg);
       -webkit-font-smoothing: antialiased;
@@ -94,134 +94,151 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; }
     button, input, select, textarea { font: inherit; color: inherit; }
-    h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; font-weight: 600; }
+    h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 .5em; font-weight: 400; }
     p { margin: 0 0 1em; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
-    .skip-link { position: absolute; left: 1rem; top: -100px; background: var(--ink); color: #fff; padding: .75rem 1rem; border-radius: 8px; z-index: 200; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .skip-link { position: absolute; left: 1rem; top: -100px; background: var(--ink); color: #fff; padding: .75rem 1rem; z-index: 200; }
     .skip-link:focus { top: 1rem; }
 
     .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
-    section { padding: 4.5rem 0; }
+    section { padding: 5rem 0; }
     .section-alt { background: var(--bg-alt); }
 
     .eyebrow {
-      display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
+      display: inline-block; font-size: .7rem; font-weight: 500; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--gray-500); margin-bottom: 1rem;
     }
-    .section-title { font-family: var(--font-display); font-size: clamp(2.2rem, 7vw, 3.4rem); font-weight: 600; letter-spacing: -.01em; }
-    .section-lead { color: var(--gray-700); max-width: 60ch; font-size: 1.05rem; }
+    .section-title {
+      font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+      font-size: clamp(2rem, 7vw, 3.3rem); letter-spacing: .03em;
+    }
+    .script { font-family: var(--font-script); font-size: clamp(1.7rem, 5vw, 2.3rem); line-height: 1.2; margin: 0 0 1rem; color: var(--ink); }
+    .section-lead { color: var(--gray-700); max-width: 60ch; font-weight: 300; font-size: 1.02rem; }
+    .rule { width: 160px; height: 1px; background: var(--ink); border: 0; margin: 1.75rem 0; }
 
     /* =========================================================
        3. BOTONES
        ========================================================= */
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
-      min-height: 52px; padding: 0 1.5rem; border-radius: 999px; border: 1.5px solid transparent;
-      font-weight: 600; font-size: 1rem; text-decoration: none; cursor: pointer;
-      transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+      display: inline-flex; align-items: center; justify-content: center; gap: .65rem;
+      min-height: 54px; padding: 0 1.75rem; border-radius: var(--radius); border: 1px solid transparent;
+      font-family: var(--font-sans); font-weight: 500; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer;
+      transition: background-color .3s var(--ease), color .3s var(--ease), border-color .3s, transform .2s var(--ease);
       -webkit-tap-highlight-color: transparent;
     }
-    .btn:active { transform: scale(.97); }
-    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -8px rgba(169,74,40,.6); }
-    .btn-primary:hover { background: var(--accent-hover); }
-    .btn-light { background: rgba(255,255,255,.95); color: var(--ink); }
-    .btn-light:hover { background: #fff; }
+    .btn:active { transform: scale(.98); }
+    .btn-primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .btn-primary:hover { background: #fff; color: var(--ink); }
+    .btn-light { background: #fff; color: var(--ink); border-color: #fff; }
+    .btn-light:hover { background: transparent; color: #fff; }
+    .btn-ghost { background: transparent; border-color: #fff; color: #fff; }
+    .btn-ghost:hover { background: #fff; color: var(--ink); }
     .btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
     .btn-outline:hover { background: var(--ink); color: #fff; }
-    .btn-whatsapp { background: var(--whatsapp); color: #fff; }
-    .btn-whatsapp:hover { background: #17733F; }
+    .btn-whatsapp { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .btn-whatsapp:hover { background: #fff; color: var(--ink); }
     .btn-block { width: 100%; }
-    .btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; }
-    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .btn[disabled] { opacity: .35; cursor: not-allowed; }
+    .btn[disabled]:hover { background: var(--ink); color: #fff; }
+    .btn svg { width: 19px; height: 19px; flex-shrink: 0; }
 
-    /* Botón chico "Agregar al pedido" */
+    /* Botón "Agregar al pedido" de cada ítem */
     .btn-add {
-      display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: 0 1rem;
-      border-radius: 999px; border: 1.5px solid var(--accent); background: transparent; color: var(--accent);
-      font-weight: 600; font-size: .9rem; cursor: pointer; white-space: nowrap;
-      transition: background-color .2s, color .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: .35rem; min-height: 40px; padding: 0 .9rem;
+      border-radius: var(--radius); border: 1px solid var(--ink); background: transparent; color: var(--ink);
+      font-family: var(--font-sans); font-weight: 500; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
+      cursor: pointer; white-space: nowrap; transition: background-color .2s, color .2s, transform .15s;
     }
-    .btn-add:hover { background: var(--accent); color: #fff; }
+    .btn-add:hover, .btn-add.added { background: var(--ink); color: #fff; }
     .btn-add:active { transform: scale(.95); }
-    .btn-add.added { background: var(--accent); color: #fff; }
 
     /* =========================================================
        4. HEADER FIJO + NAVEGACIÓN
        ========================================================= */
     .site-header {
       position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 100;
-      display: flex; align-items: center;
+      display: flex; align-items: center; color: #fff;
       transition: background-color .35s var(--ease), box-shadow .35s var(--ease), color .35s;
-      color: #fff;
     }
     .site-header.scrolled, .site-header.menu-open {
-      background: rgba(250,246,240,.94); color: var(--ink);
-      backdrop-filter: saturate(150%) blur(12px); -webkit-backdrop-filter: saturate(150%) blur(12px);
+      background: rgba(255,255,255,.96); color: var(--ink);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 1px 0 var(--line);
     }
     .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; }
-    .logo { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; text-decoration: none; letter-spacing: .01em; }
-    .header-actions { display: flex; align-items: center; gap: .5rem; }
+    .logo { font-family: var(--font-display); font-size: 1.55rem; font-weight: 400; letter-spacing: .08em; text-decoration: none; }
+    .header-actions { display: flex; align-items: center; gap: .35rem; }
 
     .icon-btn {
-      position: relative; width: 46px; height: 46px; border-radius: 50%; border: 0; background: transparent;
+      position: relative; width: 46px; height: 46px; border: 0; background: transparent;
       display: grid; place-items: center; cursor: pointer; color: inherit;
     }
-    .icon-btn svg { width: 24px; height: 24px; }
+    .icon-btn svg { width: 23px; height: 23px; }
     .cart-count {
-      position: absolute; top: 4px; right: 2px; min-width: 20px; height: 20px; padding: 0 5px;
-      border-radius: 999px; background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700;
+      position: absolute; top: 4px; right: 2px; min-width: 19px; height: 19px; padding: 0 5px;
+      border-radius: 999px; background: currentColor; font-size: .65rem; font-weight: 600;
       display: grid; place-items: center; transform: scale(0); transition: transform .25s var(--ease);
     }
+    .cart-count span { color: #fff; }
+    .site-header:not(.scrolled):not(.menu-open) .cart-count span { color: var(--ink); }
     .cart-count.visible { transform: scale(1); }
     .cart-count.bump { animation: bump .4s var(--ease); }
     @keyframes bump { 50% { transform: scale(1.35); } }
 
     /* Hamburguesa */
-    .burger span { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; transition: transform .3s var(--ease), opacity .2s; }
-    .burger span + span { margin-top: 5px; }
-    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .burger-inner { display: flex; flex-direction: column; }
+    .burger span span { display: block; width: 24px; height: 1.5px; background: currentColor; transition: transform .3s var(--ease), opacity .2s; }
+    .burger span span + span { margin-top: 6px; }
+    .burger[aria-expanded="true"] span span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .burger[aria-expanded="true"] span span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] span span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
     .main-nav {
       position: fixed; inset: var(--header-h) 0 auto 0; background: var(--bg); color: var(--ink);
-      padding: 1rem 1.25rem 1.75rem; border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md);
+      padding: .5rem 1.25rem 1.75rem; border-bottom: 1px solid var(--line);
       transform: translateY(-12px); opacity: 0; visibility: hidden;
       transition: transform .35s var(--ease), opacity .3s var(--ease), visibility .3s;
+      max-height: calc(100svh - var(--header-h)); overflow-y: auto;
     }
     .main-nav.open { transform: none; opacity: 1; visibility: visible; }
     .main-nav ul { list-style: none; margin: 0; padding: 0; }
-    .main-nav a { display: block; padding: .9rem .25rem; font-size: 1.15rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--line); }
-    .main-nav .btn { margin-top: 1.25rem; width: 100%; }
+    .main-nav a {
+      display: block; padding: .95rem .1rem; text-decoration: none; border-bottom: 1px solid var(--line);
+      font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; letter-spacing: .06em;
+    }
+    .main-nav .btn { margin-top: 1.25rem; width: 100%; font-family: var(--font-sans); font-size: .78rem; }
     .nav-reserve-desktop { display: none; }
 
-    @media (min-width: 960px) {
-      :root { --header-h: 76px; }
+    @media (min-width: 1100px) {
+      :root { --header-h: 78px; }
       .burger { display: none; }
       .main-nav {
-        position: static; background: none; color: inherit; padding: 0; border: 0; box-shadow: none;
-        transform: none; opacity: 1; visibility: visible;
+        position: static; background: none; color: inherit; padding: 0; border: 0;
+        transform: none; opacity: 1; visibility: visible; max-height: none; overflow: visible;
       }
-      .main-nav ul { display: flex; gap: 1.6rem; }
-      .main-nav a { border: 0; padding: .4rem 0; font-size: .95rem; position: relative; }
-      .main-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1.5px; background: currentColor; transition: right .3s var(--ease); }
+      .main-nav ul { display: flex; gap: 1.75rem; }
+      .main-nav a {
+        border: 0; padding: .35rem 0; position: relative;
+        font-family: var(--font-sans); font-size: .68rem; font-weight: 500; letter-spacing: .2em;
+      }
+      .main-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: currentColor; transition: right .3s var(--ease); }
       .main-nav a:hover::after, .main-nav a.active::after { right: 0; }
       .main-nav .btn { display: none; }
-      .nav-reserve-desktop { display: inline-flex; min-height: 44px; padding: 0 1.25rem; font-size: .9rem; }
+      .nav-reserve-desktop { display: inline-flex; min-height: 42px; padding: 0 1.2rem; font-size: .66rem; }
+      .site-header:not(.scrolled) .nav-reserve-desktop { background: transparent; border-color: currentColor; color: inherit; }
+      .site-header:not(.scrolled) .nav-reserve-desktop:hover { background: #fff; color: var(--ink); }
     }
 
     /* =========================================================
-       5. HERO
-       ========================================================= */
-    /* Hero con parallax en capas (GSAP ScrollTrigger + Lenis).
+       5. HERO con parallax en capas (GSAP ScrollTrigger + Lenis)
        Cada capa [data-parallax-layer] baja a distinta velocidad al hacer scroll:
-       1 = foto (la más lenta), 2 = luces cálidas, 3 = título y botones, 4 = primer plano. */
+       1 = foto (la más lenta), 2 = luces cálidas, 3 = título y botones, 4 = primer plano.
+       ========================================================= */
     .hero {
-      position: relative; height: 100svh; min-height: 620px; color: #fff;
-      background: #2B1D15; /* fallback si no carga la foto */
+      position: relative; height: 100svh; min-height: 640px; color: #fff;
+      background: #1A1612; /* fallback si no carga la foto */
     }
     .hero-layers { position: absolute; inset: 0; overflow: hidden; }
     .hero-layer { position: absolute; left: 0; width: 100%; will-change: transform; }
@@ -230,34 +247,34 @@
     @keyframes heroZoom { to { transform: scale(1); } }
     .hero-shade {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(20,14,10,.55) 0%, rgba(20,14,10,.18) 40%, rgba(20,14,10,.7) 100%);
+      background: linear-gradient(180deg, rgba(10,8,6,.6) 0%, rgba(10,8,6,.25) 40%, rgba(10,8,6,.72) 100%);
     }
     .hero-layer--glow {
       inset: 0; pointer-events: none; mix-blend-mode: screen;
       background:
-        radial-gradient(38% 32% at 18% 28%, rgba(240,180,143,.32), transparent 70%),
-        radial-gradient(30% 26% at 82% 18%, rgba(255,214,170,.22), transparent 70%);
+        radial-gradient(38% 32% at 18% 28%, rgba(240,200,160,.22), transparent 70%),
+        radial-gradient(30% 26% at 82% 18%, rgba(255,226,190,.16), transparent 70%);
     }
     .hero-layer--title {
-      inset: 0; display: flex; align-items: center;
+      inset: 0; display: flex; align-items: center; text-align: center;
       padding: calc(var(--header-h) + 1rem) 0 clamp(5.5rem, 17vh, 10rem);
     }
     .hero-layer--front { inset: 0; display: flex; align-items: flex-end; pointer-events: none; }
     .hero-layer--front svg { width: 100%; height: clamp(70px, 14vw, 190px); display: block; color: var(--bg); }
     .hero-fade {
       position: absolute; left: 0; right: 0; bottom: -1px; height: 14%; pointer-events: none;
-      background: linear-gradient(to top, var(--bg) 20%, rgba(250,246,240,0));
+      background: linear-gradient(to top, var(--bg) 20%, rgba(255,255,255,0));
     }
-    .hero-content { position: relative; }
+    .hero-content { position: relative; display: flex; flex-direction: column; align-items: center; }
+    .hero-kicker { font-size: .68rem; font-weight: 500; letter-spacing: .38em; text-transform: uppercase; opacity: .9; margin-bottom: 1.25rem; }
     .hero h1 {
-      font-family: var(--font-display); font-weight: 600; font-size: clamp(4.5rem, 22vw, 9.5rem);
-      line-height: .9; letter-spacing: -.02em; margin: 0 0 .9rem;
+      font-family: var(--font-display); font-weight: 400; font-size: clamp(4.2rem, 19vw, 10rem);
+      line-height: .9; letter-spacing: .04em; margin: 0;
     }
-    .hero-tagline { font-size: clamp(1.1rem, 4.2vw, 1.45rem); font-weight: 300; max-width: 28ch; margin-bottom: 2rem; opacity: .95; }
-    .hero-ctas { display: grid; gap: .75rem; max-width: 460px; }
-    .hero-ctas .btn { min-height: 58px; font-size: 1.05rem; }
-    .hero-meta { margin-top: 1.75rem; font-size: .85rem; opacity: .85; display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
-    .hero-meta span { display: inline-flex; align-items: center; gap: .4rem; }
+    .hero-tagline { font-family: var(--font-script); font-size: clamp(1.9rem, 7vw, 2.8rem); margin: .5rem 0 2.25rem; }
+    .hero-ctas { display: grid; gap: .75rem; width: 100%; max-width: 480px; }
+    .hero-ctas .btn { min-height: 58px; }
+    .hero-meta { margin-top: 1.75rem; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; opacity: .85; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.5rem; }
     @media (min-width: 640px) { .hero-ctas { grid-template-columns: 1fr 1fr; } }
 
     /* Estilos recomendados por Lenis (scroll suave) */
@@ -266,163 +283,176 @@
     .lenis.lenis-stopped { overflow: hidden; }
 
     /* =========================================================
-       6. CARTA
+       6. CARTA / VINOS (mismo estilo que la carta impresa)
        ========================================================= */
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto; }
+    .section-head .section-lead { margin: 0 auto; }
+    .section-head .rule { margin: 1.75rem auto; }
+
     .tabs {
-      display: flex; gap: .5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-      margin: 2rem -1.25rem 1.5rem; padding: .25rem 1.25rem; -webkit-overflow-scrolling: touch;
+      display: flex; gap: .5rem; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+      margin: 2.5rem -1.25rem 2rem; padding: .25rem 1.25rem; -webkit-overflow-scrolling: touch;
     }
     .tabs::-webkit-scrollbar { display: none; }
+    @media (min-width: 1100px) { .tabs { flex-wrap: wrap; justify-content: center; overflow: visible; } }
     .tab {
-      flex-shrink: 0; scroll-snap-align: start; min-height: 46px; padding: 0 1.15rem; border-radius: 999px;
-      border: 1.5px solid var(--line); background: var(--surface); font-weight: 500; font-size: .95rem; cursor: pointer;
+      flex-shrink: 0; scroll-snap-align: start; min-height: 44px; padding: 0 1.1rem; border-radius: var(--radius);
+      border: 1px solid var(--line); background: var(--surface); cursor: pointer;
+      font-family: var(--font-sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
       transition: background-color .25s, color .25s, border-color .25s;
     }
-    .tab:hover { border-color: var(--wood-soft); }
+    .tab:hover { border-color: var(--ink); }
     .tab[aria-selected="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
 
-    .menu-panel { animation: fadeUp .45s var(--ease); }
+    .menu-panel { display: grid; gap: 1.25rem; animation: fadeUp .45s var(--ease); }
     .menu-panel[hidden] { display: none; }
-    .menu-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
-    @media (min-width: 960px) { .menu-list { grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; } }
-
-    .dish {
-      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 1.15rem 1.15rem 1rem; display: grid; gap: .5rem; box-shadow: var(--shadow-sm);
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    .panel-label {
+      order: -1; font-family: var(--font-display); font-weight: 600; text-transform: uppercase;
+      font-size: clamp(1.7rem, 6vw, 2.6rem); letter-spacing: .03em; margin: 0;
     }
-    .dish:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .dish-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-    .dish-name { font-size: 1.08rem; font-weight: 600; margin: 0; }
-    .dish-desc { color: var(--gray-500); font-size: .93rem; margin: 0; }
-    .dish-foot { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-top: .35rem; flex-wrap: wrap; }
-    .price { font-weight: 700; font-size: 1.05rem; color: var(--wood); display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap; }
+    .panel-note { font-family: var(--font-display); font-style: italic; color: var(--gray-500); margin: 0 0 .5rem; }
+    @media (min-width: 960px) {
+      .menu-panel { grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+      .panel-label {
+        order: 0; writing-mode: vertical-rl; font-size: 3rem; line-height: 1;
+        position: sticky; top: calc(var(--header-h) + 2rem);
+      }
+    }
+
+    .group + .group { margin-top: 2.75rem; }
+    .group-title {
+      font-family: var(--font-display); font-style: italic; font-weight: 600; text-transform: uppercase;
+      text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+      font-size: 1rem; letter-spacing: .02em; margin: 0 0 .25rem;
+    }
+    .group-note { font-family: var(--font-display); font-style: italic; color: var(--gray-500); font-size: .92rem; margin: 0 0 .5rem; }
+
+    .items { list-style: none; margin: 0; padding: 0; display: grid; }
+    @media (min-width: 760px) { .items { grid-template-columns: 1fr 1fr; column-gap: 3.5rem; } }
+    .item {
+      display: grid; grid-template-columns: 1fr auto; gap: .2rem 1.25rem; align-items: start;
+      padding: 1.05rem 0; border-bottom: 1px solid var(--line);
+    }
+    .item-name { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: 1rem; letter-spacing: .02em; margin: 0; }
+    .item-desc { font-family: var(--font-display); font-style: italic; color: var(--gray-500); font-size: .9rem; line-height: 1.45; margin: .2rem 0 0; }
+    .item-side { display: flex; flex-direction: column; align-items: flex-end; gap: .55rem; }
+    .item-price { font-family: var(--font-sans); font-weight: 400; font-size: .95rem; letter-spacing: .02em; white-space: nowrap; }
+
+    .menu-extra {
+      margin-top: 2.25rem; border: 1px solid var(--ink); padding: 1.5rem 1.4rem; max-width: 560px;
+    }
+    .menu-extra h4 { font-family: var(--font-display); text-transform: uppercase; font-size: 1.1rem; letter-spacing: .03em; margin-bottom: .75rem; }
+    .menu-extra p, .menu-extra li { font-family: var(--font-display); font-style: italic; color: var(--gray-700); }
+    .menu-extra ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .3rem; }
 
     /* =========================================================
-       7. PASTELERÍA (tarjetas con foto)
+       7. PASTELERÍA (tortas por encargue)
        ========================================================= */
-    .pastry-group { margin-top: 2.75rem; }
-    .pastry-group h3 { font-family: var(--font-display); font-size: 1.85rem; display: flex; align-items: center; gap: .75rem; }
-    .pastry-group h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-    .card-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-    @media (min-width: 540px) { .card-grid { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 960px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
+    .split { display: grid; gap: 2.5rem; }
+    @media (min-width: 960px) { .split { grid-template-columns: 1fr 1.15fr; gap: 4.5rem; align-items: start; } }
+    .pastry-photos { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: 2rem; }
+    .pastry-photos figure { margin: 0; overflow: hidden; aspect-ratio: 3 / 4; }
+    .pastry-photos figure:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
+    .pastry-photos img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+    .pastry-photos figure:hover img { transform: scale(1.05); }
+    .pastry-note { font-family: var(--font-display); font-size: .95rem; margin-top: 1.75rem; }
+    .pastry-note strong { font-weight: 600; }
+    .pastry-list .items { grid-template-columns: 1fr; }
+    .pastry-list .group-title { text-decoration: none; font-style: normal; font-weight: 600; font-size: 1.15rem; border-bottom: 1px solid var(--ink); padding-bottom: .5rem; }
 
-    .card {
-      background: var(--surface); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line);
-      display: flex; flex-direction: column; box-shadow: var(--shadow-sm); transition: transform .35s var(--ease), box-shadow .35s var(--ease);
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .card-media { aspect-ratio: 4 / 3; overflow: hidden; }
-    .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
-    .card:hover .card-media img { transform: scale(1.06); }
-    .card-body { padding: 1rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
-    .card-body .dish-foot { margin-top: auto; padding-top: .5rem; }
-
-    /* Placeholder elegante si una foto no carga */
-    .media-fallback {
-      background: linear-gradient(135deg, #E9D9C6 0%, #C99A78 55%, #8B5A3C 100%);
-      position: relative;
-    }
+    /* Placeholder si una foto no carga */
+    .media-fallback { background: linear-gradient(135deg, #EDEAE4 0%, #CFC8BD 100%); position: relative; }
     .media-fallback::after {
-      content: "García"; position: absolute; inset: 0; display: grid; place-items: center;
-      font-family: var(--font-display); font-size: 2rem; color: rgba(255,255,255,.75); letter-spacing: .05em;
+      content: "GARCIA"; position: absolute; inset: 0; display: grid; place-items: center;
+      font-family: var(--font-display); font-size: 1.6rem; letter-spacing: .1em; color: rgba(20,20,20,.35);
     }
     .media-fallback img { opacity: 0; }
 
     /* =========================================================
-       8. FORMULARIOS (reserva + take away)
+       8. RESERVA + TAKE AWAY
        ========================================================= */
-    .split { display: grid; gap: 2rem; }
-    @media (min-width: 960px) { .split { grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: start; } }
+    .panel { background: var(--surface); border: 1px solid var(--line); padding: 1.75rem 1.4rem; }
+    @media (min-width: 640px) { .panel { padding: 2.5rem; } }
 
-    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.5rem 1.25rem; box-shadow: var(--shadow-sm); }
-    @media (min-width: 640px) { .panel { padding: 2rem; } }
+    .info-list { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: 1rem; }
+    .info-list li { display: flex; gap: .9rem; align-items: flex-start; color: var(--gray-700); font-weight: 300; }
+    .info-list svg { width: 21px; height: 21px; color: var(--ink); flex-shrink: 0; margin-top: 3px; }
+
+    .reserve-panel { text-align: center; display: grid; gap: 1.1rem; justify-items: center; }
+    .reserve-panel > svg { width: 48px; height: 48px; }
+    .reserve-panel h3 { font-family: var(--font-display); text-transform: uppercase; font-size: 1.7rem; letter-spacing: .03em; margin: 0; }
+    .reserve-panel p { color: var(--gray-700); margin: 0; max-width: 34ch; font-weight: 300; }
+    .reserve-panel .btn { min-height: 60px; }
+    .reserve-phone { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .04em; }
 
     .form-grid { display: grid; gap: 1rem; }
     @media (min-width: 640px) { .form-grid.cols-2 { grid-template-columns: 1fr 1fr; } }
     .field { display: grid; gap: .4rem; }
-    .field label { font-weight: 600; font-size: .9rem; }
-    .field .hint { font-size: .8rem; color: var(--gray-500); font-weight: 400; }
+    .field label { font-weight: 500; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; }
+    .field .hint { color: var(--gray-500); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: .78rem; }
     .input {
-      width: 100%; min-height: 52px; padding: .75rem 1rem; border-radius: 12px; border: 1.5px solid var(--line);
-      background: var(--bg); font-size: 1rem; transition: border-color .2s, box-shadow .2s, background-color .2s;
-      appearance: none; -webkit-appearance: none;
+      width: 100%; min-height: 50px; padding: .75rem 1rem; border-radius: var(--radius); border: 1px solid var(--line);
+      background: var(--bg); font-size: 1rem; transition: border-color .2s;
     }
-    select.input {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2344403C' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
-    }
-    textarea.input { min-height: 110px; resize: vertical; }
-    .input:focus { outline: none; border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(169,74,40,.14); }
-    .input:user-invalid { border-color: #B42318; }
-    .form-note { font-size: .82rem; color: var(--gray-500); margin: .25rem 0 0; }
+    .input:focus { outline: none; border-color: var(--ink); }
 
-    /* ---------- Bloque de reserva por WhatsApp ---------- */
-    .reserve-panel { text-align: center; display: grid; gap: 1rem; justify-items: center; }
-    .reserve-panel > svg { width: 56px; height: 56px; color: var(--whatsapp); }
-    .reserve-panel h3 { font-family: var(--font-display); font-size: 2rem; margin: 0; }
-    .reserve-panel p { color: var(--gray-700); margin: 0; max-width: 34ch; }
-    .reserve-panel .btn { min-height: 60px; font-size: 1.1rem; }
-    .reserve-phone { font-weight: 600; letter-spacing: .02em; }
-
-    .info-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .9rem; }
-    .info-list li { display: flex; gap: .85rem; align-items: flex-start; color: var(--gray-700); }
-    .info-list svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
-
-    /* ---------- Carrito ---------- */
     .cart-empty { text-align: center; padding: 2rem 1rem; color: var(--gray-500); }
-    .cart-empty svg { width: 48px; height: 48px; margin: 0 auto 1rem; color: var(--line); }
+    .cart-empty svg { width: 44px; height: 44px; margin: 0 auto 1rem; color: var(--line); }
     .cart-list { list-style: none; margin: 0; padding: 0; }
-    .cart-item { display: grid; grid-template-columns: 1fr auto; gap: .35rem 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); animation: fadeUp .35s var(--ease); }
-    .cart-item-name { font-weight: 600; }
-    .cart-item-unit { font-size: .85rem; color: var(--gray-500); }
-    .cart-item-sub { font-weight: 700; color: var(--wood); text-align: right; }
-    .qty { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 999px; overflow: hidden; }
-    .qty button { width: 40px; height: 40px; border: 0; background: transparent; cursor: pointer; font-size: 1.2rem; line-height: 1; }
+    .cart-item { display: grid; grid-template-columns: 1fr auto; gap: .4rem 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); animation: fadeUp .35s var(--ease); }
+    .cart-item-name { font-family: var(--font-display); text-transform: uppercase; font-size: .95rem; letter-spacing: .02em; }
+    .cart-item-unit { font-size: .8rem; color: var(--gray-500); }
+    .cart-item-sub { font-weight: 500; text-align: right; }
+    .qty { display: inline-flex; align-items: center; border: 1px solid var(--line); }
+    .qty button { width: 40px; height: 40px; border: 0; background: transparent; cursor: pointer; font-size: 1.15rem; line-height: 1; }
     .qty button:hover { background: var(--bg-alt); }
-    .qty output { min-width: 28px; text-align: center; font-weight: 600; }
-    .remove-btn { border: 0; background: none; color: var(--gray-500); font-size: .85rem; text-decoration: underline; cursor: pointer; justify-self: end; padding: .5rem 0; min-height: 40px; }
-    .remove-btn:hover { color: #B42318; }
-    .cart-total { display: flex; justify-content: space-between; align-items: baseline; padding: 1.25rem 0; font-size: 1.15rem; }
-    .cart-total strong { font-size: 1.5rem; color: var(--ink); }
+    .qty output { min-width: 28px; text-align: center; font-weight: 500; }
+    .remove-btn { border: 0; background: none; color: var(--gray-500); font-size: .8rem; text-decoration: underline; cursor: pointer; justify-self: end; padding: .5rem 0; min-height: 40px; }
+    .remove-btn:hover { color: var(--ink); }
+    .cart-total { display: flex; justify-content: space-between; align-items: baseline; padding: 1.25rem 0; }
+    .cart-total span { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
+    .cart-total strong { font-family: var(--font-display); font-weight: 400; font-size: 1.7rem; }
     .cart-actions { display: grid; gap: .75rem; }
-    .link-btn { background: none; border: 0; color: var(--gray-500); text-decoration: underline; cursor: pointer; font-size: .9rem; padding: .5rem; justify-self: center; }
+    .link-btn { background: none; border: 0; color: var(--gray-500); text-decoration: underline; cursor: pointer; font-size: .85rem; padding: .5rem; justify-self: center; }
 
-    /* Barra flotante del pedido (solo mobile) */
+    /* Barra flotante del pedido (mobile) */
     .floating-cart {
       position: fixed; left: 1rem; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); z-index: 90;
       display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-      min-height: 58px; padding: 0 1.25rem; border-radius: 999px; text-decoration: none;
-      background: var(--ink); color: #fff; font-weight: 600; box-shadow: 0 14px 30px -10px rgba(0,0,0,.45);
+      min-height: 56px; padding: 0 1.25rem; text-decoration: none;
+      background: var(--ink); color: #fff; font-size: .72rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+      box-shadow: 0 14px 30px -12px rgba(0,0,0,.5);
       transform: translateY(150%); transition: transform .4s var(--ease);
     }
     .floating-cart.visible { transform: none; }
-    .floating-cart .fc-total { background: var(--accent); padding: .35rem .85rem; border-radius: 999px; }
+    .floating-cart .fc-total { font-family: var(--font-display); font-size: 1.05rem; letter-spacing: .02em; text-transform: none; }
     @media (min-width: 960px) { .floating-cart { display: none; } }
 
     /* =========================================================
        9. SOBRE GARCÍA / EL LUGAR
        ========================================================= */
-    .about-media { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow-md); }
+    .about-media { overflow: hidden; aspect-ratio: 4 / 5; }
     .about-media img { width: 100%; height: 100%; object-fit: cover; }
-    .quote { font-family: var(--font-display); font-style: italic; font-size: 1.6rem; line-height: 1.3; color: var(--wood); border-left: 3px solid var(--accent); padding-left: 1.1rem; margin: 1.75rem 0; }
-    .pillars { display: grid; gap: 1rem; margin-top: 2rem; }
+    .about-text p { font-weight: 300; color: var(--gray-700); }
+    .about-text strong { font-weight: 500; color: var(--ink); }
+    .quote { font-family: var(--font-display); font-style: italic; font-size: 1.55rem; line-height: 1.35; border-left: 1px solid var(--ink); padding-left: 1.2rem; margin: 2rem 0; }
+    .quote cite { display: block; font-family: var(--font-sans); font-style: normal; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gray-500); margin-top: .75rem; }
+    .pillars { display: grid; gap: 1.5rem; margin-top: 2rem; }
     @media (min-width: 640px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
-    .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.15rem; }
-    .pillar h3 { font-size: 1rem; margin-bottom: .3rem; }
-    .pillar p { font-size: .9rem; color: var(--gray-500); margin: 0; }
+    .pillar { border-top: 1px solid var(--ink); padding-top: 1rem; }
+    .pillar h3 { font-family: var(--font-display); text-transform: uppercase; font-size: .95rem; letter-spacing: .03em; margin-bottom: .35rem; }
+    .pillar p { font-size: .88rem; color: var(--gray-500); margin: 0; font-weight: 300; }
 
-    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin: 2.25rem 0; }
     @media (min-width: 640px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-    .stat { border-top: 1.5px solid var(--ink); padding-top: .75rem; }
-    .stat strong { display: block; font-family: var(--font-display); font-size: 2.2rem; line-height: 1; font-weight: 600; }
-    .stat span { font-size: .85rem; color: var(--gray-500); }
+    .stat { border-top: 1px solid var(--ink); padding-top: .85rem; }
+    .stat strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.1; text-transform: uppercase; }
+    .stat span { font-size: .8rem; color: var(--gray-500); }
     .materials { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
-    .materials span { border: 1px solid var(--wood-soft); color: var(--wood); padding: .35rem .9rem; border-radius: 999px; font-size: .85rem; font-weight: 500; }
+    .materials span { border: 1px solid var(--ink); padding: .4rem 1rem; font-size: .66rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
 
-    .gallery { display: grid; gap: .75rem; grid-template-columns: repeat(2, 1fr); margin-top: 2rem; }
-    .gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 1; position: relative; }
+    .gallery { display: grid; gap: .6rem; grid-template-columns: repeat(2, 1fr); margin-top: 2.5rem; }
+    .gallery figure { margin: 0; overflow: hidden; aspect-ratio: 1; }
     .gallery figure:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
     .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
     .gallery figure:hover img { transform: scale(1.05); }
@@ -437,33 +467,32 @@
        10. CONTACTO
        ========================================================= */
     .hours { list-style: none; padding: 0; margin: 1rem 0 0; }
-    .hours li { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); }
-    .hours li span:last-child { font-weight: 600; text-align: right; }
-    .hours li.closed span:last-child { color: var(--gray-500); font-weight: 400; }
-    .dj-banner {
-      margin-top: 1.5rem; border-radius: var(--radius-lg); padding: 1.35rem; color: #fff;
-      background: linear-gradient(135deg, var(--wood) 0%, #2B1A12 100%); display: flex; gap: 1rem; align-items: center;
-    }
-    .dj-banner svg { width: 38px; height: 38px; flex-shrink: 0; color: #F0B48F; }
-    .dj-banner strong { display: block; font-size: 1.1rem; }
-    .dj-banner span { font-size: .9rem; opacity: .85; }
-    .map-wrap { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4 / 3; background: var(--bg-alt); box-shadow: var(--shadow-sm); }
-    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; filter: saturate(.85); }
-    .contact-ctas { display: grid; gap: .75rem; margin-top: 1.25rem; }
+    .hours li { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }
+    .hours li span:first-child { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; }
+    .hours li span:last-child { text-align: right; }
+    .hours li.closed span:last-child { color: var(--gray-500); }
+    .dj-banner { margin-top: 1.75rem; padding: 1.5rem; color: #fff; background: var(--ink); display: flex; gap: 1.1rem; align-items: center; }
+    .dj-banner svg { width: 34px; height: 34px; flex-shrink: 0; }
+    .dj-banner strong { display: block; font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: .04em; font-size: 1.15rem; }
+    .dj-banner span { font-size: .88rem; opacity: .8; font-weight: 300; }
+    .map-wrap { overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4 / 3; background: var(--bg-alt); }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(1) contrast(1.05); }
+    .contact-ctas { display: grid; gap: .75rem; margin-top: 1.5rem; }
     @media (min-width: 640px) { .contact-ctas { grid-template-columns: 1fr 1fr; } }
 
     /* =========================================================
        11. FOOTER
        ========================================================= */
-    .site-footer { background: var(--ink); color: #D6D3D1; padding: 3rem 0 6.5rem; font-size: .9rem; }
+    .site-footer { background: var(--ink); color: #BDBDBD; padding: 3.5rem 0 6.5rem; font-size: .85rem; font-weight: 300; }
     @media (min-width: 960px) { .site-footer { padding-bottom: 3rem; } }
-    .footer-grid { display: grid; gap: 1.5rem; }
+    .footer-grid { display: grid; gap: 1.75rem; }
     @media (min-width: 640px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
     .site-footer .logo { color: #fff; font-size: 2.4rem; }
+    .site-footer .script { color: #fff; font-size: 1.6rem; margin: .25rem 0 0; }
     .site-footer a { color: #fff; text-decoration: none; }
     .site-footer a:hover { text-decoration: underline; }
-    .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
-    .footer-bottom { border-top: 1px solid #3F3A36; margin-top: 2rem; padding-top: 1.25rem; font-size: .8rem; color: #A8A29E; }
+    .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+    .footer-bottom { border-top: 1px solid #333; margin-top: 2.25rem; padding-top: 1.25rem; font-size: .75rem; color: #8A8A8A; }
 
     /* =========================================================
        12. TOAST + ANIMACIONES DE ENTRADA
@@ -471,8 +500,8 @@
     .toast {
       position: fixed; left: 50%; top: calc(var(--header-h) + 12px); z-index: 150;
       transform: translate(-50%, -20px); opacity: 0; pointer-events: none;
-      background: var(--ink); color: #fff; padding: .75rem 1.15rem; border-radius: 999px; font-size: .9rem; font-weight: 500;
-      box-shadow: var(--shadow-md); transition: transform .35s var(--ease), opacity .35s var(--ease); max-width: calc(100% - 2rem); text-align: center;
+      background: var(--ink); color: #fff; padding: .8rem 1.25rem; font-size: .78rem; letter-spacing: .06em;
+      transition: transform .35s var(--ease), opacity .35s var(--ease); max-width: calc(100% - 2rem); text-align: center;
     }
     .toast.show { transform: translate(-50%, 0); opacity: 1; }
 
@@ -496,16 +525,16 @@
        ========================================================= -->
   <header class="site-header" id="header">
     <div class="container header-inner">
-      <a href="#inicio" class="logo" aria-label="García, ir al inicio">García</a>
+      <a href="#inicio" class="logo" aria-label="García, ir al inicio">GARCIA</a>
 
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
         <ul>
-          <li><a href="#carta">Carta</a></li>
+          <li><a href="#carta">Menú</a></li>
           <li><a href="#pasteleria">Pastelería</a></li>
+          <li><a href="#vinos">Vinos &amp; bar</a></li>
           <li><a href="#reservar">Reservar</a></li>
           <li><a href="#takeaway">Take away</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#lugar">El lugar</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
         <a href="#reservar" class="btn btn-primary">Reservar mesa</a>
@@ -514,8 +543,8 @@
       <div class="header-actions">
         <a href="#reservar" class="btn btn-primary nav-reserve-desktop">Reservar</a>
         <a href="#takeaway" class="icon-btn" aria-label="Ver mi pedido">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
-          <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" id="cart-count" aria-hidden="true"><span>0</span></span>
         </a>
         <button class="icon-btn burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
           <span class="burger-inner"><span></span><span></span><span></span></span>
@@ -527,7 +556,7 @@
   <main id="contenido">
 
     <!-- =========================================================
-         1. HERO
+         1. HERO (parallax)
          ========================================================= -->
     <section class="hero" id="inicio" aria-label="Inicio">
       <div class="hero-layers" data-parallax-layers>
@@ -543,27 +572,22 @@
 
         <!-- Capa 3: título y botones -->
         <div class="hero-layer hero-layer--title" data-parallax-layer="3">
-      <div class="container hero-content">
-        <h1>García</h1>
-        <p class="hero-tagline">Restaurante, bar y pastelería en Nordelta</p>
-        <div class="hero-ctas">
-          <a href="#reservar" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-            Reservar mesa
-          </a>
-          <a href="#carta" class="btn btn-light">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
-            Pedir take away
-          </a>
-        </div>
-        <div class="hero-meta">
-          <span>📍 Av. de los Lagos 205, Nordelta</span>
-          <span>🎶 DJ jueves y viernes</span>
-        </div>
-      </div>
+          <div class="container hero-content">
+            <p class="hero-kicker">Restaurante, bar y pastelería en Nordelta</p>
+            <h1>GARCIA</h1>
+            <p class="hero-tagline">Cocina y pasta casera</p>
+            <div class="hero-ctas">
+              <a href="#reservar" class="btn btn-light">Reservar mesa</a>
+              <a href="#carta" class="btn btn-ghost">Pedir take away</a>
+            </div>
+            <div class="hero-meta">
+              <span>Av. de los Lagos 205, Nordelta</span>
+              <span>DJ jueves y viernes</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Capa 4: primer plano (ondas color crema que "tapan" el título al bajar) -->
+        <!-- Capa 4: primer plano (ondas blancas que "tapan" el título al bajar) -->
         <div class="hero-layer hero-layer--front" data-parallax-layer="4" aria-hidden="true">
           <svg viewBox="0 0 1440 200" preserveAspectRatio="none" fill="currentColor">
             <path opacity=".45" d="M0 110 C 260 30 520 60 760 100 S 1220 40 1440 80 L1440 200 L0 200 Z"/>
@@ -575,39 +599,66 @@
     </section>
 
     <!-- =========================================================
-         2. CARTA
+         2. MENÚ (cocina)
          ========================================================= -->
     <section id="carta" aria-labelledby="carta-title">
       <div class="container">
-        <div class="reveal">
+        <div class="section-head reveal">
           <span class="eyebrow">Nuestra carta</span>
-          <h2 class="section-title" id="carta-title">Cocina casera, hecha con tiempo</h2>
-          <p class="section-lead">Las pastas frescas son el centro de la mesa. Alrededor, platos para compartir, principales de estación y ensaladas con productos de cercanía.</p>
+          <h2 class="section-title" id="carta-title">Menú</h2>
+          <p class="script">Cocina y pasta casera</p>
+          <p class="section-lead">Pastas amasadas todos los días, platillos para compartir, principales de estación y la pastelería de nuestra vitrina. Todo lo podés pedir también para llevar.</p>
         </div>
-
-        <div class="tabs" role="tablist" aria-label="Categorías de la carta" id="menu-tabs"></div>
+        <div class="tabs" role="tablist" aria-label="Categorías del menú" id="menu-tabs"></div>
         <div id="menu-panels"></div>
       </div>
     </section>
 
     <!-- =========================================================
-         3. PASTELERÍA Y PARA LLEVAR
+         3. PASTELERÍA (tortas enteras por encargue)
          ========================================================= -->
     <section id="pasteleria" class="section-alt" aria-labelledby="pasteleria-title">
-      <div class="container">
+      <div class="container split">
         <div class="reveal">
-          <span class="eyebrow">Pastelería y para llevar</span>
-          <h2 class="section-title" id="pasteleria-title">La vitrina de Luciano</h2>
-          <p class="section-lead">Pastelería fina, panes de masa madre de fermentación lenta, viennoiserie hojaldrada cada mañana y helados artesanales. Para disfrutar acá o llevar a casa.</p>
+          <span class="eyebrow">Pastelería García</span>
+          <h2 class="section-title" id="pasteleria-title">Tortas por encargue</h2>
+          <p class="script">Para llevar a casa</p>
+          <p class="section-lead">Las tortas de nuestra vitrina, enteras, hechas para tu mesa. Elegí la tuya, sumala al pedido o escribinos para coordinar el día de retiro.</p>
+          <p class="pastry-note">Todos nuestros productos se elaboran con chocolate <strong>Belga Callebaut</strong>.<br /><strong>Todas las tortas se realizan por encargue.</strong></p>
+          <a class="btn btn-primary" style="margin-top:1.5rem" href="https://wa.me/5491124712586" data-wa="¡Hola García! Quiero encargar una torta." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+            Encargar por WhatsApp
+          </a>
+          <div class="pastry-photos">
+            <figure><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80" alt="Torta de chocolate" loading="lazy" /></figure>
+            <figure><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80" alt="Cheesecake de frutos rojos" loading="lazy" /></figure>
+            <figure><img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=700&q=80" alt="Macarons de colores" loading="lazy" /></figure>
+          </div>
         </div>
-        <div id="pastry-groups"></div>
+        <div class="pastry-list reveal" id="tortas-list"></div>
       </div>
     </section>
 
     <!-- =========================================================
-         4. RESERVAR
+         4. VINOS & BAR
          ========================================================= -->
-    <section id="reservar" aria-labelledby="reservar-title">
+    <section id="vinos" aria-labelledby="vinos-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Carta de vinos y barra</span>
+          <h2 class="section-title" id="vinos-title">Vinos &amp; bar</h2>
+          <p class="script">Un recorrido por nuestro país con etiquetas especialmente seleccionadas</p>
+          <p class="section-lead">Espumosos, blancos, naranjos, rosados y tintos de todas las regiones de Argentina, una selección de champagne y una barra de coctelería clásica y de autor.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Categorías de vinos y bar" id="vinos-tabs"></div>
+        <div id="vinos-panels"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. RESERVAR
+         ========================================================= -->
+    <section id="reservar" class="section-alt" aria-labelledby="reservar-title">
       <div class="container split">
         <div class="reveal">
           <span class="eyebrow">Reservas</span>
@@ -615,16 +666,16 @@
           <p class="section-lead">Escribinos por WhatsApp con el día, el horario y la cantidad de personas, y te confirmamos la reserva a la brevedad.</p>
           <ul class="info-list">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
               <span>La reserva queda confirmada cuando te respondemos por WhatsApp.</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M17 20h5v-2a3 3 0 0 0-5-2.2M9 20H2v-2a4 4 0 0 1 7-2.6M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
-              <span>¿Grupos grandes o eventos? Contanos en comentarios y lo coordinamos.</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M17 20h5v-2a3 3 0 0 0-5-2.2M9 20H2v-2a4 4 0 0 1 7-2.6M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+              <span>¿Grupos grandes o eventos? Contanos y lo coordinamos.</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
-              <span>Si querés mesa con vista a la laguna, pedila en comentarios.</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+              <span>Si querés mesa con vista a la laguna, pedila en tu mensaje.</span>
             </li>
           </ul>
         </div>
@@ -643,34 +694,34 @@
     </section>
 
     <!-- =========================================================
-         5. TAKE AWAY
+         6. TAKE AWAY
          ========================================================= -->
-    <section id="takeaway" class="section-alt" aria-labelledby="takeaway-title">
+    <section id="takeaway" aria-labelledby="takeaway-title">
       <div class="container split">
         <div class="reveal">
           <span class="eyebrow">Take away</span>
           <h2 class="section-title" id="takeaway-title">Tu pedido para llevar</h2>
-          <p class="section-lead">Sumá platos de la carta o de la vitrina y mandanos el pedido por WhatsApp. Te confirmamos disponibilidad y horario de retiro.</p>
+          <p class="section-lead">Sumá platos del menú, porciones de la vitrina o tortas enteras y mandanos el pedido por WhatsApp. Te confirmamos disponibilidad y horario de retiro.</p>
           <ul class="info-list">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
               <span>Retiro en Av. de los Lagos 205, Nordelta.</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
               <span>Preparamos tu pedido en el momento y te avisamos cuando está listo.</span>
             </li>
           </ul>
-          <a href="#carta" class="btn btn-outline" style="margin-top:1.5rem">Ver la carta</a>
+          <a href="#carta" class="btn btn-outline" style="margin-top:1.75rem">Ver el menú</a>
         </div>
 
         <div class="panel reveal" aria-live="polite">
-          <h3 style="font-size:1.2rem">Resumen del pedido</h3>
+          <h3 class="group-title" style="text-decoration:none;font-style:normal;font-size:1.15rem;border-bottom:1px solid var(--ink);padding-bottom:.5rem">Resumen del pedido</h3>
 
           <div class="cart-empty" id="cart-empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
             <p>Todavía no agregaste productos.</p>
-            <a href="#carta" class="btn btn-primary">Elegir de la carta</a>
+            <a href="#carta" class="btn btn-primary">Elegir del menú</a>
           </div>
 
           <div id="cart-filled" hidden>
@@ -685,7 +736,7 @@
                 <input class="input" id="t-nombre" type="text" autocomplete="name" placeholder="Ej.: Juan" />
               </div>
               <div class="field">
-                <label for="t-retiro">Horario de retiro <span class="hint">(opcional)</span></label>
+                <label for="t-retiro">Retiro <span class="hint">(opcional)</span></label>
                 <input class="input" id="t-retiro" type="text" placeholder="Ej.: hoy 13:30" />
               </div>
             </div>
@@ -702,21 +753,20 @@
     </section>
 
     <!-- =========================================================
-         6. SOBRE GARCÍA
+         7. SOBRE GARCÍA
          ========================================================= -->
-    <section id="nosotros" aria-labelledby="nosotros-title">
+    <section id="nosotros" class="section-alt" aria-labelledby="nosotros-title">
       <div class="container split">
         <div class="about-media reveal">
           <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
                alt="Manos de pastelero trabajando la masa sobre mesada de mármol" loading="lazy" />
         </div>
-        <div class="reveal">
+        <div class="about-text reveal">
           <span class="eyebrow">Sobre García</span>
           <h2 class="section-title" id="nosotros-title">Oficio, harina y paciencia</h2>
           <p>García es la casa de <strong>Luciano García</strong>, pastelero formado en algunas de las cocinas más exigentes de Buenos Aires, como <strong>Palacio Duhau</strong> y <strong>La Bourgogne</strong>, y conocido por muchos por su paso por <strong>Cocineros Argentinos</strong>.</p>
-          <p>La idea es simple: cocina casera de alta calidad, sin atajos. Pastas frescas amasadas todos los días, pan de masa madre de fermentación lenta y una pastelería fina que se hace a la vista, del obrador a la mesa.</p>
-          <blockquote class="quote">“Lo casero, cuando se hace bien, no necesita nada más.”<br /><span style="font-size:.9rem;font-style:normal;font-family:var(--font-sans);color:var(--gray-500)">— Luciano García</span></blockquote>
-
+          <p>La idea es simple: cocina casera de alta calidad, sin atajos. Pastas caseras amasadas todos los días, pan de masa madre de fermentación lenta y una pastelería fina con chocolate belga Callebaut que se hace a la vista, del obrador a la mesa.</p>
+          <blockquote class="quote">“Lo casero, cuando se hace bien, no necesita nada más.”<cite>Luciano García</cite></blockquote>
           <div class="pillars">
             <div class="pillar">
               <h3>Productores locales</h3>
@@ -736,19 +786,19 @@
     </section>
 
     <!-- =========================================================
-         7. EL LUGAR
+         8. EL LUGAR
          ========================================================= -->
-    <section id="lugar" class="section-alt" aria-labelledby="lugar-title">
+    <section id="lugar" aria-labelledby="lugar-title">
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">El lugar</span>
-          <h2 class="section-title" id="lugar-title">Un salón frente a la laguna</h2>
+          <h2 class="section-title" id="lugar-title">Frente a la laguna</h2>
           <p class="section-lead">Más de 700 m² con vista al jardín y a la laguna, una cocina central a la vista y una barra que es el corazón de la casa. Madera, cuero y mármol en un ambiente luminoso y cálido, pensado para quedarse: desde el primer café de la mañana hasta el último trago de la noche.</p>
           <div class="stats">
             <div class="stat"><strong>+700 m²</strong><span>de salón y jardín</span></div>
             <div class="stat"><strong>Laguna</strong><span>vista abierta al agua</span></div>
             <div class="stat"><strong>Cocina</strong><span>central y a la vista</span></div>
-            <div class="stat"><strong>Barra</strong><span>tragos y vinos argentinos</span></div>
+            <div class="stat"><strong>Barra</strong><span>vinos y coctelería</span></div>
           </div>
           <div class="materials" aria-label="Materiales del espacio">
             <span>Madera</span><span>Cuero</span><span>Mármol</span><span>Luz natural</span>
@@ -756,32 +806,20 @@
         </div>
 
         <div class="gallery reveal">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Salón amplio con mesas de madera y grandes ventanales" loading="lazy" />
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80" alt="Cóctel servido en la barra" loading="lazy" />
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Panes de masa madre recién horneados" loading="lazy" />
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80" alt="Ambiente cálido del restaurante por la noche" loading="lazy" />
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" alt="Plato de pasta fresca" loading="lazy" />
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Copas de vino tinto" loading="lazy" />
-          </figure>
+          <figure><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Salón amplio con mesas de madera y grandes ventanales" loading="lazy" /></figure>
+          <figure><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80" alt="Cóctel servido en la barra" loading="lazy" /></figure>
+          <figure><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Panes de masa madre recién horneados" loading="lazy" /></figure>
+          <figure><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80" alt="Ambiente cálido del restaurante por la noche" loading="lazy" /></figure>
+          <figure><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" alt="Plato de pasta casera" loading="lazy" /></figure>
+          <figure><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Copas de vino tinto" loading="lazy" /></figure>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         8. HORARIOS, UBICACIÓN Y CONTACTO
+         9. HORARIOS, UBICACIÓN Y CONTACTO
          ========================================================= -->
-    <section id="contacto" aria-labelledby="contacto-title">
+    <section id="contacto" class="section-alt" aria-labelledby="contacto-title">
       <div class="container split">
         <div class="reveal">
           <span class="eyebrow">Visitanos</span>
@@ -793,31 +831,31 @@
           </ul>
 
           <div class="dj-banner">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
             <div>
               <strong>Noches con DJ</strong>
-              <span>Jueves y viernes desde las 20 hs. Tragos de autor, vinos argentinos y buena música.</span>
+              <span>Jueves y viernes desde las 20 hs. Coctelería de autor, vinos argentinos y buena música.</span>
             </div>
           </div>
 
           <ul class="info-list">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
               <address style="font-style:normal">Av. de los Lagos 205, Officia, Rincón de Milberg (Nordelta), Tigre, Buenos Aires</address>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
               <span>Reservas y pedidos por WhatsApp: <a href="https://wa.me/5491124712586" target="_blank" rel="noopener">+54 9 11 2471-2586</a></span>
             </li>
           </ul>
 
           <div class="contact-ctas">
-            <a class="btn btn-whatsapp" id="contact-wa" href="https://wa.me/5491124712586" target="_blank" rel="noopener">
+            <a class="btn btn-whatsapp" href="https://wa.me/5491124712586" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
-              Escribinos por WhatsApp
+              WhatsApp
             </a>
             <a class="btn btn-outline" href="https://www.instagram.com/garcianordelta/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
               @garcianordelta
             </a>
           </div>
@@ -846,13 +884,14 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="#inicio" class="logo">García</a>
-          <p style="margin-top:.5rem">Restaurante, bar y pastelería en Nordelta.</p>
+          <a href="#inicio" class="logo">GARCIA</a>
+          <p class="script">Cocina y pasta casera</p>
         </div>
         <div>
           <ul>
-            <li><a href="#carta">Carta</a></li>
+            <li><a href="#carta">Menú</a></li>
             <li><a href="#pasteleria">Pastelería</a></li>
+            <li><a href="#vinos">Vinos &amp; bar</a></li>
             <li><a href="#reservar">Reservar</a></li>
             <li><a href="#takeaway">Take away</a></li>
           </ul>
@@ -877,7 +916,7 @@
     <span class="fc-total" id="fc-total">$0</span>
   </a>
 
-  <!-- Aviso flotante (toast) + región accesible -->
+  <!-- Aviso flotante (toast) -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- Librerías del parallax: GSAP + ScrollTrigger y Lenis (scroll suave) -->
@@ -895,87 +934,476 @@
   };
 
   /* =========================================================
-     CARTA Y VITRINA
-     "seccion": 'carta' o 'pasteleria'. "img" solo se usa en pastelería.
+     DATOS DE LA CARTA
+     Cada categoría tiene "grupos" (subtítulos como CHARDONNAY, MALBEC, etc.).
+     Cada ítem es: [nombre, descripción, precio]. Precio sin puntos (ej.: 28900).
      ========================================================= */
-  const IMG = (id, w = 800) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
 
-  const CATEGORIAS_CARTA = [
-    { id: 'picar',       nombre: 'Para picar' },
-    { id: 'pastas',      nombre: 'Pastas' },
-    { id: 'principales', nombre: 'Principales' },
-    { id: 'ensaladas',   nombre: 'Ensaladas y quiches' },
-    { id: 'bebidas',     nombre: 'Bebidas' }
+  /* ---------- MENÚ DE COCINA (se puede agregar al pedido) ---------- */
+  const MENU = [
+    { id: 'platillos', nombre: 'Platillos', grupos: [{ items: [
+      ['Croquetas de humita', 'con salsa de tomate fresco & ajo', 11500],
+      ['Tartar de trucha', 'con mostaza & cilantro, sobre papa dorada', 16900],
+      ['Rösti', 'vegetales de estación & huevo de campo mollet', 13900],
+      ['Chipa so’o', 'de ternera braseada, salsa romesco', 12900],
+      ['Paté & brioche', 'paté de ave & pan brioche de manteca', 12500],
+      ['Tortilla de papa', 'con alioli', 13500],
+      ['Croquetas de hongos', '& crema de ajos asados', 11900],
+      ['Buñuelos de espinaca', 'con salsa de tomate fresco & ajo', 10900],
+      ['Burrata', 'tomates & albahaca con pesto', 17500],
+      ['Polenta dorada', 'con pomodoro', 10500],
+      ['Burrata, jamón serrano & rúcula', 'con pistachos & miel especiada', 21900],
+      ['Hongos', 'portobellos a la provenzal', 14500],
+      ['Berenjena asada & tomates al pesto', 'con blue couly', 13900],
+      ['Papas fritas', 'con cilantro', 8900],
+      ['Camembert dorado', 'con peras & miel especiada', 16500],
+      ['Langostinos', 'al ajillo', 23900],
+      ['Empanada de carne', 'cortada a cuchillo', 5900]
+    ]}]},
+
+    { id: 'selecciones', nombre: 'Nuestras selecciones', grupos: [
+      { titulo: 'Tablas de quesos', nota: '100 gramos c/u. Salen con dulce casero, frutos secos salados, librito y pan brioche. Consultar disponibilidad.', items: [
+        ['Selección de quesos x1', '', 12900],
+        ['Selección de quesos x3', '', 29900],
+        ['Selección de quesos x5', '', 44900]
+      ]},
+      { titulo: 'Embutidos', items: [
+        ['Selección de embutidos x1', 'salame tandilero, jamón serrano, mortadela con pistachos, jamón cocido de cerdo', 18900]
+      ]}
+    ], extra: { titulo: 'Nuestros quesos', lineas: [
+      'Frescos: camembert, brie',
+      'Semiduros: sardo, chevrotin',
+      'De larga maduración: morbier, 4 esquinas, gruyère, lincoln, parmesano',
+      'Azules: patagonzola, tres leches'
+    ]}},
+
+    { id: 'pastas', nombre: 'Pastas caseras', grupos: [{ items: [
+      ['Pappardelle de espinaca', 'al limón con mascarpone', 21500],
+      ['Tortelloni', 'rellenos de bondiola, con su salsa & dulce de arándanos', 24500],
+      ['Malfattis de espinaca', 'con crema de quesos', 20500],
+      ['Ñoquis de papa & sémola', 'con salsa de tomate & albahaca', 18500],
+      ['Canelones de cordero', 'con parmesano gratinado', 26500],
+      ['Lingüini', '& oliva extra virgen', 16500],
+      ['Garganelli', 'con tomates asados al aceto, albahaca & oliva extra virgen', 19500],
+      ['Tagliatelle', 'a la carbonara & con panceta ahumada', 22500],
+      ['Sorrentinos de ternera braseada', 'con su salsa', 24900],
+      ['Ravioles de zapallo asado', 'panceta, vegetales, tomates & ricota', 21900],
+      ['Garganelli', 'con frutos de mar', 28900],
+      ['Agnolottis de espinaca, ricota & parmesano', 'con tomates asados al aceto, albahaca & oliva extra virgen', 22900],
+      ['Orecchiette a la bolognesa', '', 21500],
+      ['Lasagna bolognesa', 'con salsa blanca & parmesano', 24500],
+      ['Tortelli de hongos', 'con ragoût de hongos & avellanas tostadas', 25900],
+      ['Lingüini', 'con langostinos al ajillo', 29500],
+      ['Lingüini al pesto', 'con pistacho', 21900],
+      ['Tagliatelle', 'con albóndigas & tomate', 23500]
+    ]}]},
+
+    { id: 'principales', nombre: 'Principales', grupos: [{ items: [
+      ['Sopa de zapallo', 'de cabutia & anco asado', 12900],
+      ['Pechuga de pollo dorada', 'con ensalada de rúcula, tomates, parmesano, palta y huevo de campo mollet', 23900],
+      ['Pechuga de pollo', 'con puré de zanahorias', 21500],
+      ['Trucha salmonada', 'con vegetales al rescoldo & puré de zanahorias', 31900],
+      ['Milanesa con papas fritas', '', 25900],
+      ['Milanesa con lingüini', 'al parmesano', 26900],
+      ['Risotto de hongos', '', 24500],
+      ['Abadejo', 'vegetales horneados & puré de zanahoria', 29900],
+      ['Ternera braseada', 'con puré', 28500],
+      ['Risotto de cabutia', '& queso patagonzola', 23500]
+    ]}]},
+
+    { id: 'ensaladas', nombre: 'Ensaladas & quiches', grupos: [
+      { titulo: 'Ensaladas', items: [
+        ['Pollo grillado', 'mix de verdes, rúcula, tomates, escamas de parmesano & aderezo caesar', 19500],
+        ['Pera, manzana verde & queso azul', 'rúcula & mix de verdes, manzanas doradas, queso azul, nueces y miel especiada', 18900],
+        ['Ensalada de estación', 'mix de verdes, zapallo asado, berenjena, tomate, zucchini, huevo de campo mollet', 17900],
+        ['Ensalada de trucha salmonada', 'mix de verdes, trucha a la plancha, tomates, palta, semillas de zapallo & su aderezo', 24500]
+      ]},
+      { titulo: 'Quiche del día', nota: 'Salen con rúcula, tomate, palta & parmesano. Hasta las 20 hs.', items: [
+        ['Quiche de puerro', 'queso parmesano', 16500],
+        ['Quiche de pollo', 'con masa de semillas', 17500]
+      ]}
+    ]},
+
+    { id: 'sandwiches', nombre: 'Sandwiches & tostadas', nota: 'Hasta las 20 hs.', grupos: [{ items: [
+      ['Croque monsieur “García”', 'pan brioche de molde tostado, salsa bechamel, mortadela, queso gruyère', 16900],
+      ['Croque madame “García”', 'pan brioche de molde tostado, salsa bechamel, mortadela, queso gruyère & huevo frito', 18500],
+      ['Tostado de jamón y queso', 'pan blanco de molde', 12500],
+      ['Tostada de palta', 'pan de campo, palta, tomate confitado, huevo revuelto', 15900],
+      ['Adicional', 'papas fritas o mix de verdes', 5500]
+    ]}]},
+
+    { id: 'postres', nombre: 'Postres', grupos: [{ items: [
+      ['Tiramisú', 'de queso mascarpone & café de especialidad', 11500],
+      ['Panqueque tibio acaramelado', 'de dulce de leche Jersey', 9900],
+      ['Queso lincoln y dulce', 'con frutos secos & miel (membrillo o batata)', 10500],
+      ['Flan de dulce de leche', 'con dulce de leche Jersey, crema & bostock de almendras', 9900],
+      ['Marquise merengada', 'de chocolate belga con crema chantilly & dulce de leche Jersey (sin harina)', 12500],
+      ['Degustación de chocolate belga', 'marquise (sin harina), cremoso al 70% & helado', 14500],
+      ['Natilla de vainilla', 'con azúcar rubio bruleada', 9500],
+      ['Plato de fruta fresca', 'con merengue de coco & helado de frambuesa', 10900],
+      ['Tarta tibia de peras', 'con helado de crema', 11500],
+      ['Cuadrado hojaldrado de manzana', 'con helado de crema', 11500],
+      ['Frutillas con crema', '', 9500],
+      ['Tarta de ricota', 'con dulce de leche y pistachos', 10500],
+      ['Merengue', 'con crema chantilly & fruta de estación', 9900]
+    ]}], extra: { titulo: 'Sugerencias para acompañar tu postre', lineas: [
+      'Limoncello', 'Lindaflor Chardonnay Tardío', 'Cruzat Ratafia Licor', 'Jerez González Byass Cream',
+      'Terrazas de los Andes Petit Manseng', 'Taylor’s Tawny 10 Años', 'Rutini Vin Doux'
+    ]}},
+
+    { id: 'helados', nombre: 'Helados & cafetería', grupos: [
+      { titulo: 'Helados de la casa', nota: 'Bocha de 100 g. Consultar disponibilidad.', items: [
+        ['Bocha de helado', 'dulce de leche, pistacho, frambuesa, chocolate belga intenso, crema, café, membrillo', 4500]
+      ]},
+      { titulo: 'Cafetería de especialidad', nota: 'Grano de origen Brasil.', items: [
+        ['Ristretto', '', 3500],
+        ['Espresso', '', 3500],
+        ['Jarrito', '', 3900],
+        ['Doble', '', 4900],
+        ['Flat white', '', 5500],
+        ['Latte / café con leche', '', 5200],
+        ['Capuccino', '', 5500],
+        ['Affogato', '', 7500]
+      ]}
+    ]},
+
+    { id: 'vitrina', nombre: 'Pastelería de vitrina', nota: 'También podés encargar tu torta entera para llevar.', grupos: [
+      { titulo: 'De la vitrina', items: [
+        ['Cheesecake de dulce de leche', '', 9500],
+        ['Cheesecake de chocolate belga', 'con pasta de avellanas', 9900],
+        ['Cheesecake clásica', 'frutos rojos', 9500],
+        ['Tarta de pistacho & chocolate blanco', 'con jalea de frambuesa & biscuit financier', 10500],
+        ['Tarta toffee', 'con miel y frutos secos', 9500],
+        ['Cremoso de chocolate blanco', 'con coco y dulce de leche', 9500],
+        ['Lingote doble', 'de chocolate amargo', 9900],
+        ['Lingote de chocolate & frambuesa', 'con jalea, ganache & mousse de chocolate', 9900],
+        ['Ópera de pistacho', '', 10500],
+        ['Tarta de peras especiada', 'con crema de almendras', 8900],
+        ['Espuma de limón & maracuyá', 'con bizcocho de almendras (sin harina)', 9500],
+        ['Tarta de chocolate & maní', 'sablé de cacao, toffee & mousse de chocolate', 9900],
+        ['Cuadrado de coco & dulce de leche', '', 6500]
+      ]},
+      { titulo: 'Por porción', items: [
+        ['Rogel', 'con merengue italiano', 8900],
+        ['Torta de chocolate, naranja & frambuesa', 'con bizcocho de almendras (sin harina)', 9500],
+        ['Pasta frola', 'de membrillo', 6900],
+        ['Crumble de manzana', 'con avena, nuez & canela', 7900],
+        ['Torta húmeda de limón', 'con curd, crema suiza de chocolate blanco & limón', 8900],
+        ['Torta de chocolate & avellanas', 'con dulce de leche, crema suiza de avellanas & ganache', 9500]
+      ]},
+      { titulo: 'Macarons', nota: 'Por unidad.', items: [
+        ['Macaron', 'frambuesa, coco & dulce de leche, pistacho, chocolate belga, chocolate con leche & maní', 2900]
+      ]},
+      { titulo: 'Trufas de chocolate belga', nota: 'Por unidad.', items: [
+        ['Trufa Cacao', 'chocolate al 70%', 2200],
+        ['Trufa Neige', 'chocolate con leche bañada en chocolate blanco & coco', 2200]
+      ]}
+    ]},
+
+    { id: 'bebidas', nombre: 'Bebidas', grupos: [
+      { titulo: 'Sin alcohol', items: [
+        ['Gaseosas', '', 4200],
+        ['Agua mineral con o sin gas', '', 3800],
+        ['Agua x 750 cc', 'San Pellegrino / Panna', 7900],
+        ['Licuado de estación', '', 6900],
+        ['Jugo verde detox con fibra', 'manzana verde, apio, espinaca, jengibre, pepino, jugo de naranja', 7500],
+        ['Limonada menta & jengibre', '', 6500],
+        ['Pomelada / té helado / kombucha', '', 6500],
+        ['Jugo de naranja exprimido', '', 6900]
+      ]},
+      { titulo: 'Cervezas', items: [
+        ['Stella Artois Blanche', 'white lager con notas frescas y cítricas, amargor ligero y gran aroma por su lúpulo Mandarina Bavaria. Porrón 330 cc', 7900],
+        ['Stella Artois sin alcohol', 'todo el sabor y la frescura de una Stella, sin alcohol. Porrón 330 cc', 6900],
+        ['Stella Artois', 'premium belga, destacado aroma a lúpulo y fino amargor. Porrón 330 cc', 7500],
+        ['Cerveza tirada 500 cc', '', 8500],
+        ['Corona', 'porrón 330 cc', 7900],
+        ['Patagonia', 'porrón 330 cc', 7900]
+      ]}
+    ]}
   ];
 
-  const CATEGORIAS_PASTELERIA = [
-    { id: 'vitrina',  nombre: 'Vitrina de pastelería' },
-    { id: 'panes',    nombre: 'Panes de masa madre' },
-    { id: 'vienno',   nombre: 'Viennoiserie' },
-    { id: 'helados',  nombre: 'Helados' }
+  /* ---------- TORTAS ENTERAS POR ENCARGUE (se pueden agregar al pedido) ---------- */
+  const TORTAS = [
+    ['Rogel cubierto de merengue italiano', '20 cm · 12 porciones', 42600],
+    ['Marquise de dulce de leche y crema con fruta de estación', '18 cm', 61300],
+    ['Marquise con dulce de leche y merengue italiano', '18 cm', 61300],
+    ['Lingote doble chocolate', 'biscuit de chocolate amargo y ganache de chocolate · 24 x 12 cm · 16 porciones', 80200],
+    ['Lingote de chocolate y frambuesa', 'biscuit de chocolate amargo, jalea de frambuesa y mousse de chocolate semiamargo · 24 x 12 cm · 16 porciones', 67600],
+    ['Lingote de ópera de pistacho y chocolate amargo', 'biscuit de almendras y pistacho · 24 x 12 cm · 16 porciones', 72700],
+    ['Cheesecake de frutos rojos', '18 cm · 10 porciones', 53400],
+    ['Cheesecake de chocolate y avellanas', '18 cm · 10 porciones', 53400],
+    ['Torta húmeda de chocolate, naranja y frambuesa', 'bizcocho de almendras sin harina · 20 cm · 12 porciones', 53400],
+    ['Tarta de ricota, dulce de leche y pistacho', '22 cm · 12 porciones', 49200],
+    ['Torta lemon y merengue italiano', '20 cm · 12 porciones', 46700],
+    ['Crumble de manzana', '24 cm · 16 porciones', 40600],
+    ['Tarta de peras, crema de almendra y especias', 'flor de 22 cm · 12 porciones', 40600],
+    ['Pasta frola', '24 cm · 16 porciones', 31900]
   ];
 
-  const PRODUCTOS = [
-    // ---------- Para picar ----------
-    { id: 'p1', cat: 'picar', nombre: 'Panera de masa madre', desc: 'Selección de panes de la casa con manteca batida y aceite de oliva.', precio: 6500 },
-    { id: 'p2', cat: 'picar', nombre: 'Burrata con tomates asados', desc: 'Burrata cremosa, tomates confitados, albahaca y pan tostado.', precio: 14500 },
-    { id: 'p3', cat: 'picar', nombre: 'Provoleta de campo', desc: 'Con orégano fresco, chimichurri suave y miel picante.', precio: 11000 },
-    { id: 'p4', cat: 'picar', nombre: 'Croquetas de jamón crudo', desc: 'Bechamel cremosa, rebozado crocante y alioli de limón.', precio: 9800 },
-    { id: 'p5', cat: 'picar', nombre: 'Tabla García', desc: 'Fiambres y quesos de productores locales, encurtidos y focaccia.', precio: 22000 },
+  /* ---------- CARTA DE VINOS Y BAR (solo consulta, no se agrega al pedido) ---------- */
+  const VINOS = [
+    { id: 'espumosos', nombre: 'Espumosos', grupos: [{ items: [
+      ['Chandon Cuvée Réserve Blanc de Noirs', 'Chandon | Luján de Cuyo, Mendoza', 40200],
+      ['Cruzat Cuvée Extra Brut', 'Cruzat | Tupungato, Valle de Uco, Mendoza. 75% Pinot Noir - 25% Chardonnay', 46900],
+      ['Alma Negra Brut Nature Rosé', 'Wine is Art | Agrelo y Tupungato, Mendoza. Malbec', 48900],
+      ['Baron B Brut Nature Cuvée Millésimé', 'Baron B | Mendoza. Chardonnay - Pinot Noir', 52200],
+      ['Alma 4 Extra Brut', 'Alma 4 | Tupungato, Tunuyán, Valle de Uco, Mendoza. Viognier', 53900],
+      ['Zuccardi Blanc de Blancs', 'Familia Zuccardi | Tupungato, Valle de Uco, Mendoza. Chardonnay', 79700],
+      ['Otronia Brut Nature Rosé', 'Otronia | Sarmiento, Chubut, Patagonia. Pinot Noir', 84000],
+      ['Baron B Heritage Edición 002', 'Baron B | Luján de Cuyo; Gualtallary, Tupungato, Valle de Uco, Mendoza. Chardonnay - Pinot Noir', 140900]
+    ]}]},
 
-    // ---------- Pastas ----------
-    { id: 'pa1', cat: 'pastas', nombre: 'Tagliatelle al ragú', desc: 'Pasta al huevo amasada en el día con ragú de cocción lenta.', precio: 17500 },
-    { id: 'pa2', cat: 'pastas', nombre: 'Sorrentinos de calabaza', desc: 'Calabaza asada y queso de cabra, manteca de salvia y nueces.', precio: 18000 },
-    { id: 'pa3', cat: 'pastas', nombre: 'Ñoquis de papa', desc: 'Con salsa pomodoro y albahaca, o a los cuatro quesos.', precio: 15500 },
-    { id: 'pa4', cat: 'pastas', nombre: 'Lasagna de la casa', desc: 'Capas de pasta fresca, bolognesa, bechamel y gratinado de parmesano.', precio: 19000 },
-    { id: 'pa5', cat: 'pastas', nombre: 'Cappelletti de osobuco', desc: 'Rellenos de osobuco braseado, en su jugo con gremolata.', precio: 21000 },
+    { id: 'champagne', nombre: 'Champagne', grupos: [{ items: [
+      ['Taittinger Brut Réserve', 'Taittinger | Montagne de Reims, Marne, Champagne, Francia. 40% Chardonnay - 25% Pinot Meunier - 35% Pinot Noir', 376000],
+      ['Moët & Chandon Brut Impérial', 'Moët & Chandon | Épernay, Marne, Champagne, Francia. Pinot Noir - Pinot Meunier - Chardonnay', 390900],
+      ['Veuve Clicquot Brut Yellow Label', 'Veuve Clicquot | Montagne de Reims, Marne, Champagne, Francia. 30% Chardonnay - 20% Pinot Noir - 50% Pinot Meunier', 420000],
+      ['Dom Pérignon Blanc Vintage 2012', 'Dom Pérignon | Hautvillers, Marne, Champagne, Francia. 58% Chardonnay - 42% Pinot Noir', 975000],
+      ['Cristal Brut 2009', 'Louis Roederer | Champagne, Francia. 60% Pinot Noir - 40% Chardonnay', 2830000]
+    ]}]},
 
-    // ---------- Principales ----------
-    { id: 'pr1', cat: 'principales', nombre: 'Ojo de bife', desc: 'A la parrilla con papas rústicas y ensalada verde.', precio: 28500 },
-    { id: 'pr2', cat: 'principales', nombre: 'Pesca del día', desc: 'Con vegetales asados, puré de coliflor y beurre blanc.', precio: 24000 },
-    { id: 'pr3', cat: 'principales', nombre: 'Pollo de campo al limón', desc: 'Asado al horno con hierbas, ajo confitado y papas.', precio: 19500 },
-    { id: 'pr4', cat: 'principales', nombre: 'Milanesa de ternera', desc: 'Empanada en pan de masa madre, con puré o papas fritas.', precio: 20500 },
+    { id: 'blancos', nombre: 'Blancos', grupos: [
+      { titulo: 'Chardonnay', items: [
+        ['Marchiori & Barreaud', '100% Chardonnay. Valle de Uco. 2025', 28000],
+        ['Miras', 'Miras | General Roca, Río Negro', 28900],
+        ['Perlita', 'Diamandes | Valle de Uco', 33300],
+        ['Hermandad 2021', 'Falasco | Vista Flores, Tunuyán, Mendoza', 44900],
+        ['Terrazas de los Andes Grand Chardonnay 2021', 'Terrazas de los Andes | San Pablo, Tunuyán, Mendoza', 46700],
+        ['Bramare', 'Valle de Uco', 46900],
+        ['Dominio', 'Rutini Wines | Valle de Uco', 48400],
+        ['La Coste de los Andes', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 53200],
+        ['Partida Limitada Chañar Punco', 'Bodega El Esteco | Catamarca', 84000],
+        ['La Linterna', '100% Chardonnay. Bemberg. Gualtallary, Valle de Uco. Finca El Tomillo. 2022', 115000],
+        ['Laborum de Parcela Finca Alto Los Cuises', 'El Porvenir | Cafayate, Salta', 121500],
+        ['Fósil', 'Familia Zuccardi | San Pablo, Tunuyán, Mendoza', 141900],
+        ['Adrianna Parcelas White Bones', 'Catena Zapata | Gualtallary, Tupungato, Mendoza', 415000]
+      ]},
+      { titulo: 'Sauvignon Blanc', items: [
+        ['Andillian 2025', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 28000],
+        ['Pulenta Estate', 'Pulenta Estate | Alto Agrelo, Luján de Cuyo', 33600],
+        ['Polígonos del Valle de Uco', 'Zuccardi | Tupungato, Valle de Uco', 40000],
+        ['Fuego Blanco', 'Fuego Blanco | Valle de Pedernal, San Juan', 41500]
+      ]},
+      { titulo: 'Semillón', items: [
+        ['Polígonos', 'Familia Zuccardi | El Peral, Tupungato, Mendoza', 57900],
+        ['Apuntes', 'Luigi Bosca', 61500]
+      ]},
+      { titulo: 'Torrontés', items: [
+        ['Old Vines', 'El Esteco | Valles Calchaquíes, Cafayate, Salta', 31800]
+      ]},
+      { titulo: 'Riesling', items: [
+        ['Altaluvia Riesling', 'Doña Paula | Gualtallary, Tupungato, Mendoza', 75000],
+        ['Insólito Riesling', 'Puerta del Abra | Balcarce, Buenos Aires', 76900]
+      ]},
+      { titulo: 'Gewürztraminer', items: [
+        ['Costa & Pampa', 'Trapiche | Chapadmalal', 30000],
+        ['Fuego Blanco Gewürztraminer', 'Fuego Blanco | Valle de Pedernal, San Juan', 40200],
+        ['Rutini Gewürztraminer', 'Rutini Wines | Valle de Uco, Mendoza', 63000]
+      ]},
+      { titulo: 'Blend de blancas', items: [
+        ['Nuna', 'Chakana. 2024. Vino orgánico', 28500],
+        ['El Esteco', 'Valles Calchaquíes, Cafayate', 29000],
+        ['Ferus Blend de Blancas', 'Falasco | Tunuyán y Tupungato, Mendoza. 45% Viognier - 25% Semillón - 20% Sauvignon Blanc - 10% Torrontés', 30900],
+        ['Edad Moderna', 'Alta Uco | Tupungato, Gualtallary, Mendoza. Chardonnay - Sauvignon Blanc', 35000],
+        ['El Esteco Blend de Blancas', 'El Esteco | Valle de Cafayate, Salta. Marsanne - Roussanne - Viognier - Chardonnay - Torrontés', 42500],
+        ['Lágrima Canela', 'Bressia | Tupungato, Mendoza. Chardonnay - Semillón', 44200],
+        ['Blanco Histórico', 'Catena Zapata | Tupungato, Valle de Uco, Mendoza. Semillón - Chenin Blanc', 52150],
+        ['Otronia Rugientes 45', 'Otronia | Sarmiento, Chubut. Chardonnay - Gewürztraminer - Pinot Gris', 64500],
+        ['Edad Media', 'Alta Uco | Tupungato, Valle de Uco, Mendoza. Chardonnay - Sauvignon Blanc', 80000]
+      ]}
+    ]},
 
-    // ---------- Ensaladas y quiches ----------
-    { id: 'e1', cat: 'ensaladas', nombre: 'Ensalada García', desc: 'Hojas verdes de la huerta, palta, quinoa, frutos secos y cítricos.', precio: 13500 },
-    { id: 'e2', cat: 'ensaladas', nombre: 'César con pollo', desc: 'Lechuga romana, pollo grillado, croutons de masa madre y parmesano.', precio: 15000 },
-    { id: 'e3', cat: 'ensaladas', nombre: 'Quiche de puerros y queso', desc: 'Masa brisa de manteca, puerros caramelizados. Con ensalada.', precio: 12500 },
-    { id: 'e4', cat: 'ensaladas', nombre: 'Quiche de espinaca y ricota', desc: 'Con nuez moscada y queso gratinado. Con ensalada.', precio: 12500 },
+    { id: 'naranjos', nombre: 'Naranjos', grupos: [{ items: [
+      ['Alma Gemela Amber', 'Onofri Wines | Lavalle, Oasis Este, Mendoza. Roussanne', 38500],
+      ['Campo del Cielo', 'Sella Crinita | Los Andes, Mendoza. Viognier - Chardonnay', 47000],
+      ['Chakana Singulares Maceración Prolongada', 'Chakana Wines | El Peral, Valle de Uco, Mendoza. Torrontés', 54800],
+      ['Alma Negra Orange Blend de Blancas', 'Wine is Art | Gualtallary, Tupungato, Mendoza', 57900]
+    ]}]},
 
-    // ---------- Bebidas ----------
-    { id: 'b1', cat: 'bebidas', nombre: 'Limonada de la casa', desc: 'Con menta y jengibre.', precio: 4800 },
-    { id: 'b2', cat: 'bebidas', nombre: 'Café de especialidad', desc: 'Espresso, cortado o flat white.', precio: 3500 },
-    { id: 'b3', cat: 'bebidas', nombre: 'Negroni García', desc: 'Gin, vermut rosso y bitter. Clásico de barra.', precio: 9500 },
-    { id: 'b4', cat: 'bebidas', nombre: 'Copa de Malbec', desc: 'Selección de bodegas argentinas.', precio: 7500 },
-    { id: 'b5', cat: 'bebidas', nombre: 'Agua mineral', desc: 'Con o sin gas.', precio: 3000 },
+    { id: 'rosados', nombre: 'Rosados', grupos: [{ items: [
+      ['Coeur Sair Grenache Rosé', 'Uqueco Wines | Agrelo, Luján de Cuyo, Mendoza. Garnacha', 28900],
+      ['Cuvelier Rosé', 'Cuvelier Los Andes | Vista Flores, Tunuyán, Mendoza. Malbec', 28900],
+      ['Casa de Herrero Rosé', 'Cuchillo de Palo | Vista Flores, Tunuyán, Mendoza. Pinot Noir', 31500],
+      ['Cuartel 2', '100% Syrah. Marchiori & Barreaud. Las Pintadas, Tunuyán. 2025', 35000],
+      ['Lisa Rosé', 'Château La Coste | Provence, Francia. 2023 Méditerranée', 39500],
+      ['S’il Vous Plaît', 'Pulenta Estate | Finca La Zulema, Agrelo, Luján de Cuyo, Mendoza. Merlot', 39900],
+      ['Susana Balbo Signature Rosé', 'Susana Balbo | Chacayes y Gualtallary, Valle de Uco, Mendoza. Malbec - Pinot Noir', 40000],
+      ['Antonieta', 'Falasco | Mendoza. Pinot Noir', 42900],
+      ['Rose is a Rosé', 'Luigi Bosca | Finca Don Leoncio, Maipú, Mendoza. Pinot Gris - Syrah', 51900]
+    ]}]},
 
-    // ---------- Vitrina de pastelería ----------
-    { id: 'v1', cat: 'vitrina', nombre: 'Tarta de limón', desc: 'Masa sablée, crema de limón y merengue italiano.', precio: 6800, img: IMG('photo-1519915028121-7d3463d20b13') },
-    { id: 'v2', cat: 'vitrina', nombre: 'Torta de chocolate', desc: 'Bizcocho húmedo, ganache de chocolate amargo.', precio: 7200, img: IMG('photo-1578985545062-69928b1d9587') },
-    { id: 'v3', cat: 'vitrina', nombre: 'Lemon pie entero', desc: 'Para 8 porciones. Pedido con anticipación.', precio: 38000, img: IMG('photo-1464305795204-6f5bbfc7fb81') },
-    { id: 'v4', cat: 'vitrina', nombre: 'Cheesecake de frutos rojos', desc: 'Base crocante y coulis de estación.', precio: 7000, img: IMG('photo-1533134242443-d4fd215305ad') },
+    { id: 'tintos', nombre: 'Tintos', grupos: [
+      { titulo: 'Malbec', items: [
+        ['Castore', 'Castore | Valle de Sañogasta, La Rioja', 28900],
+        ['Trapiche Medalla', 'Luján de Cuyo, Maipú', 29600],
+        ['La Madrid Reserva', 'Alto Agrelo, Luján de Cuyo, Mendoza', 29900],
+        ['Capítulo II', 'Ruca Malén', 34900],
+        ['Cuartel 2', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza', 35000],
+        ['Cadus', 'Tupungato', 40700],
+        ['Achával Ferrer', 'Luján de Cuyo, Mendoza', 46000],
+        ['Terrazas de los Andes Origen Los Chacayes', 'Terrazas de los Andes | Valle de Uco, Mendoza', 56000],
+        ['A Lisa', 'Noemía | Mainque, Río Negro', 56900],
+        ['Mártir', 'Lorenzo Wines | Luján de Cuyo, Mendoza', 57800],
+        ['Polígonos del Valle de Uco', 'Zuccardi | San Pablo, Valle de Uco', 58500],
+        ['Concreto', 'Zuccardi | Altamira, Valle de Uco', 61650],
+        ['Luca', 'Luca | Altamira, Gualtallary, Valle de Uco', 68600],
+        ['Bressano', 'Falasco | Valle de Uco: Altamira, Los Árboles, Gualtallary, Mendoza', 75000],
+        ['Lorenzo de Agrelo Lo Bendito', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 88500],
+        ['Trapiche Terroir Series Ambrosía', 'Trapiche | Gualtallary, Tupungato, Mendoza', 90100],
+        ['Riccitelli Old Vines', 'Riccitelli Wines | Río Negro, Patagonia', 95000],
+        ['La Linterna', '100% Malbec. Bemberg. Gualtallary, Valle de Uco. 2020', 115000],
+        ['J. Alberto', 'Noemía | Mainque, Río Negro', 133900],
+        ['Aluvional Altamira', 'Familia Zuccardi | Tupungato, Mendoza', 156900],
+        ['Fede', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 161000],
+        ['La Cautiva', 'Michelini i Mufatto | La Cautiva, Tupungato, Mendoza', 230900]
+      ]},
+      { titulo: 'Pinot Noir', items: [
+        ['Primogénito', 'San Patricio del Chañar. 2024', 28900],
+        ['Marantiqua', 'San Patricio del Chañar, Neuquén, Patagonia Argentina', 29300],
+        ['Costa & Pampa', 'Trapiche | Chapadmalal', 30000],
+        ['Manos Negras Red Soil', 'Manos Negras | El Cepillo, Valle de Uco, Mendoza', 30400],
+        ['Chakana Estate Selection', 'Pinot Noir 2023. Vino orgánico', 31000],
+        ['Pulenta Estate', 'Pulenta Estate | Finca Los Álamos, Tupungato, Valle de Uco', 53100],
+        ['Rugientes 45', 'Otronia | Sarmiento, Chubut, Argentina', 64500],
+        ['Proyecto Hermanas', 'Lagarde | Gualtallary, Valle de Uco', 69800],
+        ['Barda', 'Chacra | Mainque, Río Negro', 90000],
+        ['La Linterna', '100% Pinot Noir. Bemberg. Los Árboles, Valle de Uco. 2020', 115000]
+      ]},
+      { titulo: 'Cabernet Franc', items: [
+        ['Andillán 2023', 'La Coste de los Andes | Los Chacayes, Valle de Uco, Mendoza', 28000],
+        ['La Madrid Reserva', 'Alto Agrelo, Luján de Cuyo, Mendoza', 29900],
+        ['Mártir', 'Lorenzo de Agrelo | Alto Agrelo, Luján de Cuyo, Mendoza', 49900],
+        ['Zaha', 'Manos Negras | Altamira, Valle de Uco', 52500],
+        ['Hermandad Winemaker Series', 'Falasco | Tunuyán, Mendoza', 68900],
+        ['Rutini Single Vineyard Gualtallary', 'Rutini Wines | Gualtallary, Tupungato, Mendoza', 84000],
+        ['Gran Enemigo Gualtallary', 'Aleanna | Gualtallary, Tupungato, Mendoza', 117500],
+        ['Gran Pulenta', 'Pulenta Estate | Agrelo, Luján de Cuyo, Mendoza', 126000]
+      ]},
+      { titulo: 'Cabernet Sauvignon', items: [
+        ['La Mascota', 'Finca La Mascota, Cruz de Piedra, Maipú, Mendoza', 28000],
+        ['Cuartel 2', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza', 35000],
+        ['Bramare', 'Vistalba, Luján de Cuyo, Mendoza', 54900],
+        ['La Linterna', 'Bemberg. Gualtallary, Valle de Uco. 2020', 115000],
+        ['Cuartel 5', 'Marchiori & Barreaud | Perdriel, Luján de Cuyo, Mendoza', 300000]
+      ]},
+      { titulo: 'Merlot', items: [
+        ['Pulenta Estate', 'Pulenta Estate | Agrelo, Luján de Cuyo, Mendoza', 52900],
+        ['Rugientes 45', 'Otronia | Sarmiento, Chubut, Argentina', 78000]
+      ]},
+      { titulo: 'Syrah', items: [
+        ['Luca', 'Luca | La Consulta, San Carlos, Mendoza', 69200]
+      ]},
+      { titulo: 'Garnacha', items: [
+        ['El Esteco', 'Partida Limitada 2024', 67000]
+      ]},
+      { titulo: 'Bonarda', items: [
+        ['Castore', 'Castore | Valle de Famatina, La Rioja', 28900]
+      ]},
+      { titulo: 'Criolla', items: [
+        ['Proyecto Las Compuertas', 'Durigutti | Las Compuertas, Luján de Cuyo, Mendoza', 47000]
+      ]},
+      { titulo: 'Blend tinto', items: [
+        ['Château Subsónico', 'Falasco | Valle de Uco, Mendoza. Malbec - Merlot', 27900],
+        ['Clos de los Siete', 'Michel Rolland | Valle de Uco. 2021', 37900],
+        ['Hermandad Blend', 'Falasco | Mendoza. 60% Malbec - 20% Cabernet Sauvignon - 20% Petit Verdot', 44900],
+        ['Profundo', 'Bressia | Valle de Uco. Malbec - Cabernet Sauvignon - Merlot - Syrah', 74650],
+        ['Beso de Dante', 'Luca | La Pirámide, Agrelo (Luján de Cuyo); Vista Flores, Altamira (Valle de Uco). 55% Malbec - 45% Cabernet Sauvignon', 78900],
+        ['Hornero', 'Marchiori & Barreaud. 2023. Malbec 62% - Cabernet Sauvignon 33% - Petit Verdot 5%', 92000],
+        ['Cadus Assemblage Blend', 'Cadus Wines | Vistalba, Luján de Cuyo, Mendoza. Malbec - Cabernet Sauvignon - Merlot - Petit Verdot', 93500],
+        ['Mariflor', 'Rolland Collection | Valle de Uco. Cabernet Franc - Malbec', 98900],
+        ['Encuentro Barrel Blend', 'Rutini Wines | Paraje Altamira y Gualtallary, Valle de Uco, Mendoza. 30% Malbec - 30% Cabernet Sauvignon - 20% Merlot - 10% Petit Verdot - 10% Cabernet Franc', 138000],
+        ['Pionero', 'Blend de tintas. Bemberg. Gualtallary, Valle de Uco. Finca El Tomillo. 2020', 180000],
+        ['Paraíso', 'Luigi Bosca | Finca Paraíso, Valle de Uco, Mendoza. 71% Malbec - 29% Cabernet Sauvignon', 188900]
+      ]}
+    ]},
 
-    // ---------- Panes de masa madre ----------
-    { id: 'm1', cat: 'panes', nombre: 'Hogaza de campo', desc: 'Harina orgánica, fermentación de 24 hs. 900 g aprox.', precio: 8500, img: IMG('photo-1549931319-a545dcf3bc73') },
-    { id: 'm2', cat: 'panes', nombre: 'Pan integral con semillas', desc: 'Lino, girasol y sésamo. 800 g aprox.', precio: 8900, img: IMG('photo-1509440159596-0249088772ff') },
-    { id: 'm3', cat: 'panes', nombre: 'Focaccia de romero', desc: 'Aceite de oliva, romero y sal en escamas.', precio: 7500, img: IMG('photo-1573140247632-f8fd74997d5c') },
+    { id: 'dulces', nombre: 'Dulces / licorosos', grupos: [{ items: [
+      ['Luigi Bosca Granos Nobles 2023', 'Gewürztraminer. Luigi Bosca | Finca “El Paraíso”, Maipú, Luján de Cuyo', 47900],
+      ['Lindaflor Chardonnay Tardío', 'Monteviejo | Valle de Uco, Mendoza', 72700],
+      ['Taylor’s Tawny 10 Años', 'Taylor’s | Oporto, Portugal. Touriga Nacional, Touriga Franca, Tinta Barroca, Tinta Roriz, Tinto Cão, Tinta Amarela', 112500]
+    ]}]},
 
-    // ---------- Viennoiserie ----------
-    { id: 'vi1', cat: 'vienno', nombre: 'Croissant de manteca', desc: 'Laminado artesanal, hojaldrado cada mañana.', precio: 3200, img: IMG('photo-1555507036-ab1f4038808a') },
-    { id: 'vi2', cat: 'vienno', nombre: 'Pain au chocolat', desc: 'Con barras de chocolate semiamargo.', precio: 3600, img: IMG('photo-1530610476181-d83430b64dcd') },
-    { id: 'vi3', cat: 'vienno', nombre: 'Medialunas x 6', desc: 'De manteca, con almíbar.', precio: 9000, img: IMG('photo-1608198093002-ad4e005484ec') },
+    { id: 'cocteles', nombre: 'Cócteles', grupos: [
+      { titulo: 'Cócteles', items: [
+        ['Aperol Spritz', 'Aperol / espumante / soda / rodaja de naranja', 15200],
+        ['Americano', 'vermú / Campari / soda', 10800],
+        ['Gin tonic', 'gin / agua tónica / garnish (romero, pomelo, limón o pepino)', 15200],
+        ['Cynar julep', 'Cynar / menta / almíbar / jugo de pomelo', 10200],
+        ['Negroni', 'rosso / gin / Campari', 13900],
+        ['Moscow mule (mug)', 'vodka / ginger ale / angostura / menta', 12900],
+        ['Tom Collins', 'gin / simple syrup / jugo de limón / soda', 12900],
+        ['Penicillin', 'whisky / syrup de miel & jengibre / jugo de limón / jengibre fresco', 22300],
+        ['Cuba libre', 'ron / cola / jugo de lima', 12900],
+        ['Margarita', 'tequila / Cointreau / jugo de lima', 22500],
+        ['White russian', 'vodka / crema / licor de café', 16800]
+      ]},
+      { titulo: 'Clásicos', items: [
+        ['Old fashioned', 'bourbon / azúcar / angostura / naranja y cereza maraschino', 17000],
+        ['Boulevardier', 'Campari / bourbon / vermouth rosso', 13500],
+        ['Season caipiroska', 'vodka / limas / fruta de estación', 12800],
+        ['Fernet cola', 'fernet / Coca-Cola', 11900],
+        ['Campari orange', 'Campari / jugo de naranja', 11900],
+        ['Lemon drop', 'vodka / triple sec / jugo de limón', 18500],
+        ['Bloody Mary', 'vodka / jugo de limón / salsa Tabasco / salsa inglesa / jugo de tomate / sal & pimienta', 23200],
+        ['Dry martini', 'gin / vermouth extra dry', 14900],
+        ['Manhattan', 'whisky / vermouth rosso / bitter angostura', 18900],
+        ['Mojito', 'ron blanco / lima / soda / menta', 12900],
+        ['God father', 'whisky / amaretto / piel de naranja', 25200],
+        ['Carajillo', 'Licor 43 / café de especialidad', 16800]
+      ]},
+      { titulo: 'Cócteles de autor', items: [
+        ['Gin fizz & cucumber', 'gin / jugo de limón / menta / pepino / lima limón / splash de gaseosa de limón / bitter angostura', 15800],
+        ['Citrus Hennessy', 'Hennessy / pomelo / bitter italiano / romero fresco', 22900],
+        ['Sangría Chamarrita', 'por Cantinero Entrerriano. Tannat entrerriano / almíbar de frutos rojos / aperitivo El Cantinero / soda de pomelo', 12900],
+        ['Espuma Negroni', 'gin Apóstoles / Campari / Cynar / jugo de pomelo', 13900],
+        ['Passion sour', 'pisco quebranta / angostura / Golden Age Apricot / cordial de maracuyá / clara', 15500],
+        ['Pineral rouge', 'Pineral / almíbar de frutos rojos / jugo de lima / jugo de pomelo', 11200],
+        ['Flor de aperitivo', 'Gancia Hibiscus / fernet / maracuyá / jugo de naranja / almíbar', 11600],
+        ['Whisky sour', 'bourbon / jugo de limón / almíbar / clara de huevo', 23400]
+      ]},
+      { titulo: 'Mócteles', nota: 'Sin alcohol.', items: [
+        ['Lemon fizz', 'jugo de limón / menta / jengibre / soda / almíbar', 7200],
+        ['Red sour', 'almíbar de frutos rojos / maracuyá / jugo de limón / clara / almíbar', 6600]
+      ]},
+      { titulo: 'Cognac', items: [
+        ['Cognac Hennessy', 'medida de 2 oz', 24600]
+      ]}
+    ]},
 
-    // ---------- Helados ----------
-    { id: 'h1', cat: 'helados', nombre: 'Helado artesanal ¼ kg', desc: 'Sabores de estación. Consultá disponibilidad.', precio: 7500, img: IMG('photo-1501443762994-82bd5dace89a') },
-    { id: 'h2', cat: 'helados', nombre: 'Helado artesanal 1 kg', desc: 'Hasta 4 sabores.', precio: 24000, img: IMG('photo-1497034825429-c343d7c6a68f') }
+    { id: 'whisky', nombre: 'Whisky & licores', grupos: [
+      { titulo: 'Whisky', nota: 'Medida de 2 oz.', items: [
+        ['Red Label', 'mezcla joven, picante, seco', 13500],
+        ['Monkey Shoulder', 'blend de maltas, suave, moderno', 14900],
+        ['Black Label', 'suave, equilibrado, ahumado, clásico', 20500],
+        ['Chivas 12 Años', 'mezcla suave, dulce, equilibrada', 23800],
+        ['Double Black', 'más intenso, turboso, profundo', 24500],
+        ['Talisker 10 Años', 'isla, salino, turboso, especiado', 32000],
+        ['Glenkinchie', 'lowland, floral, ligero, seco', 34500],
+        ['Glenfiddich', 'speyside, frutado, suave, clásico', 41000],
+        ['Chivas 18 Años', 'maduro, cremoso, vainilla, sofisticado', 52100],
+        ['Macallan', 'elegante, afrutado, roble, suave', 58000],
+        ['Blue Label', 'premium, complejo, sedoso, exclusivo', 82900]
+      ]},
+      { titulo: 'Licores', items: [
+        ['Amarula', 'africano, cremoso, frutal, exótico', 11200],
+        ['Baileys', 'irlandés, cremoso, café, dulce', 11500],
+        ['Isola Bella', 'italiano, almendra, suave, aromático', 20600],
+        ['Disaronno', 'italiano, almendra, especiado, dulce', 11200],
+        ['Frangelico', 'avellana, suave, italiano, herbal', 11200],
+        ['St-Germain', 'flor de saúco, elegante, floral', 25700],
+        ['Limoncello', 'limón, dulce, fresco, italiano', 15900],
+        ['Grappa', 'uva, seco, fuerte, destilado', 27400],
+        ['Hesperidina', 'argentino, cítrico, amargo, herbal', 11200],
+        ['Drambuie', 'escocés, miel, whisky, especias', 17900],
+        ['Tambo', 'licor argentino de dulce de leche', 11200]
+      ]}
+    ]}
   ];
 
   /* =========================================================
      UTILIDADES
      ========================================================= */
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
-  const money = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 });
-  const fmt = n => money.format(n);
+  const fmt = n => '$' + n.toLocaleString('es-AR');
 
   /** Arma un link de WhatsApp (wa.me) con el texto ya codificado */
   const waLink = texto => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`;
@@ -983,7 +1411,7 @@
   /** Abre WhatsApp en una pestaña nueva (en mobile abre la app) */
   function abrirWhatsApp(texto) {
     const win = window.open(waLink(texto), '_blank', 'noopener');
-    if (!win) window.location.href = waLink(texto); // por si el navegador bloquea pop-ups
+    if (!win) window.location.href = waLink(texto);
   }
 
   /** Aviso flotante breve */
@@ -1000,96 +1428,108 @@
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   /* =========================================================
-     RENDER DE LA CARTA (pestañas accesibles)
+     RENDER DE CARTAS (menú y vinos usan el mismo diseño)
      ========================================================= */
-  function priceHTML(p) {
-    return `<span class="price">${fmt(p.precio)}</span>`;
-  }
-  function addBtnHTML(p) {
-    return `<button type="button" class="btn-add" data-add="${p.id}" aria-label="Agregar ${esc(p.nombre)} al pedido">
-              <span aria-hidden="true">+</span> Agregar al pedido
-            </button>`;
+  const PRODUCTOS = new Map(); // id -> { nombre, precio } (solo lo que se puede pedir)
+
+  /** HTML de un ítem. Si "id" viene, lleva botón "Agregar al pedido". */
+  function itemHTML([nombre, desc, precio], id) {
+    const add = id
+      ? `<button type="button" class="btn-add" data-add="${id}" aria-label="Agregar ${esc(nombre)} al pedido"><span aria-hidden="true">+</span> Agregar</button>`
+      : '';
+    return `
+      <li class="item">
+        <div>
+          <h4 class="item-name">${esc(nombre)}</h4>
+          ${desc ? `<p class="item-desc">${esc(desc)}</p>` : ''}
+        </div>
+        <div class="item-side">
+          <span class="item-price">${fmt(precio)}</span>
+          ${add}
+        </div>
+      </li>`;
   }
 
-  function renderCarta() {
-    const tabs = $('#menu-tabs');
-    const panels = $('#menu-panels');
+  /** Grupos de ítems (con subtítulo opcional). prefix != null => se pueden pedir. */
+  function gruposHTML(grupos, prefix, sufijoNombre = '') {
+    return grupos.map((g, gi) => `
+      <div class="group">
+        ${g.titulo ? `<h3 class="group-title">${esc(g.titulo)}</h3>` : ''}
+        ${g.nota ? `<p class="group-note">${esc(g.nota)}</p>` : ''}
+        <ul class="items">
+          ${g.items.map((it, ii) => {
+            let id = null;
+            if (prefix) {
+              id = `${prefix}-${gi}-${ii}`;
+              PRODUCTOS.set(id, { nombre: it[0] + sufijoNombre, precio: it[2] });
+            }
+            return itemHTML(it, id);
+          }).join('')}
+        </ul>
+      </div>`).join('');
+  }
 
-    CATEGORIAS_CARTA.forEach((cat, i) => {
+  /** Arma pestañas accesibles + paneles para una carta */
+  function renderCarta(data, tabsEl, panelsEl, pedible) {
+    data.forEach((cat, i) => {
       const selected = i === 0;
-      tabs.insertAdjacentHTML('beforeend',
-        `<button class="tab" role="tab" id="tab-${cat.id}" aria-controls="panel-${cat.id}"
-                 aria-selected="${selected}" tabindex="${selected ? 0 : -1}">${cat.nombre}</button>`);
+      const tabId = `tab-${cat.id}`, panelId = `panel-${cat.id}`;
+      tabsEl.insertAdjacentHTML('beforeend',
+        `<button class="tab" role="tab" id="${tabId}" aria-controls="${panelId}" aria-selected="${selected}" tabindex="${selected ? 0 : -1}">${esc(cat.nombre)}</button>`);
 
-      const items = PRODUCTOS.filter(p => p.cat === cat.id).map(p => `
-        <li class="dish">
-          <div class="dish-head"><h3 class="dish-name">${esc(p.nombre)}</h3></div>
-          <p class="dish-desc">${esc(p.desc)}</p>
-          <div class="dish-foot">${priceHTML(p)}${addBtnHTML(p)}</div>
-        </li>`).join('');
+      const extra = cat.extra
+        ? `<div class="menu-extra"><h4>${esc(cat.extra.titulo)}</h4><ul>${cat.extra.lineas.map(l => `<li>${esc(l)}</li>`).join('')}</ul></div>`
+        : '';
 
-      panels.insertAdjacentHTML('beforeend',
-        `<div class="menu-panel" role="tabpanel" id="panel-${cat.id}" aria-labelledby="tab-${cat.id}" ${selected ? '' : 'hidden'}>
-           <ul class="menu-list">${items}</ul>
-         </div>`);
+      panelsEl.insertAdjacentHTML('beforeend', `
+        <div class="menu-panel" role="tabpanel" id="${panelId}" aria-labelledby="${tabId}" ${selected ? '' : 'hidden'}>
+          <div>
+            ${cat.nota ? `<p class="panel-note">${esc(cat.nota)}</p>` : ''}
+            ${gruposHTML(cat.grupos, pedible ? cat.id : null)}
+            ${extra}
+          </div>
+          <h3 class="panel-label" aria-hidden="true">${esc(cat.nombre)}</h3>
+        </div>`);
     });
 
-    // Cambio de pestaña con click y con flechas del teclado
-    const allTabs = [...tabs.querySelectorAll('[role="tab"]')];
+    const tabs = [...tabsEl.querySelectorAll('[role="tab"]')];
     function activar(tab) {
-      allTabs.forEach(t => {
+      tabs.forEach(t => {
         const on = t === tab;
         t.setAttribute('aria-selected', on);
         t.tabIndex = on ? 0 : -1;
-        $('#' + t.getAttribute('aria-controls')).hidden = !on;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
-      tab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      tabsEl.scrollTo({ left: tab.offsetLeft - tabsEl.clientWidth / 2 + tab.clientWidth / 2, behavior: 'smooth' });
     }
-    tabs.addEventListener('click', e => { const t = e.target.closest('[role="tab"]'); if (t) activar(t); });
-    tabs.addEventListener('keydown', e => {
-      const i = allTabs.indexOf(document.activeElement);
+    tabsEl.addEventListener('click', e => { const t = e.target.closest('[role="tab"]'); if (t) activar(t); });
+    tabsEl.addEventListener('keydown', e => {
+      const i = tabs.indexOf(document.activeElement);
       if (i < 0) return;
       let n = null;
-      if (e.key === 'ArrowRight') n = allTabs[(i + 1) % allTabs.length];
-      if (e.key === 'ArrowLeft')  n = allTabs[(i - 1 + allTabs.length) % allTabs.length];
-      if (e.key === 'Home') n = allTabs[0];
-      if (e.key === 'End')  n = allTabs[allTabs.length - 1];
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft')  n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === 'Home') n = tabs[0];
+      if (e.key === 'End')  n = tabs[tabs.length - 1];
       if (n) { e.preventDefault(); n.focus(); activar(n); }
     });
   }
 
-  /* =========================================================
-     RENDER DE PASTELERÍA (tarjetas con foto)
-     ========================================================= */
-  function renderPasteleria() {
-    const wrap = $('#pastry-groups');
-    CATEGORIAS_PASTELERIA.forEach(cat => {
-      const cards = PRODUCTOS.filter(p => p.cat === cat.id).map(p => `
-        <article class="card">
-          <div class="card-media"><img src="${p.img}" alt="${esc(p.nombre)}" loading="lazy" /></div>
-          <div class="card-body">
-            <h4 class="dish-name">${esc(p.nombre)}</h4>
-            <p class="dish-desc">${esc(p.desc)}</p>
-            <div class="dish-foot">${priceHTML(p)}${addBtnHTML(p)}</div>
-          </div>
-        </article>`).join('');
-      wrap.insertAdjacentHTML('beforeend',
-        `<div class="pastry-group reveal"><h3>${cat.nombre}</h3><div class="card-grid">${cards}</div></div>`);
-    });
+  function renderTortas() {
+    $('#tortas-list').innerHTML = gruposHTML(
+      [{ titulo: 'Tortas enteras', items: TORTAS }], 'torta', ' (torta entera)');
   }
 
   /* =========================================================
      CARRITO DE TAKE AWAY (en memoria, no se guarda nada)
      ========================================================= */
   const cart = new Map(); // id -> cantidad
-  const byId = id => PRODUCTOS.find(p => p.id === id);
 
   const Cart = {
     add(id) {
       cart.set(id, (cart.get(id) || 0) + 1);
       this.render();
-      const p = byId(id);
-      toast(`✓ ${p.nombre} agregado al pedido`);
+      toast(`${PRODUCTOS.get(id).nombre} agregado al pedido`);
       const badge = $('#cart-count');
       badge.classList.remove('bump'); void badge.offsetWidth; badge.classList.add('bump');
     },
@@ -1098,37 +1538,33 @@
       this.render();
     },
     remove(id) {
-      const p = byId(id);
       cart.delete(id);
       this.render();
-      toast(`${p.nombre} quitado del pedido`);
+      toast(`${PRODUCTOS.get(id).nombre} quitado del pedido`);
     },
     clear() { cart.clear(); this.render(); toast('Pedido vaciado'); },
     count() { let n = 0; cart.forEach(q => n += q); return n; },
-    total() { let t = 0; cart.forEach((q, id) => t += byId(id).precio * q); return t; },
+    total() { let t = 0; cart.forEach((q, id) => t += PRODUCTOS.get(id).precio * q); return t; },
 
     render() {
       const count = this.count();
       const total = this.total();
       const empty = count === 0;
 
-      // Contadores
       const badge = $('#cart-count');
-      badge.textContent = count;
+      badge.firstElementChild.textContent = count;
       badge.classList.toggle('visible', !empty);
       $('#fc-count').textContent = count;
       $('#fc-total').textContent = fmt(total);
       $('#floating-cart').classList.toggle('visible', !empty);
       $('#floating-cart').tabIndex = empty ? -1 : 0;
 
-      // Estado vacío / lleno
       $('#cart-empty').hidden = !empty;
       $('#cart-filled').hidden = empty;
       $('#send-order').disabled = empty;
 
-      // Lista
       $('#cart-list').innerHTML = [...cart.entries()].map(([id, q]) => {
-        const p = byId(id);
+        const p = PRODUCTOS.get(id);
         return `
           <li class="cart-item">
             <div>
@@ -1138,7 +1574,7 @@
             <div class="cart-item-sub">${fmt(p.precio * q)}</div>
             <div class="qty" role="group" aria-label="Cantidad de ${esc(p.nombre)}">
               <button type="button" data-dec="${id}" aria-label="Restar uno">−</button>
-              <output aria-live="polite">${q}</output>
+              <output>${q}</output>
               <button type="button" data-inc="${id}" aria-label="Sumar uno">+</button>
             </div>
             <button type="button" class="remove-btn" data-remove="${id}">Quitar</button>
@@ -1146,12 +1582,11 @@
       }).join('');
       $('#cart-total').textContent = fmt(total);
 
-      // Marca visual en los botones "Agregar" de productos que ya están en el pedido
       document.querySelectorAll('[data-add]').forEach(b => b.classList.toggle('added', cart.has(b.dataset.add)));
     }
   };
 
-  // Delegación de eventos para todos los botones del carrito
+  // Delegación de eventos para los botones del carrito
   document.addEventListener('click', e => {
     const add = e.target.closest('[data-add]');
     if (add) return Cart.add(add.dataset.add);
@@ -1170,7 +1605,7 @@
     const nombre = $('#t-nombre').value.trim();
     const retiro = $('#t-retiro').value.trim();
     const lineas = [...cart.entries()].map(([id, q]) => {
-      const p = byId(id);
+      const p = PRODUCTOS.get(id);
       return `• ${q} x ${p.nombre} — ${fmt(p.precio * q)}`;
     });
     const msg = [
@@ -1217,7 +1652,6 @@
     nav.addEventListener('click', e => { if (e.target.closest('a')) toggle(false); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
 
-    // Resalta en el menú la sección visible
     const links = [...nav.querySelectorAll('ul a')];
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => {
@@ -1228,14 +1662,14 @@
   }
 
   /* =========================================================
-     ANIMACIONES DE ENTRADA + FALLBACK DE IMÁGENES
+     ANIMACIONES DE ENTRADA
      ========================================================= */
   function initReveal() {
     const els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); return; }
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
     els.forEach(el => io.observe(el));
   }
 
@@ -1283,9 +1717,14 @@
       lenis.scrollTo(target, { offset: -($('#header').offsetHeight + 12) });
       history.pushState(null, '', hash);
     });
+
+    // Al cambiar de pestaña cambia la altura de la página: recalcular
+    document.addEventListener('click', e => {
+      if (e.target.closest('[role="tab"]')) requestAnimationFrame(() => { lenis.resize(); ScrollTrigger.refresh(); });
+    });
   }
 
-  // Si alguna foto no carga, se muestra un placeholder cálido con el nombre "García"
+  // Si alguna foto no carga, se muestra un placeholder neutro con "GARCIA"
   document.addEventListener('error', e => {
     if (e.target.tagName === 'IMG' && e.target.parentElement) e.target.parentElement.classList.add('media-fallback');
   }, true);
@@ -1293,8 +1732,9 @@
   /* =========================================================
      INICIO
      ========================================================= */
-  renderCarta();
-  renderPasteleria();
+  renderCarta(MENU, $('#menu-tabs'), $('#menu-panels'), true);
+  renderCarta(VINOS, $('#vinos-tabs'), $('#vinos-panels'), false);
+  renderTortas();
   Cart.render();
   initWhatsAppLinks();
   initNav();
@@ -1315,28 +1755,33 @@
      - Buscá también "5491124712586" en el HTML (links de contacto y footer)
        y "+54 9 11 2471-2586" (texto visible) para actualizarlos.
 
-  2) CAMBIAR PLATOS Y PRECIOS
-     - Todo está en el array  PRODUCTOS  dentro del <script>.
-       Cada producto tiene: id (único), cat (categoría), nombre, desc, precio (número, sin puntos), img (solo pastelería).
-     - Para agregar un plato, copiá una línea y cambiale el id y los datos.
-     - Las categorías están en CATEGORIAS_CARTA y CATEGORIAS_PASTELERIA.
+  2) CAMBIAR PLATOS, VINOS Y PRECIOS
+     - MENU   = carta de cocina (se puede agregar al pedido).
+     - TORTAS = tortas enteras por encargue (se pueden agregar al pedido).
+     - VINOS  = carta de vinos, coctelería, whisky y licores (solo consulta).
+     - Cada ítem es  ['Nombre', 'descripción', precio]  con el precio sin puntos (ej.: 28900).
+     - Cada categoría tiene "grupos": un grupo puede tener titulo (ej.: 'Malbec') y nota.
+     - Para agregar un plato, copiá una línea dentro del grupo y cambiá los datos.
 
   3) CAMBIAR LAS FOTOS
      - Hero: <img> dentro de data-parallax-layer="1" (ideal: 2000 px de ancho, horizontal).
        La velocidad de cada capa se ajusta en initParallax() (valores yPercent).
+     - Pastelería: las 3 <img> dentro de <div class="pastry-photos">.
      - Sobre García: <div class="about-media"> (vertical 4:5).
      - Galería "El lugar": las 6 <img> dentro de <div class="gallery">.
-     - Pastelería: campo img de cada producto. Podés usar una URL o una ruta local, ej.: img: 'fotos/croissant.jpg'
      - Imagen para redes (Open Graph): meta property="og:image" en el <head> (1200 x 630 px).
      - Recomendado: fotos en .jpg o .webp, comprimidas (menos de 300 KB cada una).
 
   4) HORARIOS Y TEXTOS
      - Horarios: lista <ul class="hours"> en la sección #contacto y "openingHours"
        en los datos estructurados del <head>.
-     - Mensaje prearmado de reservas: atributo data-wa del botón "Hablanos por WhatsApp".
+     - Mensajes prearmados de WhatsApp: atributo data-wa de los botones.
      - Texto de "Sobre García" y la frase de Luciano: sección #nosotros.
 
-  5) DOMINIO
+  5) ESTILO
+     - Colores y tipografías: variables al principio del <style> (:root).
+
+  6) DOMINIO
      - Reemplazá <link rel="canonical"> con el dominio real del sitio.
   =====================================================================
   -->
